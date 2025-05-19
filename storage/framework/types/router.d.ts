@@ -20,6 +20,7 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/[...all]': RouteRecordInfo<'/[...all]', '/:all(.*)', { all: ParamValue<true> }, { all: ParamValue<false> }>,
+    '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
     '/auth/login': RouteRecordInfo<'/auth/login', '/auth/login', Record<never, never>, Record<never, never>>,
     '/auth/signup': RouteRecordInfo<'/auth/signup', '/auth/signup', Record<never, never>, Record<never, never>>,
     '/dashboard/': RouteRecordInfo<'/dashboard/', '/dashboard', Record<never, never>, Record<never, never>>,
@@ -130,6 +131,7 @@ declare module 'vue-router/auto-routes' {
     '/forum/profile': RouteRecordInfo<'/forum/profile', '/forum/profile', Record<never, never>, Record<never, never>>,
     '/forum/topic': RouteRecordInfo<'/forum/topic', '/forum/topic', Record<never, never>, Record<never, never>>,
     '/hello-world/[name]': RouteRecordInfo<'/hello-world/[name]', '/hello-world/:name', { name: ParamValue<true> }, { name: ParamValue<false> }>,
+    '/judges/': RouteRecordInfo<'/judges/', '/judges', Record<never, never>, Record<never, never>>,
     '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
     '/system-tray/': RouteRecordInfo<'/system-tray/', '/system-tray', Record<never, never>, Record<never, never>>,
     '/table/': RouteRecordInfo<'/table/', '/table', Record<never, never>, Record<never, never>>,
