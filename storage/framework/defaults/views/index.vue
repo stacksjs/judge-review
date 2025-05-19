@@ -25,32 +25,13 @@ useHead({
   ],
 })
 
-// const user = useUserStore()
-// const name = ref(user.savedName)
-
-// const router = useRouter()
-// function go() {
-//   if (name.value)
-//     router.push(`/hello-world/${encodeURIComponent(name.value)}`)
-// }
-
-// const { t } = useI18n()
 </script>
 
 <template>
-  <!-- <Header /> -->
-
   <main>
-    <ComingSoon />
-    <!-- <Hero /> -->
-    <!-- <PrimaryFeatures /> -->
-    <!-- <PrimaryFeatures2 />
-    <SecondaryFeatures />
-    <CallToAction />
-    <Testimonials />
-    <Pricing />
-    <Faqs /> -->
+    <HeroSection />
+    <PricingSection />
+    <TestimonialsSection />
   </main>
 
-  <Footer />
 </template>
