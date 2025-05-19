@@ -1,0 +1,47 @@
+{
+  "name": "@stacksjs/query-builder",
+  "type": "module",
+  "version": "0.70.23",
+  "description": "The Stacks Query Builder integration",
+  "author": "Chris Breuer",
+  "contributors": ["Chris Breuer <chris@stacksjs.org>"],
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/chrisbbreuer",
+  "homepage": "https://github.com/stacksjs/stacks/tree/main/storage/framework/core/query-builder#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stacksjs/stacks.git",
+    "directory": "./storage/framework/core/query-builder"
+  },
+  "bugs": {
+    "url": "https://github.com/stacksjs/stacks/issues"
+  },
+  "keywords": ["stacks", "kysely"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "import": "./dist/*"
+    }
+  },
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["README.md", "dist"],
+  "scripts": {
+    "build": "bun build.ts",
+    "typecheck": "bun tsc --noEmit",
+    "prepublishOnly": "bun run build"
+  },
+  "devDependencies": {
+    "@stacksjs/database": "workspace:*",
+    "@stacksjs/development": "workspace:*",
+    "@stacksjs/types": "workspace:*",
+    "@types/pg": "^8.15.2",
+    "kysely": "^0.28.2",
+    "kysely-bun-worker": "^0.7.0",
+    "mysql2": "^3.14.1",
+    "pg": "^8.16.0"
+  }
+}

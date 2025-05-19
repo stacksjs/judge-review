@@ -1,0 +1,59 @@
+{
+  "name": "@stacksjs/lint",
+  "type": "module",
+  "version": "0.70.23",
+  "description": "The Stacks way to lint.",
+  "author": "Chris Breuer",
+  "contributors": [
+    "Chris Breuer <chris@stacksjs.org>"
+  ],
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/chrisbbreuer",
+  "homepage": "https://github.com/stacksjs/stacks/tree/main/storage/framework/core/lint#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stacksjs/stacks.git",
+    "directory": "./storage/framework/core/lint"
+  },
+  "bugs": {
+    "url": "https://github.com/stacksjs/stacks/issues"
+  },
+  "keywords": [
+    "linter",
+    "formatter",
+    "eslint",
+    "antfu",
+    "pre-configured",
+    "zero-config",
+    "stacks"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "import": "./dist/*"
+    }
+  },
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "bun build.ts",
+    "typecheck": "bun tsc --noEmit",
+    "prepublishOnly": "bun run build"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@stacksjs/development": "workspace:*",
+    "@stacksjs/eslint-config": "^4.14.0-beta.3",
+    "bun-git-hooks": "^0.2.16",
+    "lint-staged": "^15.5.2",
+    "publint": "^0.3.12"
+  }
+}

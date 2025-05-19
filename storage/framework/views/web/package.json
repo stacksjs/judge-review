@@ -1,0 +1,58 @@
+{
+  "name": "stacks-web",
+  "type": "module",
+  "version": "0.70.23",
+  "private": true,
+  "scripts": {
+    "build": "bun --bun vite-ssg build -c ../../core/vite-config/src/views.ts",
+    "dev": "bun --bun vite serve -c ../../core/vite-config/src/views.ts",
+    "preview": "bun --bun vite preview",
+    "typecheck": "bun --bun vue-tsc --noEmit",
+    "up": "bun --bun taze major -I",
+    "sizecheck": "bun --bun vite-bundle-visualizer"
+  },
+  "dependencies": {
+    "@stacksjs/alias": "workspace:*",
+    "@stacksjs/config": "workspace:*",
+    "@stacksjs/server": "workspace:*",
+    "@unhead/vue": "^2.0.9",
+    "@unocss/reset": "66.1.2",
+    "@vueuse/core": "^13.2.0",
+    "@vueuse/head": "^2.0.0",
+    "nprogress": "^0.2.0",
+    "pinia": "^3.0.2",
+    "vue": "^3.5.14",
+    "vue-i18n": "^11.1.3",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.2.8",
+    "@intlify/unplugin-vue-i18n": "^6.0.8",
+    "@shikijs/markdown-it": "^3.4.2",
+    "@types/markdown-it-link-attributes": "^3.0.5",
+    "@types/nprogress": "^0.2.3",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vue-macros/volar": "^0.30.15",
+    "@vue/test-utils": "^2.4.6",
+    "markdown-it-link-attributes": "^4.0.1",
+    "rollup": "^4.41.0",
+    "shiki": "^3.4.2",
+    "unocss": "66.1.2",
+    "unplugin-auto-import": "^19.2.0",
+    "unplugin-vue-components": "^28.5.0",
+    "unplugin-vue-markdown": "^28.3.1",
+    "unplugin-vue-router": "^0.12.0",
+    "vite": "npm:rolldown-vite@latest",
+    "vite-bundle-visualizer": "^1.2.1",
+    "vite-plugin-inspect": "^11.0.1",
+    "vite-plugin-pwa": "^1.0.0",
+    "vite-plugin-vue-devtools": "^7.7.6",
+    "vite-plugin-vue-layouts": "^0.11.0",
+    "vite-ssg": "^27.0.0",
+    "vite-ssg-sitemap": "^0.9.0",
+    "vue-tsc": "^2.2.10"
+  },
+  "overrides": {
+    "vite": "npm:rolldown-vite@latest"
+  }
+}
