@@ -9,88 +9,79 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <h2 class="text-base/7 font-semibold text-indigo-600">Testimonials</h2>
-        <p class="mt-2 text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">We have worked with thousands of amazing people</p>
+        <p class="mt-2 text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">What legal professionals are saying</p>
       </div>
       <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm/6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
         <figure class="rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
           <blockquote class="p-6 text-lg font-semibold tracking-tight text-gray-900 sm:p-12 sm:text-xl/8">
-            <p>“Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non hendrerit in vel ac diam.”</p>
+            <p>"This platform has revolutionized how we prepare for court appearances. Being able to read detailed reviews and understand a judge's approach has been invaluable for our practice. The insights shared by other attorneys have helped us better serve our clients."</p>
           </blockquote>
           <figcaption class="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
             <img class="size-10 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80" alt="">
             <div class="flex-auto">
-              <div class="font-semibold">Brenna Goyette</div>
-              <div class="text-gray-600">@brennagoyette</div>
+              <div class="font-semibold">Sarah Chen</div>
+              <div class="text-gray-600">Senior Partner, Chen & Associates</div>
             </div>
-            <img class="h-10 w-auto flex-none" src="https://tailwindcss.com/plus-assets/img/logos/savvycal-logo-gray-900.svg" alt="">
           </figcaption>
         </figure>
         <div class="space-y-8 xl:contents xl:space-y-0">
           <div class="space-y-8 xl:row-span-2">
             <figure class="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
               <blockquote class="text-gray-900">
-                <p>“Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut enim doloremque et ipsam.”</p>
+                <p>"The detailed reviews have been a game-changer for our firm. We can now better prepare our clients for what to expect in court, leading to more successful outcomes."</p>
               </blockquote>
               <figcaption class="mt-6 flex items-center gap-x-4">
                 <img class="size-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                 <div>
-                  <div class="font-semibold">Leslie Alexander</div>
-                  <div class="text-gray-600">@lesliealexander</div>
+                  <div class="font-semibold">Michael Rodriguez</div>
+                  <div class="text-gray-600">Criminal Defense Attorney</div>
                 </div>
               </figcaption>
             </figure>
-
-            <!-- More testimonials... -->
           </div>
           <div class="space-y-8 xl:row-start-1">
             <figure class="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
               <blockquote class="text-gray-900">
-                <p>“Aut reprehenderit voluptatem eum asperiores beatae id. Iure molestiae ipsam ut officia rem nulla blanditiis.”</p>
+                <p>"As a public defender, this platform has been invaluable. The insights into judicial tendencies and preferences help us better serve our clients and prepare more effective arguments."</p>
               </blockquote>
               <figcaption class="mt-6 flex items-center gap-x-4">
                 <img class="size-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                 <div>
-                  <div class="font-semibold">Lindsay Walton</div>
-                  <div class="text-gray-600">@lindsaywalton</div>
+                  <div class="font-semibold">Emily Thompson</div>
+                  <div class="text-gray-600">Public Defender</div>
                 </div>
               </figcaption>
             </figure>
-
-            <!-- More testimonials... -->
           </div>
         </div>
         <div class="space-y-8 xl:contents xl:space-y-0">
           <div class="space-y-8 xl:row-start-1">
             <figure class="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
               <blockquote class="text-gray-900">
-                <p>“Voluptas quos itaque ipsam in voluptatem est. Iste eos blanditiis repudiandae. Earum deserunt enim molestiae ipsum perferendis recusandae saepe corrupti.”</p>
+                <p>"The ability to share experiences and learn from other attorneys has made us more effective advocates. This platform has become an essential tool in our practice."</p>
               </blockquote>
               <figcaption class="mt-6 flex items-center gap-x-4">
                 <img class="size-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                 <div>
-                  <div class="font-semibold">Tom Cook</div>
-                  <div class="text-gray-600">@tomcook</div>
+                  <div class="font-semibold">David Kim</div>
+                  <div class="text-gray-600">Family Law Attorney</div>
                 </div>
               </figcaption>
             </figure>
-
-            <!-- More testimonials... -->
           </div>
           <div class="space-y-8 xl:row-span-2">
             <figure class="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
               <blockquote class="text-gray-900">
-                <p>“Molestias ea earum quos nostrum doloremque sed. Quaerat quasi aut velit incidunt excepturi rerum voluptatem minus harum.”</p>
+                <p>"The transparency this platform provides is exactly what the legal community needed. It helps level the playing field and ensures better outcomes for all parties involved."</p>
               </blockquote>
               <figcaption class="mt-6 flex items-center gap-x-4">
                 <img class="size-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                 <div>
-                  <div class="font-semibold">Leonard Krasner</div>
-                  <div class="text-gray-600">@leonardkrasner</div>
+                  <div class="font-semibold">James Wilson</div>
+                  <div class="text-gray-600">Civil Rights Attorney</div>
                 </div>
               </figcaption>
             </figure>
-
-            <!-- More testimonials... -->
           </div>
         </div>
       </div>
@@ -99,6 +90,5 @@
 </template>
 
 <script setup lang="ts">
-
 </script>
 
