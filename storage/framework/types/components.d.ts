@@ -67,7 +67,7 @@ declare module 'vue' {
     ForumTopicItem: typeof import('./../defaults/components/Forum/ForumTopicItem.vue')['default']
     ForumTopicList: typeof import('./../defaults/components/Forum/ForumTopicList.vue')['default']
     HashingForm: typeof import('./../defaults/components/Dashboard/Settings/Forms/HashingForm.vue')['default']
-    Header: typeof import('./../defaults/components/Marketing/Header.vue')['default']
+    Header: typeof import('./../defaults/components/Judge/Header.vue')['default']
     HelloWorld: typeof import('./../../../resources/components/HelloWorld.vue')['default']
     Hero: typeof import('./../defaults/components/Docs/Demo/Hero.vue')['default']
     HeroSection: typeof import('./../defaults/components/Judge/HeroSection.vue')['default']
