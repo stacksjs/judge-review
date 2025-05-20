@@ -133,6 +133,7 @@ declare module 'vue-router/auto-routes' {
     '/hello-world/[name]': RouteRecordInfo<'/hello-world/[name]', '/hello-world/:name', { name: ParamValue<true> }, { name: ParamValue<false> }>,
     '/judges/': RouteRecordInfo<'/judges/', '/judges', Record<never, never>, Record<never, never>>,
     '/judges/[id]': RouteRecordInfo<'/judges/[id]', '/judges/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/judges/review/[id]': RouteRecordInfo<'/judges/review/[id]', '/judges/review/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
     '/system-tray/': RouteRecordInfo<'/system-tray/', '/system-tray', Record<never, never>, Record<never, never>>,
     '/table/': RouteRecordInfo<'/table/', '/table', Record<never, never>, Record<never, never>>,
