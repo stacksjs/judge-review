@@ -115,6 +115,7 @@ declare module 'vue' {
     RadioGroupCode: typeof import('./../defaults/components/Docs/Demo/RadioGroupCode.md')['default']
     RadioGroupDemo: typeof import('./../defaults/components/Docs/Demo/RadioGroupDemo.vue')['default']
     README: typeof import('./../../../resources/components/README.md')['default']
+    ReviewForm: typeof import('./../defaults/components/Judge/ReviewForm.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchEngineForm: typeof import('./../defaults/components/Dashboard/Settings/Forms/SearchEngineForm.vue')['default']

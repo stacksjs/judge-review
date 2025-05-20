@@ -17,8 +17,7 @@
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
         <router-link to="/judges" class="text-sm/6 font-semibold text-gray-900">Find Judges</router-link>
-        <router-link to="/reviews" class="text-sm/6 font-semibold text-gray-900">Write Review</router-link>
-        <router-link to="/about" class="text-sm/6 font-semibold text-gray-900">About</router-link>
+        <router-link to="/review" class="text-sm/6 font-semibold text-gray-900">Write Review</router-link>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <router-link to="/login" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></router-link>
