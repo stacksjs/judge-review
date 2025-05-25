@@ -7,6 +7,7 @@ import type { PaymentModel } from './Payment'
 import type { ReviewModel } from './Review'
 import type { UserModel } from './User'
 import type { WaitlistProductModel } from './WaitlistProduct'
+
 import type { WaitlistRestaurantModel } from './WaitlistRestaurant'
 
 import { randomUUIDv7 } from 'bun'
@@ -66,7 +67,7 @@ export type CustomerUpdate = Updateable<CustomerWrite>
 
 export class CustomerModel extends BaseOrm<CustomerModel, CustomersTable, CustomerJsonResponse> {
   private readonly hidden: Array<keyof CustomerJsonResponse> = []
-  private readonly fillable: Array<keyof CustomerJsonResponse> = ['name', 'email', 'phone', 'total_spent', 'last_order', 'status', 'avatar', 'uuid', 'user_id']
+  private readonly fillable: Array<keyof CustomerJsonResponse> = ['name', 'email', 'phone', 'total_spent', 'last_order', 'status', 'avatar', 'uuid']
   private readonly guarded: Array<keyof CustomerJsonResponse> = []
   protected attributes = {} as CustomerJsonResponse
   protected originalAttributes = {} as CustomerJsonResponse

@@ -6,6 +6,7 @@ import type { CustomerModel } from './Customer'
 import { randomUUIDv7 } from 'bun'
 import { sql } from '@stacksjs/database'
 import { HttpError } from '@stacksjs/error-handling'
+
 import { dispatch } from '@stacksjs/events'
 
 import { DB } from '@stacksjs/orm'
@@ -22,7 +23,7 @@ export interface CartsTable {
   tax_amount?: number
   discount_amount?: number
   total?: number
-  expires_at: number
+  expires_at: Date | string
   currency?: string
   notes?: string
   applied_coupon_id?: string
@@ -238,7 +239,7 @@ export class CartModel extends BaseOrm<CartModel, CartsTable, CartJsonResponse> 
     return this.attributes.total
   }
 
-  get expires_at(): number {
+  get expires_at(): Date | string {
     return this.attributes.expires_at
   }
 
@@ -290,7 +291,7 @@ export class CartModel extends BaseOrm<CartModel, CartsTable, CartJsonResponse> 
     this.attributes.total = value
   }
 
-  set expires_at(value: number) {
+  set expires_at(value: Date | string) {
     this.attributes.expires_at = value
   }
 
@@ -1138,7 +1139,7 @@ export async function whereTotal(value: number): Promise<CartModel[]> {
   return results.map((modelItem: CartJsonResponse) => new CartModel(modelItem))
 }
 
-export async function whereExpiresAt(value: number): Promise<CartModel[]> {
+export async function whereExpiresAt(value: Date | string): Promise<CartModel[]> {
   const query = DB.instance.selectFrom('carts').where('expires_at', '=', value)
   const results: CartJsonResponse = await query.execute()
 

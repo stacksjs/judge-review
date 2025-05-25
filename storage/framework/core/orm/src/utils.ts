@@ -1349,10 +1349,32 @@ export function mapEntity(attribute: ModelElement): string | undefined {
     case 'date':
       return 'Date | string'
     case 'timestamp':
-      return 'number'
+      return 'Date | string'
+    case 'datetime':
+      return 'Date | string'
     default:
       return entity
   }
+}
+
+export function extractImports(filePath: string): string[] {
+  const content = fs.readFileSync(filePath, 'utf8')
+  const ast = parser.parse(content, {
+    sourceType: 'module',
+    plugins: ['typescript', 'classProperties', 'decorators-legacy'],
+  })
+
+  const imports: string[] = []
+
+  traverse(ast, {
+    ImportDeclaration(path) {
+      // Convert the import node back to code
+      const generated = generator(path.node, {}, content)
+      imports.push(generated.code)
+    },
+  })
+
+  return imports
 }
 
 export async function generateModelFiles(modelStringFile?: string): Promise<void> {
@@ -1437,8 +1459,6 @@ export async function generateModelFiles(modelStringFile?: string): Promise<void
     await generateApiRoutes(modelFiles)
     log.success('Generated API Routes')
 
-    await writeModelOrmImports(modelFiles)
-
     for (const modelFile of modelFiles) {
       if (modelStringFile && modelStringFile !== modelFile)
         continue
@@ -1449,18 +1469,25 @@ export async function generateModelFiles(modelStringFile?: string): Promise<void
       const modelName = getModelName(model, modelFile)
       const file = Bun.file(path.frameworkPath(`orm/src/models/${modelName}.ts`))
       const fields = await extractFields(model, modelFile)
-      const classString = await generateModelString(tableName, modelName, model, fields)
+
+      // Extract imports from the original model file
+      const imports = extractImports(modelFile)
+      const classString = await generateModelString(tableName, modelName, model, fields, imports)
 
       const writer = file.writer()
-      log.info(`Writing API Endpoints for: ${italic(modelName)}`)
+      log.info(`Writing Model: ${italic(modelName)}`)
       writer.write(classString)
-      log.success(`Wrote API endpoints for: ${italic(modelName)}`)
+      log.success(`Wrote Model: ${italic(modelName)}`)
       await writer.end()
     }
 
     log.info('Generating Query Builder types...')
     await generateKyselyTypes()
     log.success('Generated Query Builder types')
+
+    log.info('Writing Model Orm Imports...')
+    await writeModelOrmImports(modelFiles)
+    log.success('Wrote Model Orm Imports')
 
     // we need to lint:fix the auto-generated code, given there is a chance that
     // the codebase has lint issues unrelating to our auto-generated code, we

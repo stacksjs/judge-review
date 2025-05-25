@@ -44,6 +44,7 @@ async function main() {
     }
   }
 
+  cmd.auth(buddy)
   cmd.build(buddy)
   cmd.changelog(buddy)
   cmd.clean(buddy)

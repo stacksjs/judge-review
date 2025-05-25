@@ -1,12 +1,15 @@
-import type { TeamModel } from '../../../orm/src/models/Team'
-import type { UserModel, UsersTable } from '../../../orm/src/models/User'
+import type { OauthClientJsonResponse } from '@stacksjs/orm'
+import type { AuthToken } from './token'
+import type { AuthUser } from './user'
 import { randomBytes } from 'node:crypto'
+import { config } from '@stacksjs/config'
+import { db } from '@stacksjs/database'
 import { HttpError } from '@stacksjs/error-handling'
+import { formatDate } from '@stacksjs/orm'
 import { request } from '@stacksjs/router'
-import { verifyHash } from '@stacksjs/security'
-import AccessToken from '../../../orm/src/models/AccessToken'
-import Team from '../../../orm/src/models/Team'
-import User from '../../../orm/src/models/User'
+import { decrypt, encrypt, makeHash, verifyHash } from '@stacksjs/security'
+import { RateLimiter } from './rate-limiter'
+import { TokenManager } from './token'
 
 interface Credentials {
   password: string | undefined
@@ -14,149 +17,280 @@ interface Credentials {
   [key: string]: string | undefined
 }
 
-type AuthToken = `${number}:${number}:${string}`
+export class Authentication {
+  private static authUser: AuthUser | undefined = undefined
+  private static clientSecret: string | undefined = undefined
 
-const authConfig = { username: 'email', password: 'password' }
+  private static async getClientSecret(): Promise<string> {
+    if (this.clientSecret)
+      return this.clientSecret
 
-let authUser: UserModel | null = null
+    const client = await this.getPersonalAccessClient()
+    this.clientSecret = client.secret
+    return client.secret
+  }
 
-export async function attempt(credentials: Credentials): Promise<boolean> {
-  let hashCheck = false
+  private static async getPersonalAccessClient(): Promise<OauthClientJsonResponse> {
+    const client = await db.selectFrom('oauth_clients')
+      .where('personal_access_client', '=', true)
+      .selectAll()
+      .executeTakeFirst()
 
-  const user = await User.where(authConfig.username as keyof UsersTable, credentials[authConfig.username]).first()
-  const authPass = credentials[authConfig.password]
+    if (!client)
+      throw new HttpError(500, 'No personal access client found. Please run `./buddy auth:token` to create a personal access client.')
 
-  if (typeof authPass === 'string' && user?.password)
-    hashCheck = await verifyHash(authPass, user.password, 'bcrypt')
+    return client
+  }
 
-  if (hashCheck && user) {
-    authUser = user
+  private static async validateClient(clientId: number, clientSecret: string): Promise<boolean> {
+    const client = await db.selectFrom('oauth_clients')
+      .where('id', '=', clientId)
+      .selectAll()
+      .executeTakeFirst()
+
+    if (!client)
+      return false
+
+    return client.secret === clientSecret
+  }
+
+  public static async attempt(credentials: Credentials): Promise<boolean> {
+    const username = config.auth.username || 'email'
+    const password = config.auth.password || 'password'
+
+    const email = credentials[username]
+
+    if (!email || typeof email !== 'string')
+      return false
+
+    let hashCheck = false
+    const user = await db.selectFrom('users')
+      .where('email', '=', email)
+      .selectAll()
+      .executeTakeFirst()
+
+    const authPass = credentials[password] || ''
+
+    if (user?.password)
+      hashCheck = await verifyHash(authPass, user.password, 'bcrypt')
+
+    if (hashCheck && user) {
+      RateLimiter.resetAttempts(email)
+      this.authUser = user
+      return true
+    }
+
+    RateLimiter.recordFailedAttempt(email)
+    return false
+  }
+
+  public static async createToken(user: AuthUser, name: string = config.auth.defaultTokenName || 'auth-token'): Promise<AuthToken> {
+    const client = await this.getPersonalAccessClient()
+    const clientSecret = await this.getClientSecret()
+
+    // Generate a long JWT token
+    const jwtToken = await TokenManager.generateLongJWT(user.id)
+
+    // Set token expiry
+    const expiresAt = new Date()
+    expiresAt.setDate(expiresAt.getDate() + 30) // 30 days from now
+
+    // Store the token in the database first to get the ID
+    const result = await db.insertInto('oauth_access_tokens')
+      .values({
+        user_id: user.id,
+        oauth_client_id: client.id,
+        name,
+        token: jwtToken,
+        scopes: '[]',
+        revoked: false,
+        expires_at: formatDate(expiresAt),
+      })
+      .executeTakeFirst()
+
+    if (!result?.insertId)
+      throw new HttpError(500, 'Failed to create token')
+
+    // Encrypt the token ID using client secret
+    const encryptedId = encrypt(result.insertId.toString(), clientSecret)
+
+    // Combine into final token format with JWT first
+    return `${jwtToken}:${encryptedId}` as AuthToken
+  }
+
+  public static async requestToken(credentials: Credentials, clientId: number, clientSecret: string): Promise<{ token: AuthToken } | null> {
+    const isValidClient = await this.validateClient(clientId, clientSecret)
+    if (!isValidClient)
+      throw new HttpError(401, 'Invalid client credentials')
+
+    const isValid = await this.attempt(credentials)
+    if (!isValid || !this.authUser)
+      return null
+
+    return { token: await this.createToken(this.authUser, 'user-auth-token') }
+  }
+
+  public static async login(credentials: Credentials): Promise<{ token: AuthToken } | null> {
+    const isValid = await this.attempt(credentials)
+    if (!isValid || !this.authUser)
+      return null
+
+    return { token: await this.createToken(this.authUser, 'user-auth-token') }
+  }
+
+  public static async rotateToken(oldToken: string): Promise<AuthToken | null> {
+    const [jwtToken, tokenId] = oldToken.split(':')
+    if (!tokenId || !jwtToken)
+      return null
+
+    const clientSecret = await this.getClientSecret()
+    const decryptedId = decrypt(tokenId, clientSecret)
+    if (!decryptedId)
+      return null
+
+    const accessToken = await db.selectFrom('oauth_access_tokens')
+      .where('id', '=', Number(decryptedId))
+      .selectAll()
+      .executeTakeFirst()
+
+    if (!accessToken)
+      return null
+
+    // Verify the old token
+    const isValid = await verifyHash(jwtToken, accessToken.token, 'bcrypt')
+    if (!isValid)
+      return null
+
+    // Generate new token
+    const newToken = randomBytes(40).toString('hex')
+    const hashedNewToken = await makeHash(newToken, { algorithm: 'bcrypt' })
+
+    // Update the token
+    await db.updateTable('oauth_access_tokens')
+      .set({
+        token: hashedNewToken,
+        updated_at: formatDate(new Date()),
+      })
+      .where('id', '=', accessToken.id)
+      .execute()
+
+    // Encrypt the new token ID
+    const encryptedId = encrypt(accessToken.id.toString(), clientSecret)
+    return `${newToken}:${encryptedId}` as AuthToken
+  }
+
+  public static async validateToken(token: string): Promise<boolean> {
+    const [jwtToken, tokenId] = token.split(':')
+    if (!tokenId || !jwtToken)
+      return false
+
+    const clientSecret = await this.getClientSecret()
+    const decryptedId = decrypt(tokenId, clientSecret)
+    if (!decryptedId)
+      return false
+
+    const accessToken = await db.selectFrom('oauth_access_tokens')
+      .where('id', '=', Number(decryptedId))
+      .selectAll()
+      .executeTakeFirst()
+
+    if (!accessToken)
+      return false
+
+    // Check if token is expired
+    if (accessToken.expires_at && new Date(accessToken.expires_at) < new Date()) {
+      await db.deleteFrom('oauth_access_tokens')
+        .where('id', '=', accessToken.id)
+        .execute()
+      return false
+    }
+
+    // Check if token is revoked
+    if (accessToken.revoked)
+      return false
+
+    // Rotate token if it's been used for more than 24 hours
+    const lastUsed = accessToken.updated_at ? new Date(accessToken.updated_at) : new Date()
+    const now = new Date()
+    const hoursSinceLastUse = (now.getTime() - lastUsed.getTime()) / (1000 * 60 * 60)
+
+    if (hoursSinceLastUse >= 24) {
+      await this.rotateToken(token)
+    }
+    else {
+      await db.updateTable('oauth_access_tokens')
+        .set({
+          updated_at: formatDate(now),
+        })
+        .where('id', '=', accessToken.id)
+        .execute()
+    }
+
     return true
   }
 
-  return false
-}
+  public static async getUserFromToken(token: string): Promise<AuthUser | undefined> {
+    const [jwtToken, tokenId] = token.split(':')
+    if (!tokenId || !jwtToken)
+      return undefined
 
-export async function createAccessToken(user: UserModel, teamId?: number): Promise<AuthToken> {
-  const token = randomBytes(40).toString('hex')
+    const clientSecret = await this.getClientSecret()
+    const decryptedId = decrypt(tokenId, clientSecret)
+    if (!decryptedId)
+      return undefined
 
-  const accessToken = await AccessToken.create({
-    team_id: teamId,
-    token,
-    name: 'auth-token',
-    expires_at: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30), // 30 days
-  })
+    const accessToken = await db.selectFrom('oauth_access_tokens')
+      .where('id', '=', Number(decryptedId))
+      .selectAll()
+      .executeTakeFirst()
 
-  if (!accessToken?.id)
-    throw new HttpError(500, 'Failed to create access token')
+    if (!accessToken || accessToken.token !== jwtToken)
+      return undefined
 
-  return `${accessToken.id}:${teamId || 0}:${token}`
-}
+    if (accessToken.expires_at && new Date(accessToken.expires_at) < new Date()) {
+      await db.deleteFrom('oauth_access_tokens')
+        .where('id', '=', accessToken.id)
+        .execute()
+      return undefined
+    }
 
-export async function login(credentials: Credentials): Promise<{ token: AuthToken } | null> {
-  const isValid = await attempt(credentials)
+    if (accessToken.revoked)
+      return undefined
 
-  if (!isValid || !authUser)
-    return null
+    await db.updateTable('oauth_access_tokens')
+      .set({
+        updated_at: formatDate(new Date()),
+      })
+      .where('id', '=', accessToken.id)
+      .execute()
 
-  // Get user's primary team
-  const teams = await authUser.userTeams()
-  const primaryTeam = teams[0]
-
-  const token = await createAccessToken(authUser, primaryTeam?.id)
-  return { token }
-}
-
-export async function validateToken(token: string): Promise<boolean> {
-  const parts = token.split(':')
-
-  if (parts.length !== 3)
-    return false
-
-  const [tokenId, teamId, plainToken] = parts
-
-  const accessToken = await AccessToken.where('id', Number(tokenId))
-    .where('token', plainToken)
-    .where('team_id', Number(teamId))
-    .first()
-
-  if (!accessToken)
-    return false
-
-  // Check if token is expired
-  if (accessToken.expires_at && new Date(accessToken.expires_at) < new Date())
-    return false
-
-  // Update last used timestamp
-  await AccessToken.where('id', accessToken.id).update({
-    last_used_at: new Date(),
-  })
-
-  return true
-}
-
-export async function getUserFromToken(token: string): Promise<UserModel | undefined> {
-  const parts = token.split(':')
-
-  if (parts.length !== 3)
-    return undefined
-
-  const [tokenId] = parts
-
-  const accessToken = await AccessToken.where('id', Number(tokenId)).first()
-
-  if (!accessToken?.user_id)
-    return undefined
-
-  return await User.find(accessToken.user_id)
-}
-
-export async function team(): Promise<TeamModel | undefined> {
-  if (authUser) {
-    const teams = await authUser.userTeams()
-    return teams[0]
+    return await db.selectFrom('users')
+      .where('id', '=', accessToken.user_id)
+      .selectAll()
+      .executeTakeFirst()
   }
 
-  const bearerToken = request.bearerToken()
+  public static async revokeToken(token: string): Promise<void> {
+    const [jwtToken, tokenId] = token.split(':')
+    if (!tokenId || !jwtToken)
+      return
 
-  if (!bearerToken)
-    return undefined
+    const clientSecret = await this.getClientSecret()
+    const decryptedId = decrypt(tokenId, clientSecret)
+    if (!decryptedId)
+      return
 
-  const parts = bearerToken.split(':')
+    await db.updateTable('oauth_access_tokens')
+      .set({ revoked: true })
+      .where('id', '=', Number(decryptedId))
+      .execute()
+  }
 
-  if (parts.length !== 3)
-    throw new HttpError(401, 'Invalid bearer token format')
+  public static async logout(): Promise<void> {
+    const bearerToken = request.bearerToken()
+    if (bearerToken)
+      await this.revokeToken(bearerToken)
 
-  const tokenId = Number(parts[0])
-  const teamId = parts[1]
-  const plainString = parts[2]
-
-  const accessToken = await AccessToken.where('id', Number(tokenId))
-    .where('token', plainString)
-    .first()
-
-  if (Number(teamId) !== Number(accessToken?.team_id))
-    return undefined
-
-  return await Team.find(Number(accessToken?.team_id))
-}
-
-export async function revokeToken(token: string): Promise<void> {
-  const parts = token.split(':')
-
-  if (parts.length !== 3)
-    return
-
-  const [tokenId] = parts
-
-  await AccessToken.where('id', Number(tokenId)).delete()
-}
-
-export async function logout(): Promise<void> {
-  const bearerToken = request.bearerToken()
-
-  if (bearerToken)
-    await revokeToken(bearerToken)
-
-  authUser = null
+    this.authUser = undefined
+  }
 }

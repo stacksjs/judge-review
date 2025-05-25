@@ -5,14 +5,14 @@ export interface Attributes {
   status: string
   email: string
   token: string
-  plain_text_token: string
-  abilities: string | string[]
-  last_used_at: Date | string
+  scopes: string
+  revoked: boolean
   expires_at: Date | string
-  revoked_at: Date | string
-  ip_address: string
-  device_name: string
-  is_single_use: boolean
+  secret: string
+  provider: string
+  redirect: string
+  personal_access_client: boolean
+  password_client: boolean
   company_name: string
   billing_email: string
   path: string
@@ -27,6 +27,13 @@ export interface Attributes {
   version: string
   job_title: string
   password: string
+  plain_text_token: string
+  abilities: string
+  last_used_at: Date | string
+  revoked_at: Date | string
+  ip_address: string
+  device_name: string
+  is_single_use: boolean
   mac_address: string
   location: string
   terminal: string
@@ -52,9 +59,9 @@ export interface Attributes {
   quantity: number
   notification_preference: string | string[]
   source: string
-  notified_at: number
-  purchased_at: number
-  cancelled_at: number
+  notified_at: Date | string
+  purchased_at: Date | string
+  cancelled_at: Date | string
   download_limit: number
   expiry_days: number
   requires_login: boolean
@@ -87,15 +94,15 @@ export interface Attributes {
   options: string
   key: string
   template: string | string[]
-  expiry_date: number
+  expiry_date: Date | string
   party_size: number
-  check_in_time: number
+  check_in_time: Date | string
   table_preference: string | string[]
   quoted_wait_time: number
   actual_wait_time: number
   queue_position: number
-  seated_at: number
-  no_show_at: number
+  seated_at: Date | string
+  no_show_at: Date | string
   rating: number
   title: string
   content: string
@@ -117,7 +124,7 @@ export interface Attributes {
   personal_message: string
   is_digital: boolean
   is_reloadable: boolean
-  last_used_date: number
+  last_used_date: Date | string
   template_id: string
   total_amount: number
   tax_amount: number
@@ -188,7 +195,7 @@ export interface Attributes {
   exp_month: number
   exp_year: number
   views: number
-  published_at: number
+  published_at: Date | string
   conversions: number
   poster: string
   excerpt: string
@@ -211,8 +218,8 @@ export interface Attributes {
   provider_status: string
   provider_type: string
   provider_price_id: string
-  trial_ends_at: number
-  ends_at: number
+  trial_ends_at: Date | string
+  ends_at: Date | string
   stack: string
   additional_info: string
 }

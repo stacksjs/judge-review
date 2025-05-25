@@ -1,3 +1,4 @@
+export * from './auth'
 export * from './build'
 export * from './changelog'
 export * from './clean'

@@ -1,4 +1,3 @@
-import type { PersonalAccessTokensTable } from '../src/models/AccessToken'
 import type { AuthorsTable } from '../src/models/Author'
 import type { CartsTable } from '../src/models/Cart'
 import type { CartItemsTable } from '../src/models/CartItem'
@@ -18,6 +17,8 @@ import type { LogsTable } from '../src/models/Log'
 import type { LoyaltyPointsTable } from '../src/models/LoyaltyPoint'
 import type { LoyaltyRewardsTable } from '../src/models/LoyaltyReward'
 import type { ManufacturersTable } from '../src/models/Manufacturer'
+import type { OauthAccessTokensTable } from '../src/models/OauthAccessToken'
+import type { OauthClientsTable } from '../src/models/OauthClient'
 import type { OrdersTable } from '../src/models/Order'
 import type { OrderItemsTable } from '../src/models/OrderItem'
 import type { PagesTable } from '../src/models/Page'
@@ -25,6 +26,7 @@ import type { PaymentsTable } from '../src/models/Payment'
 import type { PaymentMethodsTable } from '../src/models/PaymentMethod'
 import type { PaymentProductsTable } from '../src/models/PaymentProduct'
 import type { PaymentTransactionsTable } from '../src/models/PaymentTransaction'
+import type { PersonalAccessTokensTable } from '../src/models/PersonalAccessToken'
 import type { PostsTable } from '../src/models/Post'
 import type { PrintDevicesTable } from '../src/models/PrintDevice'
 import type { ProductsTable } from '../src/models/Product'
@@ -178,13 +180,15 @@ export interface QueryLogsTable {
 export interface Database {
   projects: ProjectsTable
   subscriber_emails: SubscriberEmailsTable
-  personal_access_tokens: PersonalAccessTokensTable
+  oauth_access_tokens: OauthAccessTokensTable
+  oauth_clients: OauthClientsTable
   teams_users: TeamsUsersTable
   teams: TeamsTable
   subscribers: SubscribersTable
   deployments: DeploymentsTable
   releases: ReleasesTable
   users: UsersTable
+  personal_access_tokens: PersonalAccessTokensTable
   print_devices: PrintDevicesTable
   categories: CategoriesTable
   payments: PaymentsTable

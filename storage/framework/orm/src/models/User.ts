@@ -1,14 +1,10 @@
 import type { Generated, Insertable, RawBuilder, Selectable, Updateable } from '@stacksjs/database'
 import type { Operator } from '@stacksjs/orm'
 import type { AuthorModel } from './Author'
-import type { CustomerModel } from './Customer'
-import type { DeploymentModel } from './Deployment'
 import type { DriverModel } from './Driver'
-import type { PaymentMethodModel } from './PaymentMethod'
-import type { PaymentTransactionModel } from './PaymentTransaction'
+import type { OauthAccessTokenModel } from './OauthAccessToken'
+import type { PersonalAccessTokenModel } from './PersonalAccessToken'
 import type { SubscriberModel } from './Subscriber'
-import type { SubscriptionModel } from './Subscription'
-
 import { randomUUIDv7 } from 'bun'
 
 import { sql } from '@stacksjs/database'
@@ -19,6 +15,9 @@ import { dispatch } from '@stacksjs/events'
 
 import { DB } from '@stacksjs/orm'
 
+import { makeHash } from '@stacksjs/security'
+// soon, these will be auto-imported
+// soon, these will be auto-imported
 import { BaseOrm } from '../utils/base'
 
 export interface UsersTable {
@@ -189,7 +188,9 @@ export class UserModel extends BaseOrm<UserModel, UsersTable, UserJsonResponse> 
       default: () => {
       },
 
-      password: () => Bun.password.hash(String(model.password)),
+      password: async () => {
+        return await makeHash(model.password, { algorithm: 'bcrypt' })
+      },
 
     }
 
@@ -210,24 +211,12 @@ export class UserModel extends BaseOrm<UserModel, UsersTable, UserJsonResponse> 
     return this.attributes.author
   }
 
-  get deployments(): DeploymentModel[] | [] {
-    return this.attributes.deployments
+  get personal_access_tokens(): PersonalAccessTokenModel[] | [] {
+    return this.attributes.personal_access_tokens
   }
 
-  get subscriptions(): SubscriptionModel[] | [] {
-    return this.attributes.subscriptions
-  }
-
-  get payment_methods(): PaymentMethodModel[] | [] {
-    return this.attributes.payment_methods
-  }
-
-  get payment_transactions(): PaymentTransactionModel[] | [] {
-    return this.attributes.payment_transactions
-  }
-
-  get customers(): CustomerModel[] | [] {
-    return this.attributes.customers
+  get oauth_access_tokens(): OauthAccessTokenModel[] | [] {
+    return this.attributes.oauth_access_tokens
   }
 
   get id(): number {
@@ -943,11 +932,8 @@ export class UserModel extends BaseOrm<UserModel, UsersTable, UserJsonResponse> 
 
       updated_at: this.updated_at,
 
-      deployments: this.deployments,
-      subscriptions: this.subscriptions,
-      payment_methods: this.payment_methods,
-      payment_transactions: this.payment_transactions,
-      customers: this.customers,
+      personal_access_tokens: this.personal_access_tokens,
+      oauth_access_tokens: this.oauth_access_tokens,
       ...this.customColumns,
       public_passkey: this.public_passkey,
     }

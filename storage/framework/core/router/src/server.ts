@@ -13,7 +13,6 @@ import { fs, globSync } from '@stacksjs/storage'
 import { camelCase } from '@stacksjs/strings'
 // import { RateLimiter } from 'ts-rate-limiter'
 import { route, staticRoute } from '.'
-import { middlewares } from './middleware'
 import { request as RequestParam } from './request'
 
 export async function serve(options: ServeOptions = {}): Promise<void> {
@@ -162,7 +161,7 @@ function handleOptions() {
     status: 204,
     headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
       'Access-Control-Allow-Headers':
         'Content-Type, Authorization, Access-Control-Allow-Headers, Access-Control-Allow-Origin, Accept',
       'Access-Control-Max-Age': '86400', // Cache the preflight response for a day
@@ -289,49 +288,55 @@ async function addHeaders(headers: Headers): Promise<void> {
 async function executeMiddleware(route: Route): Promise<any> {
   const { middleware = null } = route
 
-  if (middleware && await middlewares() && isObjectNotEmpty(await middlewares())) {
-    // let middlewareItem: MiddlewareOptions
-    if (isString(middleware)) {
-      let middlewarePath = path.userMiddlewarePath(`${middleware}.ts`)
+  if (!middleware)
+    return null
 
-      if (!fs.existsSync(middlewarePath)) {
-        middlewarePath = path.storagePath(`framework/defaults/middleware/${middleware}.ts`)
-      }
+  // Get middleware aliases from app/Middleware.ts
+  const middlewareAliases = (await import(path.appPath('Middleware.ts'))).default
 
+  // Helper function to resolve middleware path
+  async function resolveMiddlewarePath(middlewareName: string): Promise<string> {
+    // Check if it's an alias
+    const actualName = middlewareAliases[middlewareName] || middlewareName
+    let middlewarePath = path.userMiddlewarePath(`${actualName}.ts`)
+
+    if (!fs.existsSync(middlewarePath))
+      middlewarePath = path.storagePath(`framework/defaults/middleware/${actualName}.ts`)
+
+    if (!fs.existsSync(middlewarePath))
+      throw new Error(`Middleware "${middlewareName}" not found in user or default paths`)
+
+    return middlewarePath
+  }
+
+  // Helper function to execute a single middleware
+  async function executeSingleMiddleware(middlewareName: string) {
+    try {
+      const middlewarePath = await resolveMiddlewarePath(middlewareName)
       const middlewareInstance = (await import(middlewarePath)).default
 
-      try {
-        await middlewareInstance.handle()
-      }
-      catch (error: any) {
-        return error
-      }
+      if (!middlewareInstance?.handle)
+        throw new Error(`Middleware "${middlewareName}" does not have a handle method`)
+
+      await middlewareInstance.handle()
     }
-    else {
-      for (const middlewareElement of middleware) {
-        let middlewarePath = path.userMiddlewarePath(`${middlewareElement}.ts`)
-
-        if (!fs.existsSync(middlewarePath)) {
-          middlewarePath = path.storagePath(`framework/defaults/middleware/${middlewareElement}.ts`)
-        }
-
-        const middlewareInstance = (await import(middlewarePath)).default
-
-        try {
-          await middlewareInstance.handle()
-        }
-        catch (error: any) {
-          return error
-        }
+    catch (error: any) {
+      log.error(`Error executing middleware "${middlewareName}": ${error.message}`)
+      return {
+        status: error.status || 500,
+        message: error.message || 'Internal Server Error',
       }
     }
   }
-}
 
-function isString(val: unknown): val is string {
-  return typeof val === 'string'
-}
+  // Handle both single middleware and array of middleware
+  const middlewareList = Array.isArray(middleware) ? middleware : [middleware]
 
-function isObjectNotEmpty(obj: object): boolean {
-  return Object.keys(obj).length > 0
+  for (const middlewareName of middlewareList) {
+    const result = await executeSingleMiddleware(middlewareName)
+    if (result)
+      return result // Return early if middleware returns an error
+  }
+
+  return null
 }

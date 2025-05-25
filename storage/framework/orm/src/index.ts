@@ -1,5 +1,3 @@
-export { default as AccessToken, type AccessTokenJsonResponse, type AccessTokenUpdate, type NewAccessToken } from './models/AccessToken'
-
 export { default as Author, type AuthorJsonResponse, type AuthorUpdate, type NewAuthor } from './models/Author'
 
 export { default as Cart, type CartJsonResponse, type CartUpdate, type NewCart } from './models/Cart'
@@ -38,6 +36,10 @@ export { default as LoyaltyReward, type LoyaltyRewardJsonResponse, type LoyaltyR
 
 export { default as Manufacturer, type ManufacturerJsonResponse, type ManufacturerUpdate, type NewManufacturer } from './models/Manufacturer'
 
+export { type NewOauthAccessToken, default as OauthAccessToken, type OauthAccessTokenJsonResponse, type OauthAccessTokenUpdate } from './models/OauthAccessToken'
+
+export { type NewOauthClient, default as OauthClient, type OauthClientJsonResponse, type OauthClientUpdate } from './models/OauthClient'
+
 export { type NewOrder, default as Order, type OrderJsonResponse, type OrderUpdate } from './models/Order'
 
 export { type NewOrderItem, default as OrderItem, type OrderItemJsonResponse, type OrderItemUpdate } from './models/OrderItem'
@@ -51,6 +53,8 @@ export { type NewPaymentMethod, default as PaymentMethod, type PaymentMethodJson
 export { type NewPaymentProduct, default as PaymentProduct, type PaymentProductJsonResponse, type PaymentProductUpdate } from './models/PaymentProduct'
 
 export { type NewPaymentTransaction, default as PaymentTransaction, type PaymentTransactionJsonResponse, type PaymentTransactionUpdate } from './models/PaymentTransaction'
+
+export { type NewPersonalAccessToken, default as PersonalAccessToken, type PersonalAccessTokenJsonResponse, type PersonalAccessTokenUpdate } from './models/PersonalAccessToken'
 
 export { type NewPost, default as Post, type PostJsonResponse, type PostUpdate } from './models/Post'
 

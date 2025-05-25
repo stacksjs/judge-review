@@ -1,8 +1,9 @@
 import type { Generated, Insertable, RawBuilder, Selectable, Updateable } from '@stacksjs/database'
 import type { Operator } from '@stacksjs/orm'
-import type { AccessTokenModel } from './AccessToken'
+import type { PersonalAccessTokenModel } from './PersonalAccessToken'
 import { sql } from '@stacksjs/database'
 import { HttpError } from '@stacksjs/error-handling'
+
 import { DB } from '@stacksjs/orm'
 
 import { BaseOrm } from '../utils/base'
@@ -176,7 +177,7 @@ export class TeamModel extends BaseOrm<TeamModel, TeamsTable, TeamJsonResponse> 
     }
   }
 
-  get personal_access_tokens(): AccessTokenModel[] | [] {
+  get personal_access_tokens(): PersonalAccessTokenModel[] | [] {
     return this.attributes.personal_access_tokens
   }
 

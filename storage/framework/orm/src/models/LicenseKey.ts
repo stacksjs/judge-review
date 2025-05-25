@@ -6,6 +6,7 @@ import type { ProductModel } from './Product'
 import { randomUUIDv7 } from 'bun'
 import { sql } from '@stacksjs/database'
 import { HttpError } from '@stacksjs/error-handling'
+
 import { dispatch } from '@stacksjs/events'
 
 import { DB } from '@stacksjs/orm'
@@ -19,7 +20,7 @@ export interface LicenseKeysTable {
   order_id: number
   key: string
   template: string | string[]
-  expiry_date: number
+  expiry_date: Date | string
   status?: string | string[]
   uuid?: string
 
@@ -221,7 +222,7 @@ export class LicenseKeyModel extends BaseOrm<LicenseKeyModel, LicenseKeysTable, 
     return this.attributes.template
   }
 
-  get expiry_date(): number {
+  get expiry_date(): Date | string {
     return this.attributes.expiry_date
   }
 
@@ -249,7 +250,7 @@ export class LicenseKeyModel extends BaseOrm<LicenseKeyModel, LicenseKeysTable, 
     this.attributes.template = value
   }
 
-  set expiry_date(value: number) {
+  set expiry_date(value: Date | string) {
     this.attributes.expiry_date = value
   }
 
@@ -1020,7 +1021,7 @@ export async function whereTemplate(value: string | string[]): Promise<LicenseKe
   return results.map((modelItem: LicenseKeyJsonResponse) => new LicenseKeyModel(modelItem))
 }
 
-export async function whereExpiryDate(value: number): Promise<LicenseKeyModel[]> {
+export async function whereExpiryDate(value: Date | string): Promise<LicenseKeyModel[]> {
   const query = DB.instance.selectFrom('license_keys').where('expiry_date', '=', value)
   const results: LicenseKeyJsonResponse = await query.execute()
 
