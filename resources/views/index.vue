@@ -28,6 +28,7 @@ useHead({
 </script>
 
 <template>
+
   <main>
     <HeroSection />
     <PricingSection />
@@ -35,8 +36,3 @@ useHead({
   </main>
 
 </template>
-
-<route lang="yaml">
-  meta:
-    layout: default
-</route>
