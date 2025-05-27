@@ -16,8 +16,40 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-          <router-link to="/judges" class="text-sm/6 font-semibold text-gray-900">Find Judges</router-link>
-          <router-link to="/review" class="text-sm/6 font-semibold text-gray-900">Write Review</router-link>
+          <router-link 
+            to="/judges" 
+            class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
+            :class="[
+              $route.path === '/judges' 
+                ? 'border-blue-500 text-blue-600' 
+                : 'border-transparent hover:border-blue-500'
+            ]"
+          >
+            Find Judges
+          </router-link>
+          <router-link 
+            to="/review" 
+            class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
+            :class="[
+              $route.path === '/review' 
+                ? 'border-blue-500 text-blue-600' 
+                : 'border-transparent hover:border-blue-500'
+            ]"
+          >
+            Write Review
+          </router-link>
+          <router-link 
+            v-if="isAuthenticated" 
+            to="/feed" 
+            class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
+            :class="[
+              $route.path === '/feed' 
+                ? 'border-blue-500 text-blue-600' 
+                : 'border-transparent hover:border-blue-500'
+            ]"
+          >
+            Feed
+          </router-link>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <router-link v-if="!isAuthenticated" to="/login" class="text-sm/6 font-semibold text-gray-900 mr-6">Log in </router-link>
@@ -117,9 +149,51 @@
           <div class="mt-6 flow-root">
             <div class="-my-6 divide-y divide-gray-500/10">
               <div class="space-y-2 py-6">
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Find Judges</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Write Review</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
+                <a 
+                  href="#" 
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold border-b-2 transition-colors duration-200"
+                  :class="[
+                    $route.path === '/judges' 
+                      ? 'border-blue-500 text-blue-600' 
+                      : 'border-transparent hover:border-blue-500 text-gray-900'
+                  ]"
+                >
+                  Find Judges
+                </a>
+                <a 
+                  href="#" 
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold border-b-2 transition-colors duration-200"
+                  :class="[
+                    $route.path === '/review' 
+                      ? 'border-blue-500 text-blue-600' 
+                      : 'border-transparent hover:border-blue-500 text-gray-900'
+                  ]"
+                >
+                  Write Review
+                </a>
+                <a 
+                  v-if="isAuthenticated" 
+                  href="#" 
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold border-b-2 transition-colors duration-200"
+                  :class="[
+                    $route.path === '/feed' 
+                      ? 'border-blue-500 text-blue-600' 
+                      : 'border-transparent hover:border-blue-500 text-gray-900'
+                  ]"
+                >
+                  Feed
+                </a>
+                <a 
+                  href="#" 
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold border-b-2 transition-colors duration-200"
+                  :class="[
+                    $route.path === '/about' 
+                      ? 'border-blue-500 text-blue-600' 
+                      : 'border-transparent hover:border-blue-500 text-gray-900'
+                  ]"
+                >
+                  About
+                </a>
               </div>
               <div class="py-6">
                 <router-link v-if="!isAuthenticated" to="/register" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Register</router-link>
