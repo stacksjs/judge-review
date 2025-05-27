@@ -42,27 +42,22 @@
                <div class="col-span-full">
                  <label for="rating" class="block text-sm/6 font-medium text-gray-900">Overall Rating</label>
                  <div class="mt-2">
-                   <div class="flex items-center space-x-4">
-                     <div class="flex items-center">
-                       <input type="radio" id="rating-5" name="rating" value="5" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                       <label for="rating-5" class="ml-2 text-sm/6 text-gray-900">5 - Excellent</label>
-                     </div>
-                     <div class="flex items-center">
-                       <input type="radio" id="rating-4" name="rating" value="4" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                       <label for="rating-4" class="ml-2 text-sm/6 text-gray-900">4 - Very Good</label>
-                     </div>
-                     <div class="flex items-center">
-                       <input type="radio" id="rating-3" name="rating" value="3" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                       <label for="rating-3" class="ml-2 text-sm/6 text-gray-900">3 - Good</label>
-                     </div>
-                     <div class="flex items-center">
-                       <input type="radio" id="rating-2" name="rating" value="2" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                       <label for="rating-2" class="ml-2 text-sm/6 text-gray-900">2 - Fair</label>
-                     </div>
-                     <div class="flex items-center">
-                       <input type="radio" id="rating-1" name="rating" value="1" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                       <label for="rating-1" class="ml-2 text-sm/6 text-gray-900">1 - Poor</label>
-                     </div>
+                   <div class="flex items-center space-x-1">
+                     <button 
+                       v-for="star in 5" 
+                       :key="star"
+                       type="button"
+                       class="text-gray-300 hover:text-yellow-400 focus:outline-none"
+                       :class="{ 'text-yellow-400': star <= (hoverRating || rating) }"
+                       @click="rating = star"
+                       @mouseenter="hoverRating = star"
+                       @mouseleave="hoverRating = 0"
+                     >
+                       <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                       </svg>
+                     </button>
+                     <span class="ml-2 text-sm text-gray-500">{{ ratingText }}</span>
                    </div>
                  </div>
                </div>
@@ -84,35 +79,71 @@
              <div class="mt-10 space-y-10">
                <div class="space-y-6">
                  <div class="flex items-center justify-between">
-                   <label for="fairness" class="text-sm/6 font-medium text-gray-900">Fairness & Impartiality</label>
-                   <div class="flex items-center space-x-4">
-                     <input type="radio" id="fairness-5" name="fairness" value="5" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="fairness-4" name="fairness" value="4" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="fairness-3" name="fairness" value="3" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="fairness-2" name="fairness" value="2" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="fairness-1" name="fairness" value="1" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                   <label for="fairness" class="text-sm/6 font-medium text-gray-900 w-48">Fairness & Impartiality</label>
+                   <div class="flex items-center space-x-1 w-64">
+                     <div class="flex items-center space-x-1">
+                       <button 
+                         v-for="star in 5" 
+                         :key="star"
+                         type="button"
+                         class="text-gray-300 hover:text-yellow-400 focus:outline-none"
+                         :class="{ 'text-yellow-400': star <= (hoverFairness || fairness) }"
+                         @click="fairness = star"
+                         @mouseenter="hoverFairness = star"
+                         @mouseleave="hoverFairness = 0"
+                       >
+                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                         </svg>
+                       </button>
+                     </div>
+                     <span class="ml-2 text-sm text-gray-500 w-24">{{ fairness ? getRatingText(fairness) : 'Select a rating' }}</span>
                    </div>
                  </div>
    
                  <div class="flex items-center justify-between">
-                   <label for="knowledge" class="text-sm/6 font-medium text-gray-900">Legal Knowledge</label>
-                   <div class="flex items-center space-x-4">
-                     <input type="radio" id="knowledge-5" name="knowledge" value="5" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="knowledge-4" name="knowledge" value="4" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="knowledge-3" name="knowledge" value="3" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="knowledge-2" name="knowledge" value="2" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="knowledge-1" name="knowledge" value="1" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                   <label for="knowledge" class="text-sm/6 font-medium text-gray-900 w-48">Legal Knowledge</label>
+                   <div class="flex items-center space-x-1 w-64">
+                     <div class="flex items-center space-x-1">
+                       <button 
+                         v-for="star in 5" 
+                         :key="star"
+                         type="button"
+                         class="text-gray-300 hover:text-yellow-400 focus:outline-none"
+                         :class="{ 'text-yellow-400': star <= (hoverKnowledge || knowledge) }"
+                         @click="knowledge = star"
+                         @mouseenter="hoverKnowledge = star"
+                         @mouseleave="hoverKnowledge = 0"
+                       >
+                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                         </svg>
+                       </button>
+                     </div>
+                     <span class="ml-2 text-sm text-gray-500 w-24">{{ knowledge ? getRatingText(knowledge) : 'Select a rating' }}</span>
                    </div>
                  </div>
    
                  <div class="flex items-center justify-between">
-                   <label for="demeanor" class="text-sm/6 font-medium text-gray-900">Professional Demeanor</label>
-                   <div class="flex items-center space-x-4">
-                     <input type="radio" id="demeanor-5" name="demeanor" value="5" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="demeanor-4" name="demeanor" value="4" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="demeanor-3" name="demeanor" value="3" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="demeanor-2" name="demeanor" value="2" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                     <input type="radio" id="demeanor-1" name="demeanor" value="1" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                   <label for="demeanor" class="text-sm/6 font-medium text-gray-900 w-48">Professional Demeanor</label>
+                   <div class="flex items-center space-x-1 w-64">
+                     <div class="flex items-center space-x-1">
+                       <button 
+                         v-for="star in 5" 
+                         :key="star"
+                         type="button"
+                         class="text-gray-300 hover:text-yellow-400 focus:outline-none"
+                         :class="{ 'text-yellow-400': star <= (hoverDemeanor || demeanor) }"
+                         @click="demeanor = star"
+                         @mouseenter="hoverDemeanor = star"
+                         @mouseleave="hoverDemeanor = 0"
+                       >
+                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                         </svg>
+                       </button>
+                     </div>
+                     <span class="ml-2 text-sm text-gray-500 w-24">{{ demeanor ? getRatingText(demeanor) : 'Select a rating' }}</span>
                    </div>
                  </div>
                </div>
@@ -160,3 +191,29 @@
          </div>
        </form>
    </template>
+
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+const rating = ref(0)
+const hoverRating = ref(0)
+const fairness = ref(0)
+const hoverFairness = ref(0)
+const knowledge = ref(0)
+const hoverKnowledge = ref(0)
+const demeanor = ref(0)
+const hoverDemeanor = ref(0)
+
+const getRatingText = (value: number) => {
+  switch (value) {
+    case 1: return 'Poor'
+    case 2: return 'Fair'
+    case 3: return 'Good'
+    case 4: return 'Very Good'
+    case 5: return 'Excellent'
+    default: return 'Select a rating'
+  }
+}
+
+const ratingText = computed(() => getRatingText(hoverRating.value || rating.value))
+</script>
