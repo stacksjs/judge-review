@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import backgroundImage from '../../storage/framework/defaults/public/images/background-auth.jpg'
 </script>
 
 <template>
@@ -30,7 +29,7 @@ import backgroundImage from '../../storage/framework/defaults/public/images/back
       </main>
     </div>
     <div class="hidden lg:relative lg:block sm:contents lg:flex-1">
-      <img class="absolute inset-0 h-full w-full object-cover" :src="backgroundImage" alt="">
+      <!-- <img class="absolute inset-0 h-full w-full object-cover" :src="backgroundImage" alt=""> -->
     </div>
   </div>
 </template>

@@ -57,9 +57,27 @@
           <div class="hidden sm:block">
             <div class="border-b border-gray-200">
               <nav class="-mb-px flex space-x-8" aria-label="Tabs">
-                <a href="#" class="whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Reviews</a>
-                <a href="#" class="whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Cases</a>
-                <a href="#" class="whitespace-nowrap border-b-2 border-indigo-500 px-1 py-4 text-sm font-medium text-indigo-600" aria-current="page">Profile</a>
+                <router-link 
+                  :to="`/judges/${$route.params.id}/reviews`" 
+                  class="whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium"
+                  :class="[$route.path.includes('/reviews') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
+                >
+                  Reviews
+                </router-link>
+                <router-link 
+                  :to="`/judges/${$route.params.id}/cases`" 
+                  class="whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium"
+                  :class="[$route.path.includes('/cases') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
+                >
+                  Cases
+                </router-link>
+                <router-link 
+                  :to="`/judges/${$route.params.id}/profile`" 
+                  class="whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium"
+                  :class="[$route.path.includes('/profile') || !$route.path.includes('/reviews') && !$route.path.includes('/cases') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
+                >
+                  Profile
+                </router-link>
               </nav>
             </div>
           </div>
@@ -116,79 +134,9 @@
             </div>
           </div>
 
-          <!-- Judge Profile -->
-          <div class="-mx-4 px-4 py-8 shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg sm:px-8 sm:pb-14 lg:col-span-2 lg:row-span-2 lg:row-end-2 xl:px-16 xl:pb-20 xl:pt-16">
-            <h2 class="text-base font-semibold text-gray-900">Professional Background</h2>
-            <dl class="mt-6 grid grid-cols-1 text-sm/6 sm:grid-cols-2">
-              <div class="sm:pr-4">
-                <dt class="inline text-gray-500">Education</dt>
-                <dd class="inline text-gray-700">J.D., Stanford Law School</dd>
-              </div>
-              <div class="mt-2 sm:mt-0 sm:pl-4">
-                <dt class="inline text-gray-500">Bar Admission</dt>
-                <dd class="inline text-gray-700">California, 2005</dd>
-              </div>
-              <div class="mt-6 border-t border-gray-900/5 pt-6 sm:pr-4">
-                <dt class="font-semibold text-gray-900">Previous Experience</dt>
-                <dd class="mt-2 text-gray-500">
-                  <span class="font-medium text-gray-900">Senior Partner, Johnson & Associates</span><br>
-                  Criminal Defense Attorney<br>
-                  2005-2020
-                </dd>
-              </div>
-              <div class="mt-8 sm:mt-6 sm:border-t sm:border-gray-900/5 sm:pl-4 sm:pt-6">
-                <dt class="font-semibold text-gray-900">Notable Achievements</dt>
-                <dd class="mt-2 text-gray-500">
-                  <span class="font-medium text-gray-900">California Bar Association</span><br>
-                  Excellence in Legal Practice Award<br>
-                  2018
-                </dd>
-              </div>
-            </dl>
-            <div class="mt-16">
-              <h3 class="text-base font-semibold text-gray-900">Recent Cases</h3>
-              <table class="mt-6 w-full whitespace-nowrap text-left text-sm/6">
-                <colgroup>
-                  <col class="w-full">
-                  <col>
-                  <col>
-                </colgroup>
-                <thead class="border-b border-gray-200 text-gray-900">
-                  <tr>
-                    <th scope="col" class="px-0 py-3 font-semibold">Case Name</th>
-                    <th scope="col" class="hidden py-3 pl-8 pr-0 text-right font-semibold sm:table-cell">Year</th>
-                    <th scope="col" class="py-3 pl-8 pr-0 text-right font-semibold">Outcome</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="border-b border-gray-100">
-                    <td class="max-w-0 px-0 py-5 align-top">
-                      <div class="truncate font-medium text-gray-900">State v. Johnson</div>
-                      <div class="truncate text-gray-500">Criminal case involving complex evidence handling</div>
-                    </td>
-                    <td class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">2023</td>
-                    <td class="py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700">Guilty</td>
-                  </tr>
-                  <tr class="border-b border-gray-100">
-                    <td class="max-w-0 px-0 py-5 align-top">
-                      <div class="truncate font-medium text-gray-900">Smith Family Trust</div>
-                      <div class="truncate text-gray-500">Complex family law dispute resolution</div>
-                    </td>
-                    <td class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">2023</td>
-                    <td class="py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700">Settled</td>
-                  </tr>
-                  <tr class="border-b border-gray-100">
-                    <td class="max-w-0 px-0 py-5 align-top">
-                      <div class="truncate font-medium text-gray-900">City v. Development Corp</div>
-                      <div class="truncate text-gray-500">Land use and zoning dispute</div>
-                    </td>
-                    <td class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">2022</td>
-                    <td class="py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700">Appealed</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <!-- Dynamic Content -->
+          <RouterView />
+          
 
           <div class="lg:col-start-3">
             <!-- Activity feed -->
@@ -261,7 +209,7 @@
 </template>
 
 <script setup lang="ts">
-// Component logic here
+// No need for component imports or computed properties anymore
 </script>
 
 <style scoped>

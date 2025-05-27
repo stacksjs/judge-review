@@ -14,7 +14,7 @@
           <span class="text-4xl font-semibold tracking-tight text-gray-900">$0</span>
           <span class="text-sm/6 font-semibold text-gray-600">/month</span>
         </p>
-        <a href="#" aria-describedby="tier-free" class="mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
+        <router-link to="/register" aria-describedby="tier-free" class="mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</router-link>
         <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-600">
           <li class="flex gap-x-3">
             <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
@@ -37,7 +37,7 @@
           <span class="text-4xl font-semibold tracking-tight text-gray-900">$5</span>
           <span class="text-sm/6 font-semibold text-gray-600">/month</span>
         </p>
-        <a href="#" aria-describedby="tier-hobby" class="mt-6 block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
+        <router-link to="/register" aria-describedby="tier-hobby" class="mt-6 block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</router-link>
         <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-600">
           <li class="flex gap-x-3">
             <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
