@@ -87,13 +87,13 @@
           <!-- Judge Summary -->
           <div class="lg:col-start-3 lg:row-end-1">
             <h2 class="sr-only">Summary</h2>
-            <div class="rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5">
+            <div class="rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5 p-4">
               <dl class="flex flex-wrap">
-                <div class="flex-auto pl-6 pt-6">
+                <div class="flex-auto">
                   <dt class="text-sm/6 font-semibold text-gray-900">Overall Rating</dt>
                   <dd class="mt-1 text-base font-semibold text-gray-900">4.8/5.0</dd>
                 </div>
-                <div class="flex-none self-end px-6 pt-4">
+                <div class="flex-none self-end">
                   <dt class="sr-only">Status</dt>
                   <dd class="rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-600 ring-1 ring-inset ring-green-600/20">Active</dd>
                 </div>
@@ -128,80 +128,12 @@
                   <dd class="text-sm/6 text-gray-500">Criminal Law, Family Law</dd>
                 </div>
               </dl>
-              <div class="mt-6 border-t border-gray-900/5 px-6 py-6">
-                <a href="#" class="text-sm/6 font-semibold text-gray-900">Download Full Profile <span aria-hidden="true">&rarr;</span></a>
-              </div>
+             
             </div>
           </div>
 
           <!-- Dynamic Content -->
           <RouterView />
-          
-
-          <div class="lg:col-start-3">
-            <!-- Activity feed -->
-            <h2 class="text-sm/6 font-semibold text-gray-900">Recent Reviews</h2>
-            <ul role="list" class="mt-6 space-y-6">
-              <li class="relative flex gap-x-4">
-                <div class="absolute -bottom-6 left-0 top-0 flex w-6 justify-center">
-                  <div class="w-px bg-gray-200"></div>
-                </div>
-                <div class="relative flex size-6 flex-none items-center justify-center bg-white">
-                  <div class="size-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
-                </div>
-                <p class="flex-auto py-0.5 text-xs/5 text-gray-500"><span class="font-medium text-gray-900">Michael Chen</span> wrote a review.</p>
-                <time datetime="2023-01-23T10:32" class="flex-none py-0.5 text-xs/5 text-gray-500">7d ago</time>
-              </li>
-              <li class="relative flex gap-x-4">
-                <div class="absolute -bottom-6 left-0 top-0 flex w-6 justify-center">
-                  <div class="w-px bg-gray-200"></div>
-                </div>
-                <div class="relative flex size-6 flex-none items-center justify-center bg-white">
-                  <div class="size-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
-                </div>
-                <p class="flex-auto py-0.5 text-xs/5 text-gray-500"><span class="font-medium text-gray-900">Sarah Williams</span> updated their review.</p>
-                <time datetime="2023-01-23T11:03" class="flex-none py-0.5 text-xs/5 text-gray-500">6d ago</time>
-              </li>
-              <li class="relative flex gap-x-4">
-                <div class="absolute -bottom-6 left-0 top-0 flex w-6 justify-center">
-                  <div class="w-px bg-gray-200"></div>
-                </div>
-                <img src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="relative mt-3 size-6 flex-none rounded-full bg-gray-50">
-                <div class="flex-auto rounded-md p-3 ring-1 ring-inset ring-gray-200">
-                  <div class="flex justify-between gap-x-4">
-                    <div class="py-0.5 text-xs/5 text-gray-500"><span class="font-medium text-gray-900">Robert Davis</span> commented</div>
-                    <time datetime="2023-01-23T15:56" class="flex-none py-0.5 text-xs/5 text-gray-500">3d ago</time>
-                  </div>
-                  <p class="text-sm/6 text-gray-500">Very fair and thorough in handling my case. Would recommend.</p>
-                </div>
-              </li>
-            </ul>
-
-            <!-- New review form -->
-            <div class="mt-6 flex gap-x-3">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-6 flex-none rounded-full bg-gray-50">
-              <form action="#" class="relative flex-auto">
-                <div class="overflow-hidden rounded-lg pb-12 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
-                  <label for="comment" class="sr-only">Add your review</label>
-                  <textarea rows="2" name="comment" id="comment" class="block w-full resize-none bg-transparent px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6" placeholder="Write your review..."></textarea>
-                </div>
-
-                <div class="absolute inset-x-0 bottom-0 flex justify-between py-2 pl-3 pr-2">
-                  <div class="flex items-center space-x-5">
-                    <div class="flex items-center">
-                      <button type="button" class="-m-2.5 flex size-10 items-center justify-center rounded-full text-gray-400 hover:text-gray-500">
-                        <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                          <path fill-rule="evenodd" d="M15.621 4.379a3 3 0 0 0-4.242 0l-7 7a3 3 0 0 0 4.241 4.243h.001l.497-.5a.75.75 0 0 1 1.064 1.057l-.498.501-.002.002a4.5 4.5 0 0 1-6.364-6.364l7-7a4.5 4.5 0 0 1 6.368 6.36l-3.455 3.553A2.625 2.625 0 1 1 9.52 9.52l3.45-3.451a.75.75 0 1 1 1.061 1.06l-3.45 3.451a1.125 1.125 0 0 0 1.587 1.595l3.454-3.553a3 3 0 0 0 0-4.242Z" clip-rule="evenodd" />
-                        </svg>
-                        <span class="sr-only">Attach a file</span>
-                      </button>
-                    </div>
-                  </div>
-                  <button type="submit" class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Submit Review</button>
-                </div>
-              </form>
-            </div>
-          </div>
         </div>
       </div>
     </main>

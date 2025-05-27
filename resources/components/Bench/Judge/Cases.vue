@@ -26,28 +26,6 @@
       </div>
     </div>
 
-    <!-- Case Type Distribution -->
-    <div class="mt-8">
-      <h3 class="text-base font-semibold text-gray-900">Case Type Distribution</h3>
-      <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div v-for="type in caseTypes" :key="type.name" class="relative overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:px-6 sm:py-6">
-          <dt>
-            <div class="absolute rounded-md bg-indigo-500 p-3">
-              <component :is="type.icon" class="h-6 w-6 text-white" aria-hidden="true" />
-            </div>
-            <p class="ml-16 truncate text-sm font-medium text-gray-500">{{ type.name }}</p>
-          </dt>
-          <dd class="ml-16 flex items-baseline">
-            <p class="text-2xl font-semibold text-gray-900">{{ type.count }}</p>
-            <p class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-              <span class="sr-only">Increased by</span>
-              {{ type.percentage }}%
-            </p>
-          </dd>
-        </div>
-      </div>
-    </div>
-
     <!-- Cases Table -->
     <div class="mt-8">
       <div class="flow-root">
