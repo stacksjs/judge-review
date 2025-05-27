@@ -11,7 +11,7 @@
     "up": "bun --bun taze major -I",
     "sizecheck": "bun --bun vite-bundle-visualizer"
   },
-  "dependencies": {
+ "dependencies": {
     "@stacksjs/alias": "workspace:*",
     "@stacksjs/config": "workspace:*",
     "@stacksjs/server": "workspace:*",
@@ -21,6 +21,8 @@
     "@vueuse/head": "^2.0.0",
     "nprogress": "^0.2.0",
     "pinia": "^3.0.2",
+    "vite-plugin-vue-layouts": "^0.11.0",
+    "vite-plugin-layouts": "^0.1.9",
     "vue": "^3.5.14",
     "vue-i18n": "^11.1.4",
     "vue-router": "^4.5.1"
