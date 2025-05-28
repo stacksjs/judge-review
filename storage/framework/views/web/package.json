@@ -11,7 +11,7 @@
     "up": "bun --bun taze major -I",
     "sizecheck": "bun --bun vite-bundle-visualizer"
   },
- "dependencies": {
+  "dependencies": {
     "@stacksjs/alias": "workspace:*",
     "@stacksjs/config": "workspace:*",
     "@stacksjs/server": "workspace:*",
@@ -21,9 +21,8 @@
     "@vueuse/head": "^2.0.0",
     "nprogress": "^0.2.0",
     "pinia": "^3.0.2",
-    "vite-plugin-vue-layouts": "^0.11.0",
     "vite-plugin-layouts": "^0.1.10",
-    "vue": "^3.5.14",
+    "vue": "^3.5.15",
     "vue-i18n": "^11.1.4",
     "vue-router": "^4.5.1"
   },
@@ -40,21 +39,20 @@
     "rollup": "^4.41.1",
     "shiki": "^3.4.2",
     "unocss": "66.1.2",
-    "unplugin-auto-import": "^19.2.0",
-    "unplugin-vue-components": "^28.5.0",
+    "unplugin-auto-import": "^19.3.0",
+    "unplugin-vue-components": "^28.7.0",
     "unplugin-vue-markdown": "^28.3.1",
     "unplugin-vue-router": "^0.12.0",
-    "vite": "^5.0.0",
+    "vite": "npm:rolldown-vite@latest",
     "vite-bundle-visualizer": "^1.2.1",
     "vite-plugin-inspect": "^11.1.0",
     "vite-plugin-pwa": "^1.0.0",
     "vite-plugin-vue-devtools": "^7.7.6",
-    "vite-plugin-vue-layouts": "^0.11.0",
     "vite-ssg": "^27.0.1",
     "vite-ssg-sitemap": "^0.9.0",
     "vue-tsc": "^2.2.10"
   },
   "overrides": {
-    "vite": "^5.0.0"
+    "vite": "npm:rolldown-vite@latest"
   }
 }

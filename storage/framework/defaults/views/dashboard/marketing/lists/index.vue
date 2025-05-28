@@ -660,7 +660,7 @@ function bulkChangeStatus(status: 'Active' | 'Draft' | 'Archived'): void {
                   Change status
                   <div class="i-hugeicons-chevron-down h-5 w-5 ml-1"></div>
                 </button>
-                <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-blue-gray-700 dark:ring-gray-600" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-blue-gray-700 dark:ring-gray-600" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" style="display: none;">
                   <div class="py-1" role="none">
                     <button @click="bulkChangeStatus('Active')" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 dark:text-white dark:hover:bg-blue-gray-600" role="menuitem">Mark as Active</button>
                     <button @click="bulkChangeStatus('Draft')" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 dark:text-white dark:hover:bg-blue-gray-600" role="menuitem">Mark as Draft</button>
