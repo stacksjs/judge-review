@@ -1,6 +1,6 @@
 [build]
   base = "."
-  command = "bun install && ./buddy build views"
+  command = "bun install && touch .env && ./buddy build views"
   publish = "storage/framework/views/web/dist"
 
 [build.environment]
