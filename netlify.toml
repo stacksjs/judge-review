@@ -1,5 +1,6 @@
 [build]
-  command = "bun install && cd storage/framework/views/web && bun run build"
+  base = "."
+  command = "bun install && bun --cwd storage/framework/views/web run build"
   publish = "storage/framework/views/web/dist"
 
 [build.environment]
