@@ -1,6 +1,6 @@
 [build]
   base = "."
-  command = "bun install && bun --cwd storage/framework/views/web run build"
+  command = "bun install && ./buddy build views"
   publish = "storage/framework/views/web/dist"
 
 [build.environment]
