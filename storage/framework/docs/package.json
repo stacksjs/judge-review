@@ -20,6 +20,6 @@
     "vitepress": "1.6.3"
   },
   "overrides": {
-    "vite": "npm:rolldown-vite@latest"
+    "vite": "^5.0.0"
   }
 }

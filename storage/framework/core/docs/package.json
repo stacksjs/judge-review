@@ -53,6 +53,6 @@
     "@stacksjs/server": "workspace:*"
   },
   "overrides": {
-    "vite": "npm:rolldown-vite@latest"
+    "vite": "^5.0.0"
   }
 }
