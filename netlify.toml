@@ -1,0 +1,9 @@
+[build]
+  command = "bun install && cd storage/framework/views/web && bun run build"
+  publish = "storage/framework/views/web/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse" 
