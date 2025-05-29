@@ -3,17 +3,17 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
         <!-- Left Sidebar - Case Categories -->
-        <div class="lg:col-span-3">
+        <div class="hidden lg:block lg:col-span-3">
           <CategoriesList :categories="categories" />
         </div>
 
         <!-- Main Feed -->
-        <div class="lg:col-span-6">
+        <div class="col-span-1 lg:col-span-6">
           <ReviewsFeed :reviews="reviews" />
         </div>
 
         <!-- Right Sidebar -->
-        <div class="lg:col-span-3">
+        <div class="hidden lg:block lg:col-span-3">
           <RightSidebar :trending-judges="trendingJudges" :recent-activity="recentActivity" />
         </div>
       </div>

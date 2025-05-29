@@ -90,6 +90,7 @@ declare module 'vue' {
     LoadingCard: typeof import('./../defaults/components/Dashboard/Skeleton/LoadingCard.vue')['default']
     LoadingDetails: typeof import('./../defaults/components/Dashboard/Skeleton/LoadingDetails.vue')['default']
     Logo: typeof import('./../../../resources/components/Logo.vue')['default']
+    MobileMenu: typeof import('./../../../resources/components/Bench/MobileMenu.vue')['default']
     MobileSidebar: typeof import('./../defaults/components/Dashboard/MobileSidebar.vue')['default']
     Navbar: typeof import('./../defaults/components/Dashboard/Navbar.vue')['default']
     NavLink: typeof import('./../defaults/components/Marketing/NavLink.vue')['default']
