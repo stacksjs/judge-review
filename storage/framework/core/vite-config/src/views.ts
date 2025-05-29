@@ -2,6 +2,7 @@ import type { UserConfig as ViteConfig } from 'vite'
 import { alias } from '@stacksjs/alias'
 import { path as p } from '@stacksjs/path'
 import Unocss from 'unocss/vite'
+
 import {
   autoImports,
   components,
@@ -81,7 +82,10 @@ export const viewsConfig: ViteConfig = {
     layouts(),
     autoImports(),
     components(),
-    cssEngine(),
+    Unocss({
+      configFile: p.uiPath('src/uno.config.ts', { relative: true }),
+    }),
+    // cssEngine(),
     markdown(),
     pwa(),
     devtools(),
