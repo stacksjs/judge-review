@@ -47,10 +47,22 @@ const config: UnoConfig = {
     }),
 
     presetWebFonts({
-      provider: 'bunny', // privacy-friendly Google Web Fonts proxy
+      provider: 'google', // privacy-friendly Google Web Fonts proxy
       fonts: {
         sans: 'Inter',
         serif: 'Inter',
+        lobster: 'Lobster',
+        libre: [
+          {
+            name: 'Libre Baskerville',
+            weights: ['400', '500', '700', '800'],
+            italic: true,
+          },
+          {
+            name: 'sans-serif',
+            provider: 'none',
+          },
+        ],
         mono: 'Fira Code',
       },
 

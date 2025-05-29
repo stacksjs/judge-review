@@ -23,6 +23,7 @@ import generateSitemap from 'vite-ssg-sitemap'
 // const isMaintenanceMode = config.app.maintenanceMode
 // const maintenancePath = isMaintenanceMode ? '' : './maintenance'
 
+
 export const viewsConfig: ViteConfig = {
   build: {
     rollupOptions: {
@@ -83,7 +84,7 @@ export const viewsConfig: ViteConfig = {
     autoImports(),
     components(),
     Unocss({
-      configFile: p.uiPath('src/uno.config.ts', { relative: true }),
+      configFile: p.uiPath('src/uno.config.ts'),
     }),
     // cssEngine(),
     markdown(),
