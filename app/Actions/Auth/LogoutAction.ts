@@ -1,5 +1,5 @@
 import { Action } from '@stacksjs/actions'
-import { Authentication } from '@stacksjs/auth'
+import { Auth } from '@stacksjs/auth'
 import { response } from '@stacksjs/router'
 
 export default new Action({
@@ -7,7 +7,7 @@ export default new Action({
   description: 'Logout from the application',
   method: 'POST',
   async handle() {
-    await Authentication.logout()
+    await Auth.logout()
 
     return response.json({
       message: 'Successfully logged out',

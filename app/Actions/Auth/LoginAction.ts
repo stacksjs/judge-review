@@ -1,6 +1,6 @@
 import type { RequestInstance } from '@stacksjs/types'
 import { Action } from '@stacksjs/actions'
-import { Authentication } from '@stacksjs/auth'
+import { Auth } from '@stacksjs/auth'
 import { response } from '@stacksjs/router'
 import { schema } from '@stacksjs/validation'
 
@@ -29,10 +29,10 @@ export default new Action({
       },
     })
 
-    const result = await Authentication.login({ email, password })
+    const result = await Auth.login({ email, password })
 
     if (result) {
-      const user = await Authentication.getUserFromToken(result.token)
+      const user = await Auth.getUserFromToken(result.token)
 
       return response.json({
         token: result.token,
