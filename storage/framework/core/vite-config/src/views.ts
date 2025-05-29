@@ -1,6 +1,7 @@
 import type { UserConfig as ViteConfig } from 'vite'
 import { alias } from '@stacksjs/alias'
 import { path as p } from '@stacksjs/path'
+import Unocss from 'unocss/vite'
 import {
   autoImports,
   components,
@@ -89,23 +90,23 @@ export const viewsConfig: ViteConfig = {
   ],
 
   // https://github.com/antfu/vite-ssg
-  ssgOptions: {
-    script: 'async',
-    formatting: 'minify',
+  // ssgOptions: {
+  //   script: 'async',
+  //   formatting: 'minify',
 
-    // crittersOptions: {
-    //   reduceInlineStyles: false,
-    // },
+  //   // crittersOptions: {
+  //   //   reduceInlineStyles: false,
+  //   // },
 
-    includedRoutes(paths) {
-      // exclude all the route paths that contains 'errors', 'system-tray', or 'dashboard'
-      return paths.filter(i => !i.includes('errors') && !i.includes('system-tray') && !i.includes('dashboard'))
-    },
+  //   includedRoutes(paths) {
+  //     // exclude all the route paths that contains 'errors', 'system-tray', or 'dashboard'
+  //     return paths.filter(i => !i.includes('errors') && !i.includes('system-tray') && !i.includes('dashboard'))
+  //   },
 
-    onFinished() {
-      generateSitemap()
-    },
-  },
+  //   onFinished() {
+  //     generateSitemap()
+  //   },
+  // },
 
   ssr: {
     // TODO: workaround until they support native ESM

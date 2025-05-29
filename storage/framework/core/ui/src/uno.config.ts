@@ -31,7 +31,7 @@ const config: UnoConfig = {
   presets: [
     presetUno(), // allows for Tailwind utility classes
     presetAttributify(),
-    presetHeadlessUi(),
+    // presetHeadlessUi(),
     presetForms(), // allows for form Tailwind's form styling
     presetTypography(),
     presetIcons({
