@@ -3,11 +3,15 @@
     <div v-for="review in reviews" :key="review.id" class="rounded-lg bg-white shadow">
       <div class="p-4">
         <div class="flex items-start space-x-4">
-          <img class="h-10 w-10 rounded-full" :src="review.author.imageUrl" :alt="review.author.name" />
+          <router-link :to="`/profile/${review.author.id}`" class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full" :src="review.author.imageUrl" :alt="review.author.name" />
+          </router-link>
           <div class="min-w-0 flex-1">
             <div class="flex items-center justify-between">
               <p class="text-sm font-medium text-gray-900">
-                <a href="#" class="hover:underline">{{ review.author.name }}</a>
+                <router-link :to="`/profile/${review.author.id}`" class="hover:underline">
+                  {{ review.author.name }}
+                </router-link>
               </p>
               <p class="text-sm text-gray-500">
                 <time :datetime="review.dateTime">{{ review.date }}</time>
@@ -37,6 +41,7 @@
 
 <script setup lang="ts">
 interface Author {
+  id: number;
   name: string;
   imageUrl: string;
 }

@@ -36,6 +36,7 @@ const reviews = [
   {
     id: 1,
     author: {
+      id: 1,
       name: 'Michael Chen',
       imageUrl: 'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
@@ -48,6 +49,7 @@ const reviews = [
   {
     id: 2,
     author: {
+      id: 2,
       name: 'Sarah Williams',
       imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },

@@ -6,7 +6,7 @@
         <div class="absolute inset-0 h-32 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-t-2xl"></div>
         <div class="relative px-4 py-6 sm:px-6 sm:py-8">
           <div class="flex items-center">
-            <img class="h-24 w-24 rounded-full ring-4 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+            <img class="h-24 w-24 rounded-full ring-4 ring-white" :src="user.imageUrl" :alt="user.name" />
             <div class="ml-6">
               <h1 class="text-2xl font-bold text-white">{{ user.name }}</h1>
               <p class="text-indigo-100">Member since {{ user.joinDate }}</p>
@@ -37,7 +37,7 @@
 
       <!-- Reviews Feed -->
       <div class="mt-8">
-        <h2 class="text-lg font-medium text-gray-800">Your Reviews</h2>
+        <h2 class="text-lg font-medium text-gray-800">{{ user.name }}'s Reviews</h2>
         <div class="mt-6 space-y-6">
           <div v-for="review in reviews" :key="review.id" class="bg-white shadow sm:rounded-lg">
             <div class="px-4 py-5 sm:p-6">
@@ -102,7 +102,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 
 interface Judge {
   id: string
@@ -123,12 +124,31 @@ interface Review {
   caseStatus: string
 }
 
-const user = ref({
+interface User {
+  id: string
+  name: string
+  imageUrl: string
+  joinDate: string
+}
+
+interface Stats {
+  totalReviews: number
+  judgesReviewed: number
+  averageRating: number
+  helpfulVotes: number
+}
+
+const route = useRoute()
+const userId = route.params.id
+
+const user = ref<User>({
+  id: userId as string,
   name: 'John Doe',
+  imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   joinDate: 'January 2024'
 })
 
-const stats = ref({
+const stats = ref<Stats>({
   totalReviews: 24,
   judgesReviewed: 12,
   averageRating: 4.2,
@@ -169,4 +189,14 @@ const reviews = ref<Review[]>([
     caseStatus: 'Pending'
   }
 ])
+
+onMounted(async () => {
+  // Here you would typically fetch the user data, stats, and reviews based on the userId
+  // For example:
+  // const response = await fetch(`/api/users/${userId}`)
+  // const data = await response.json()
+  // user.value = data.user
+  // stats.value = data.stats
+  // reviews.value = data.reviews
+})
 </script> 
