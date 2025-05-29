@@ -23,13 +23,13 @@
           Sorry, we couldn’t find the page you’re looking for.
         </p>
 
-        <Button href="/" class="mt-10">
+        <router-link to="/" class="mt-10">
           Go back home
-        </Button>
+        </router-link>
       </main>
     </div>
     <div class="hidden lg:relative lg:block sm:contents lg:flex-1">
-      <!-- <img class="absolute inset-0 h-full w-full object-cover" :src="backgroundImage" alt=""> -->
+      <img class="absolute inset-0 h-full w-full object-cover" src="/images/background-auth.jpg" alt="">
     </div>
   </div>
 </template>

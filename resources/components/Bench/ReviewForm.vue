@@ -2,14 +2,16 @@
     <form>
          <div class="space-y-12">
            <div class="border-b border-gray-900/10 pb-12">
-             <div class="flex items-center justify-between">
-               <div>
+             <div>
+               <div class="mb-8 text-center">
                  <h2 class="text-base/7 font-semibold text-gray-800">Write a Review</h2>
                  <p class="mt-1 text-sm/6 text-gray-600">Your review will help others understand the judge's performance and conduct in court.</p>
                </div>
-               <div class="text-right">
+               <div class="text-center mb-8">
+                 <img class="inline-block h-24 w-24 rounded-full ring-2 ring-white mb-4" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="Judge Sarah Johnson" />
                  <h3 class="text-lg font-semibold text-gray-800">Hon. Sarah Johnson</h3>
                  <p class="text-sm text-gray-600">Superior Court of California</p>
+                 <p class="text-sm text-gray-600">San Francisco County, Department 15</p>
                </div>
              </div>
    
@@ -97,7 +99,7 @@
                          </svg>
                        </button>
                      </div>
-                     <span class="ml-2 text-sm text-gray-500 w-24">{{ fairness ? getRatingText(fairness) : 'Select a rating' }}</span>
+                     <span class="ml-2 text-sm text-gray-500 w-24">{{ fairness ? getRatingText(fairness) : '' }}</span>
                    </div>
                  </div>
    
@@ -120,7 +122,7 @@
                          </svg>
                        </button>
                      </div>
-                     <span class="ml-2 text-sm text-gray-500 w-24">{{ knowledge ? getRatingText(knowledge) : 'Select a rating' }}</span>
+                     <span class="ml-2 text-sm text-gray-500 w-24">{{ knowledge ? getRatingText(knowledge) : '' }}</span>
                    </div>
                  </div>
    
@@ -143,7 +145,7 @@
                          </svg>
                        </button>
                      </div>
-                     <span class="ml-2 text-sm text-gray-500 w-24">{{ demeanor ? getRatingText(demeanor) : 'Select a rating' }}</span>
+                     <span class="ml-2 text-sm text-gray-500 w-24">{{ demeanor ? getRatingText(demeanor) : '' }}</span>
                    </div>
                  </div>
                </div>
