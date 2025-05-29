@@ -20,11 +20,11 @@
             <div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
               <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Transparency in the Judiciary Starts Here</h1>
-                  <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">The first-ever platform dedicated to judicial transparency. Read and share experiences with judges across the country. Like Glassdoor for the judiciary, we're empowering citizens to make informed decisions about their legal representatives.</p>
+                  <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-800 sm:text-7xl">Transparency in the Judiciary Starts Here</h1>
+                  <p class="mt-8 text-pretty text-lg font-medium text-gray-600 sm:max-w-md sm:text-xl/8 lg:max-w-none">The first-ever platform dedicated to judicial transparency. Read and share experiences with judges across the country. Like Glassdoor for the judiciary, we're empowering citizens to make informed decisions about their legal representatives.</p>
                   <div class="mt-10 flex items-center gap-x-6">
                     <router-link to="/judges" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Find a Judge</router-link>
-                    <router-link to="/review" class="text-sm/6 font-semibold text-gray-900">Write a Review <span aria-hidden="true">→</span></router-link>
+                    <router-link to="/review" class="text-sm/6 font-semibold text-gray-700">Write a Review <span aria-hidden="true">→</span></router-link>
                   </div>
                 </div>
                 <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">

@@ -2,16 +2,15 @@
     <div class="bg-white py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-4xl text-center">
-      <h2 class="text-base/7 font-semibold text-indigo-600">Pricing</h2>
-      <p class="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl">Simple, transparent pricing</p>
+      <p class="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-800 sm:text-6xl">Simple, transparent pricing</p>
     </div>
     <p class="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">Choose the plan that best fits your needs. Start with our free tier and upgrade when you're ready for more.</p>
     <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2">
       <div class="rounded-3xl p-8 ring-1 ring-gray-200">
-        <h3 id="tier-free" class="text-lg/8 font-semibold text-gray-900">Free</h3>
+        <h3 id="tier-free" class="text-lg/8 font-semibold text-gray-800">Free</h3>
         <p class="mt-4 text-sm/6 text-gray-600">Perfect for getting started with judge reviews.</p>
         <p class="mt-6 flex items-baseline gap-x-1">
-          <span class="text-4xl font-semibold tracking-tight text-gray-900">$0</span>
+          <span class="text-4xl font-semibold tracking-tight text-gray-800">$0</span>
           <span class="text-sm/6 font-semibold text-gray-600">/month</span>
         </p>
         <router-link to="/register" aria-describedby="tier-free" class="mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</router-link>
@@ -34,7 +33,7 @@
         <h3 id="tier-hobby" class="text-lg/8 font-semibold text-indigo-600">Hobby</h3>
         <p class="mt-4 text-sm/6 text-gray-600">For those who need to review more judges.</p>
         <p class="mt-6 flex items-baseline gap-x-1">
-          <span class="text-4xl font-semibold tracking-tight text-gray-900">$5</span>
+          <span class="text-4xl font-semibold tracking-tight text-gray-800">$5</span>
           <span class="text-sm/6 font-semibold text-gray-600">/month</span>
         </p>
         <router-link to="/register" aria-describedby="tier-hobby" class="mt-6 block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</router-link>
