@@ -98,6 +98,7 @@ const config: UnoConfig = {
         success: '#CAFE48',
         dark: '#1A181B',
         light: '#F5F3F5',
+        'brown-header': '#F8F5E8',
       },
     },
   },

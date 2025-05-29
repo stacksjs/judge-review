@@ -8,7 +8,7 @@ defineOptions({
 // they will be rendered correctly in the html results with vite-ssg
 useHead({
   // title: app.name,
-  title: 'Stacks',
+  title: 'The Chamber of Secrets',
   meta: [
     { name: 'description', content: 'Coming soon.' },
     {
