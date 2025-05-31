@@ -14,7 +14,8 @@ export function router(options?: RouterOptions): Plugin {
     extensions: ['.stx', '.vue', '.md'],
     dts: p.frameworkPath('types/router.d.ts'),
     routesFolder: [
-      p.resourcesPath('views')
+      p.resourcesPath('views'),
+      p.frameworkPath('defaults/views'),
     ],
     logs: config.app.debug || false,
     ...options,

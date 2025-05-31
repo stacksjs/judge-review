@@ -27,7 +27,6 @@ export function autoImports(options?: AutoImportsOptions): Plugin | Plugin[] {
     dts: p.frameworkPath('types/browser-auto-imports.d.ts'),
     dirs: [
       p.resourcesPath('components'),
-      p.resourcesPath('types'),
       p.frameworkPath('defaults/components'),
       p.resourcesPath('functions'),
       p.frameworkPath('defaults/functions'),
