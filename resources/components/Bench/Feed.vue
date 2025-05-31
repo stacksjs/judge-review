@@ -44,9 +44,12 @@
           <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
         </div>
         <div class="mt-2">
-          <router-link :to="`/reviews/${review.id}`" class="inline-block text-xs text-blue-600 hover:text-blue-500 hover:underline">
+          <button 
+            @click="showPricingModal = true" 
+            class="inline-block text-xs text-blue-600 hover:text-blue-500 hover:underline"
+          >
             Read more
-          </router-link>
+          </button>
         </div>
       </div>
 
@@ -70,15 +73,25 @@
         </div>
       </div>
     </div>
+
+    <!-- Pricing Modal -->
+    <PricingModal 
+      v-if="showPricingModal"
+      @close="showPricingModal = false" 
+    />
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { BenchReviews } from '@/types/bench'
+import PricingModal from '../Modal/PricingModal.vue'
 
 defineProps<{
   review: BenchReviews
 }>();
+
+const showPricingModal = ref(false)
 </script>
 
 <style scoped>
