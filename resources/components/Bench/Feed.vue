@@ -38,12 +38,16 @@
       </div>
 
       <!-- Review Content -->
-      <div class="mt-4 relative">
-        <p class="text-sm text-gray-700 line-clamp-4">{{ review.content }}</p>
-        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
-        <router-link :to="`/reviews/${review.id}`" class="mt-1 inline-block text-xs text-blue-600 hover:text-blue-500 hover:underline">
-          Read more
-        </router-link>
+      <div class="mt-4">
+        <div class="relative">
+          <p class="text-sm text-gray-700 line-clamp-4">{{ review.content }}</p>
+          <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+        </div>
+        <div class="mt-2">
+          <router-link :to="`/reviews/${review.id}`" class="inline-block text-xs text-blue-600 hover:text-blue-500 hover:underline">
+            Read more
+          </router-link>
+        </div>
       </div>
 
       <!-- Actions and Status -->
