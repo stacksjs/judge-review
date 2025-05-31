@@ -56,6 +56,7 @@ declare module 'vue' {
     EmailSidebar: typeof import('./../defaults/components/Dashboard/Email/EmailSidebar.vue')['default']
     Faqs: typeof import('./../defaults/components/Marketing/Faqs.vue')['default']
     Feature: typeof import('./../defaults/components/Marketing/Feature.vue')['default']
+    Feed: typeof import('./../../../resources/components/Bench/Feed.vue')['default']
     Fields: typeof import('./../defaults/components/Marketing/Fields.vue')['default']
     FileSystemForm: typeof import('./../defaults/components/Dashboard/Settings/Forms/FileSystemForm.vue')['default']
     Footer: typeof import('./../defaults/components/Marketing/Footer.vue')['default']

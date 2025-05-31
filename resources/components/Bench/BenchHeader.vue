@@ -134,19 +134,8 @@
   </template>
   
   <script setup lang="ts">
+import { BenchNotification } from '@/types/bench'
 
-  interface NotificationUser {
-    name: string
-    imageUrl: string
-  }
-
-  interface Notification {
-    id: number
-    user: NotificationUser
-    message: string
-    time: string
-    unread: boolean
-  }
 
   // This would typically come from your auth store
   const isAuthenticated = ref(true)
@@ -154,7 +143,7 @@
   const isNotificationMenuOpen = ref(false)
   const mobileMenu = ref(false)
 
-  const notifications = ref<Notification[]>([
+  const notifications = ref<BenchNotification[]>([
     {
       id: 1,
       user: {
