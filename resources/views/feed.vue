@@ -22,7 +22,6 @@
 </template>
 
 <script setup lang="ts">
-
 const categories = [
   { name: 'Criminal', count: 428, current: true, icon: 'ScaleIcon' },
   { name: 'Civil', count: 312, current: false, icon: 'DocumentTextIcon' },
@@ -40,11 +39,21 @@ const reviews = [
       name: 'Michael Chen',
       imageUrl: 'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
+    judge: {
+      id: '123',
+      name: 'Hon. Sarah Johnson',
+      court: 'Superior Court',
+      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+    },
+    title: 'Topnotch!',
     content: 'Judge Johnson handled my case with exceptional professionalism and fairness. Her attention to detail and clear communication made the process much smoother than expected.',
     date: '2h ago',
     dateTime: '2024-02-20T10:00',
     likes: 24,
-    comments: 5
+    rating: 4,
+    comments: 5,
+    type: 'Criminal',
+    status: 'Closed'
   },
   {
     id: 2,
@@ -53,11 +62,21 @@ const reviews = [
       name: 'Sarah Williams',
       imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
+    judge: {
+      id: '456',
+      name: 'Hon. Robert Davis',
+      court: 'Appellate Court',
+      imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+    },
+    title: 'Disappointed!',
     content: 'Very impressed with the thoroughness of the proceedings. The judge maintained perfect decorum while ensuring all parties were heard.',
     date: '4h ago',
     dateTime: '2024-02-20T08:00',
+    rating: 3.5,
     likes: 18,
-    comments: 3
+    comments: 3,
+    type: 'Civil',
+    status: 'Pending'
   }
 ]
 

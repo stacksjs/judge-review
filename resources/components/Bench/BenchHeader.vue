@@ -133,7 +133,7 @@
     </header>
   </template>
   
-  <script setup lang="ts">
+<script setup lang="ts">
 import { BenchNotification } from '@/types/bench'
 
 
@@ -176,5 +176,5 @@ import { BenchNotification } from '@/types/bench'
     }
   ])
 
-  const unreadNotifications = ref(notifications.value.filter(n => n.unread).length)
-  </script>
+const unreadNotifications = ref(notifications.value.filter(n => n.unread).length)
+</script>

@@ -1,18 +1,31 @@
 
 export interface BenchAuthor {
-  id: number;
-  name: string;
-  imageUrl: string;
+  id: number
+  name: string
+  imageUrl: string
+}
+
+  
+export interface Judge {
+  id: string
+  name: string
+  court: string
+  imageUrl: string
 }
   
 export interface BenchReviews {
-  id: number;
-  author: BenchAuthor;
-  content: string;
-  date: string;
-  dateTime: string;
-  likes: number;
-  comments: number;
+  id: number
+  author: BenchAuthor
+  judge: Judge
+  title: string
+  content: string
+  date: string
+  dateTime: string
+  likes: number
+  rating: number
+  comments: number
+  type: string
+  status: string
 }
 
 
