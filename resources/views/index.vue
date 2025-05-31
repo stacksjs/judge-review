@@ -11,10 +11,6 @@ useHead({
   title: 'The Chamber of Secrets',
   meta: [
     { name: 'description', content: 'Coming soon.' },
-    {
-      name: 'theme-color',
-      content: () => (isDark.value ? '#00aba9' : '#ffffff'),
-    },
   ],
   link: [
     {
