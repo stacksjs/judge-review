@@ -1,5 +1,8 @@
 <template>
-  <BaseModal @close="close">
+  <Dialog 
+    :model-value="isOpen"
+    @close="$emit('closeModal')"
+  >
     <div class="bg-white rounded-lg">
       <div class="mx-auto max-w-7xl px-6 lg:px-8 py-8">
         <div class="mx-auto max-w-2xl text-center">
@@ -51,16 +54,17 @@
         </div>
       </div>
     </div>
-  </BaseModal>
+  </Dialog>
 </template>
 
 <script setup lang="ts">
+import { Dialog } from '@stacksjs/dialog'
 
-const emit = defineEmits<{
-  (e: 'close'): void
+defineProps<{
+  isOpen: boolean
 }>()
 
-const close = () => {
-  emit('close')
-}
+defineEmits<{
+  (e: 'closeModal'): void
+}>()
 </script> 

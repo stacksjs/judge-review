@@ -20,7 +20,7 @@
         </h1>
 
         <p class="mt-3 text-sm text-gray-700">
-          Sorry, we couldn’t find the page you’re looking for.
+          Sorry, we couldn't find the page you're looking for.
         </p>
 
         <router-link to="/" class="mt-10">

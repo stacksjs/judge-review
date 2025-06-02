@@ -88,8 +88,8 @@
 
     <!-- Pricing Modal -->
     <PricingModal 
-      v-if="showPricingModal"
-      @close="showPricingModal = false" 
+      :is-open="showPricingModal"
+      @close-modal="showPricingModal = false"
     />
   </div>
 </template>
