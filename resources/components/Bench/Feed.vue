@@ -56,11 +56,23 @@
       <!-- Actions and Status -->
       <div class="mt-4 flex items-center justify-between">
         <div class="flex items-center space-x-4">
-          <button type="button" class="inline-flex items-center text-sm text-gray-600 hover:text-gray-700">
-            <svg class="mr-1.5 h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+          <button 
+            type="button" 
+            @click="toggleLike"
+            class="inline-flex items-center transition ease-in-out duration-150 text-sm"
+            :class="isLiked ? 'text-blue-600' : 'text-gray-500 group-hover:text-gray-600'"
+          >
+            <svg 
+              class="mr-1.5 h-5 w-5 transition-colors" 
+              :class="isLiked ? 'text-blue-600' : 'text-gray-500 group-hover:text-gray-600'"
+              viewBox="0 0 20 20" 
+              fill="currentColor"
+            >
               <path fill-rule="evenodd" d="M10 2c-1.716 0-3.408.106-5.07.31C3.806 2.45 3 3.414 3 4.517V17.25a.75.75 0 001.075.676L10 15.082l5.925 2.844A.75.75 0 0017 17.25V4.517c0-1.103-.806-2.068-1.93-2.207A41.403 41.403 0 0010 2z" clip-rule="evenodd" />
             </svg>
-            {{ review.likes }}
+            <span :class="isLiked ? 'text-blue-600' : 'group-hover:text-gray-600'">
+              {{ review.likes }}
+            </span>
           </button>
         </div>
         <div class="flex items-center space-x-2">
@@ -92,6 +104,11 @@ defineProps<{
 }>();
 
 const showPricingModal = ref(false)
+const isLiked = ref(false)
+
+const toggleLike = () => {
+  isLiked.value = !isLiked.value
+}
 </script>
 
 <style scoped>
