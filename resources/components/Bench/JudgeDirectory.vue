@@ -8,7 +8,7 @@
               <div class="relative">
                 <input
                   type="text"
-                  class="block w-full rounded-md border-0 py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  class="block w-full rounded-md border-0 py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
                   placeholder="Search judges..."
                 >
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -19,20 +19,20 @@
               </div>
             </div>
             <div class="flex gap-4">
-              <select class="rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              <select class="rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6">
                 <option>All Courts</option>
                 <option>Supreme Court</option>
                 <option>Appellate Court</option>
                 <option>District Court</option>
               </select>
-              <select class="rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              <select class="rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6">
                 <option>All States</option>
                 <option>California</option>
                 <option>New York</option>
                 <option>Texas</option>
                 <option>Florida</option>
               </select>
-              <select class="rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              <select class="rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6">
                 <option>Rating</option>
                 <option>4+ Stars</option>
                 <option>3+ Stars</option>
@@ -54,7 +54,7 @@
                 <dd class="text-sm text-gray-500">{{ judge.court }}</dd>
                 <dt class="sr-only">Location</dt>
                 <dd class="mt-3">
-                  <span class="inline-flex items-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-600/20">{{ judge.location }}</span>
+                  <span class="inline-flex items-center rounded-full bg-gray-50 px-2 py-1 text-xs font-medium text-gray-700 ring-1 ring-inset ring-gray-600/20">{{ judge.location }}</span>
                 </dd>
                 <dd class="mt-3">
                   <div class="flex items-center justify-center">

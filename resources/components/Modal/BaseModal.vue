@@ -29,7 +29,7 @@
             <button 
               type="button" 
               @click="$emit('close')"
-              class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
+              class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-hidden"
             >
               <span class="sr-only">Close</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">

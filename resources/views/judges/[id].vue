@@ -21,7 +21,7 @@
             <div class="flex items-center gap-x-4 sm:gap-x-6">
               <button type="button" class="hidden text-sm/6 font-semibold text-gray-900 sm:block">Share Profile</button>
               <a href="#" class="hidden text-sm/6 font-semibold text-gray-900 sm:block">Write Review</a>
-              <a href="#" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Follow</a>
+              <a href="#" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Follow</a>
 
               <div class="relative sm:hidden">
                 <button type="button" class="-m-3 block p-3" id="more-menu-button" aria-expanded="false" aria-haspopup="true">
@@ -45,7 +45,7 @@
         <div>
           <div class="grid grid-cols-1 sm:hidden">
             <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
-            <select aria-label="Select a tab" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-2 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600">
+            <select aria-label="Select a tab" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-2 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600">
               <option>Reviews</option>
               <option>Cases</option>
               <option selected>Profile</option>
@@ -60,21 +60,21 @@
                 <router-link 
                   :to="`/judges/${$route.params.id}/reviews`" 
                   class="whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium"
-                  :class="[$route.path.includes('/reviews') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
+                  :class="[$route.path.includes('/reviews') ? 'border-gray-500 text-gray-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
                 >
                   Reviews
                 </router-link>
                 <router-link 
                   :to="`/judges/${$route.params.id}/cases`" 
                   class="whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium"
-                  :class="[$route.path.includes('/cases') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
+                  :class="[$route.path.includes('/cases') ? 'border-gray-500 text-gray-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
                 >
                   Cases
                 </router-link>
                 <router-link 
                   :to="`/judges/${$route.params.id}/profile`" 
                   class="whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium"
-                  :class="[$route.path.includes('/profile') || !$route.path.includes('/reviews') && !$route.path.includes('/cases') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
+                  :class="[$route.path.includes('/profile') || !$route.path.includes('/reviews') && !$route.path.includes('/cases') ? 'border-gray-500 text-gray-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
                 >
                   Profile
                 </router-link>

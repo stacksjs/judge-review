@@ -101,14 +101,14 @@
                   </div>
                 </div>
                 <div class="border-t border-gray-100 px-4 py-2">
-                  <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">View all notifications</a>
+                  <a href="#" class="text-sm font-medium text-gray-600 hover:text-gray-500">View all notifications</a>
                 </div>
               </div>
             </div>
             <div class="relative">
               <button 
                 type="button" 
-                class="flex rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                class="flex rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                 @click="isProfileMenuOpen = !isProfileMenuOpen"
               >
                 <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />

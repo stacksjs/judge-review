@@ -3,13 +3,13 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Profile Header -->
       <div class="relative">
-        <div class="absolute inset-0 h-32 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-t-2xl"></div>
+        <div class="absolute inset-0 h-32 bg-gradient-to-r from-gray-500 to-purple-600 rounded-t-2xl"></div>
         <div class="relative px-4 py-6 sm:px-6 sm:py-8">
           <div class="flex items-center">
             <img class="h-24 w-24 rounded-full ring-4 ring-white" :src="user.imageUrl" :alt="user.name" />
             <div class="ml-6">
               <h1 class="text-2xl font-bold text-white">{{ user.name }}</h1>
-              <p class="text-indigo-100">Member since {{ user.joinDate }}</p>
+              <p class="text-gray-100">Member since {{ user.joinDate }}</p>
             </div>
           </div>
         </div>

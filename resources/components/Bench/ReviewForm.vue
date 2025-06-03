@@ -19,7 +19,7 @@
                <div class="sm:col-span-4">
                  <label for="case-type" class="block text-sm/6 font-medium text-gray-700">Case Type</label>
                  <div class="mt-2">
-                   <select id="case-type" name="case-type" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                   <select id="case-type" name="case-type" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6">
                      <option>Criminal</option>
                      <option>Civil</option>
                      <option>Family Law</option>
@@ -32,7 +32,7 @@
                <div class="sm:col-span-4">
                  <label for="case-outcome" class="block text-sm/6 font-medium text-gray-700">Case Outcome</label>
                  <div class="mt-2">
-                   <select id="case-outcome" name="case-outcome" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                   <select id="case-outcome" name="case-outcome" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6">
                      <option>Favorable</option>
                      <option>Unfavorable</option>
                      <option>Mixed</option>
@@ -68,7 +68,7 @@
                  <label for="review" class="block text-sm/6 font-medium text-gray-700">Your Review</label>
                  <div class="mt-2">
                    <!-- TODO: this will be a WYSIWYG editor -->
-                   <textarea name="review" id="review" rows="6" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" placeholder="Share your experience with this judge..."></textarea>
+                   <textarea name="review" id="review" rows="6" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6" placeholder="Share your experience with this judge..."></textarea>
                  </div>
                  <p class="mt-3 text-sm/6 text-gray-600">Please be specific about your experience and maintain a professional tone.</p>
                </div>
@@ -161,21 +161,21 @@
                <div class="sm:col-span-3">
                  <label for="case-number" class="block text-sm/6 font-medium text-gray-700">Case Number (Optional)</label>
                  <div class="mt-2">
-                   <input type="text" name="case-number" id="case-number" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                   <input type="text" name="case-number" id="case-number" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6">
                  </div>
                </div>
    
                <div class="sm:col-span-3">
                  <label for="case-date" class="block text-sm/6 font-medium text-gray-700">Case Date (Optional)</label>
                  <div class="mt-2">
-                   <input type="date" name="case-date" id="case-date" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                   <input type="date" name="case-date" id="case-date" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6">
                  </div>
                </div>
    
                <div class="col-span-full">
                  <label for="role" class="block text-sm/6 font-medium text-gray-700">Your Role in the Case</label>
                  <div class="mt-2">
-                   <select id="role" name="role" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                   <select id="role" name="role" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6">
                      <option>Attorney</option>
                      <option>Party to the Case</option>
                      <option>Court Staff</option>
@@ -190,7 +190,7 @@
    
          <div class="mt-6 flex items-center justify-end gap-x-6">
            <button type="button" class="text-sm/6 font-semibold text-gray-700">Cancel</button>
-           <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit Review</button>
+           <button type="submit" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Submit Review</button>
          </div>
        </form>
    </template>
