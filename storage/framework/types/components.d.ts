@@ -18,6 +18,7 @@ declare module 'vue' {
     BaseButton: typeof import('./../defaults/components/Buttons/BaseButton.vue')['default']
     BaseModal: typeof import('./../../../resources/components/Modal/BaseModal.vue')['default']
     BenchComingSoon: typeof import('./../../../resources/components/Bench/BenchComingSoon.vue')['default']
+    BenchFooter: typeof import('./../../../resources/components/Bench/BenchFooter.vue')['default']
     BenchHeader: typeof import('./../../../resources/components/Bench/BenchHeader.vue')['default']
     Button: typeof import('./../../../resources/components/Button.vue')['default']
     CacheForm: typeof import('./../defaults/components/Dashboard/Settings/Forms/CacheForm.vue')['default']

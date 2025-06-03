@@ -4,4 +4,6 @@
   <main>
     <RouterView />
   </main>
+
+  <BenchFooter />
 </template>

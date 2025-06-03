@@ -1,33 +1,35 @@
 <script setup lang="ts">
-import { Toaster, notification } from '@stacksjs/notification'
+  import { Toaster, notification } from '@stacksjs/notification'
 
-import { ref, computed } from 'vue'
+  
 
-const rating = ref(0)
-const hoverRating = ref(0)
-const fairness = ref(0)
-const hoverFairness = ref(0)
-const knowledge = ref(0)
-const hoverKnowledge = ref(0)
-const demeanor = ref(0)
-const hoverDemeanor = ref(0)
+  import { ref, computed } from 'vue'
 
-const getRatingText = (value: number) => {
-  switch (value) {
-    case 1: return 'Poor'
-    case 2: return 'Fair'
-    case 3: return 'Good'
-    case 4: return 'Very Good'
-    case 5: return 'Excellent'
-    default: return 'Select a rating'
+  const rating = ref(0)
+  const hoverRating = ref(0)
+  const fairness = ref(0)
+  const hoverFairness = ref(0)
+  const knowledge = ref(0)
+  const hoverKnowledge = ref(0)
+  const demeanor = ref(0)
+  const hoverDemeanor = ref(0)
+
+  const getRatingText = (value: number) => {
+    switch (value) {
+      case 1: return 'Poor'
+      case 2: return 'Fair'
+      case 3: return 'Good'
+      case 4: return 'Very Good'
+      case 5: return 'Excellent'
+      default: return 'Select a rating'
+    }
   }
-}
 
-const ratingText = computed(() => getRatingText(hoverRating.value || rating.value))
+  const ratingText = computed(() => getRatingText(hoverRating.value || rating.value))
 
-function handleSubmit() {
-  notification('Review Submitted')
-}
+  function handleSubmit() {
+    notification('Review Submitted')
+  }
 </script>
 
 <template>
