@@ -1,46 +1,4 @@
-<template>
-    <div class="min-h-screen mt-32">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <!-- Profile Header -->
-        <div class="relative">
-          <div class="absolute inset-0 h-32 bg-gradient-to-r from-gray-500 to-purple-600 rounded-t-2xl"></div>
-          <div class="relative px-4 py-6 sm:px-6 sm:py-8">
-            <div class="flex items-center">
-              <img class="h-24 w-24 rounded-full ring-4 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-              <div class="ml-6">
-                <h1 class="text-2xl font-bold text-white">{{ user.name }}</h1>
-                <p class="text-gray-100">Member since {{ user.joinDate }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Stats -->
-        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-            <dt class="truncate text-sm font-medium text-gray-600">Total Reviews</dt>
-            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-800">{{ stats.totalReviews }}</dd>
-          </div>
-          <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-            <dt class="truncate text-sm font-medium text-gray-600">Judges Reviewed</dt>
-            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-800">{{ stats.judgesReviewed }}</dd>
-          </div>
-          <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-            <dt class="truncate text-sm font-medium text-gray-600">Average Rating</dt>
-            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-800">{{ stats.averageRating }}/5.0</dd>
-          </div>
-          <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-            <dt class="truncate text-sm font-medium text-gray-600">Helpful Votes</dt>
-            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-800">{{ stats.helpfulVotes }}</dd>
-          </div>
-        </div>
-  
-        <!-- Reviews Feed -->
-        <ReviewSection :reviews="reviews" />
-      </div>
-    </div>
-  </template>
-  
+ 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { BenchReviews } from '@/types/bench'
@@ -105,4 +63,56 @@ const reviews = ref<BenchReviews[]>([
     status: 'Pending'
   }
 ])
+
+useHead({
+  // title: app.name,
+  title: 'Profile - The Chamber of Secrets',
+  meta: [
+    { name: 'description', content: 'Profile.' },
+  ],
+})
 </script> 
+
+<template>
+    <div class="min-h-screen mt-32">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Profile Header -->
+        <div class="relative">
+          <div class="absolute inset-0 h-32 bg-gradient-to-r from-gray-500 to-purple-600 rounded-t-2xl"></div>
+          <div class="relative px-4 py-6 sm:px-6 sm:py-8">
+            <div class="flex items-center">
+              <img class="h-24 w-24 rounded-full ring-4 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+              <div class="ml-6">
+                <h1 class="text-2xl font-bold text-white">{{ user.name }}</h1>
+                <p class="text-gray-100">Member since {{ user.joinDate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Stats -->
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
+            <dt class="truncate text-sm font-medium text-gray-600">Total Reviews</dt>
+            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-800">{{ stats.totalReviews }}</dd>
+          </div>
+          <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
+            <dt class="truncate text-sm font-medium text-gray-600">Judges Reviewed</dt>
+            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-800">{{ stats.judgesReviewed }}</dd>
+          </div>
+          <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
+            <dt class="truncate text-sm font-medium text-gray-600">Average Rating</dt>
+            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-800">{{ stats.averageRating }}/5.0</dd>
+          </div>
+          <div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
+            <dt class="truncate text-sm font-medium text-gray-600">Helpful Votes</dt>
+            <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-800">{{ stats.helpfulVotes }}</dd>
+          </div>
+        </div>
+  
+        <!-- Reviews Feed -->
+        <ReviewSection :reviews="reviews" />
+      </div>
+    </div>
+</template>
+ 

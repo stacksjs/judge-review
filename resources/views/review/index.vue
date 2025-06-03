@@ -5,9 +5,15 @@
 </template>
 
 <script setup lang="ts">
-// Component logic here
-</script>
+defineOptions({
+  name: 'ReviewPage',
+})
 
-<style scoped>
-/* Component styles here */
-</style>
+useHead({
+  // title: app.name,
+  title: 'Review - The Chamber of Secrets',
+  meta: [
+    { name: 'description', content: 'Review.' },
+  ],
+})
+</script>
