@@ -13,7 +13,7 @@
             <span class="text-4xl font-semibold tracking-tight text-gray-800">$0</span>
             <span class="text-sm/6 font-semibold text-gray-600">/month</span>
           </p>
-          <router-link to="/register" aria-describedby="tier-free" class="mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-gray-600 ring-1 ring-inset ring-gray-200 hover:ring-gray-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Get started</router-link>
+          <router-link to="/register" aria-describedby="tier-free" class="mt-6 block rounded-sm px-2.5 py-1.5 text-center text-sm/6 font-semibold text-gray-600 ring-1 ring-inset ring-gray-200 hover:ring-gray-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Get started</router-link>
           <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-600">
             <li class="flex gap-x-3">
               <svg class="h-6 w-5 flex-none text-gray-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
@@ -36,7 +36,7 @@
             <span class="text-4xl font-semibold tracking-tight text-gray-800">$5</span>
             <span class="text-sm/6 font-semibold text-gray-600">/month</span>
           </p>
-          <router-link to="/register" aria-describedby="tier-hobby" class="mt-6 block rounded-md bg-gray-600 px-3 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Get started</router-link>
+          <router-link to="/register" aria-describedby="tier-hobby" class="mt-6 block rounded-sm bg-gray-600 px-2.5 py-1.5 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Get started</router-link>
           <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-600">
             <li class="flex gap-x-3">
               <svg class="h-6 w-5 flex-none text-gray-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">

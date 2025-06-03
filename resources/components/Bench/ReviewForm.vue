@@ -147,7 +147,6 @@
                    </div>
                  </div>
                </div>
-     d
                <div class="col-span-full">
                  <label for="review" class="block text-sm/6 font-medium text-gray-700">Your Review</label>
                  <div class="mt-2">
@@ -163,7 +162,7 @@
    
          <div class="mt-6 flex items-center justify-end gap-x-6">
            <button type="button" class="text-sm/6 font-semibold text-gray-700">Cancel</button>
-           <button type="submit" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Submit Review</button>
+           <button type="submit" class="rounded-sm bg-gray-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Submit Review</button>
          </div>
        </form>
    </template>
