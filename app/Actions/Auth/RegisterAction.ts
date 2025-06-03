@@ -12,6 +12,7 @@ export default new Action({
     const email = request.get('email')
     const password = request.get('password')
     const name = request.get('name')
+    const passwordConfirmation = request.get('password_confirmation')
 
     await request.validate({
       email: {
@@ -26,6 +27,13 @@ export default new Action({
         message: {
           min: 'Password must have a minimum of 6 characters',
           max: 'Password must have a maximum of 255 characters',
+        },
+      },
+
+      password_confirmation: {
+        rule: schema.string().equals(password),
+        message: {
+          equals: 'Password confirmation must match password',
         },
       },
 
