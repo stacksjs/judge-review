@@ -55,10 +55,10 @@
           <router-link v-if="!isAuthenticated" to="/login" class="text-sm/6 font-semibold text-gray-900 mr-6">Log in </router-link>
           <router-link v-if="!isAuthenticated" to="/register" class="text-sm/6 font-semibold text-gray-900"> Sign up </router-link>
           <div v-else class="flex items-center gap-x-4">
-            <div class="relative">
+            <div class="relative flex items-center">
               <button 
                 type="button" 
-                class="text-gray-400 hover:text-gray-500"
+                class="text-gray-400 hover:text-gray-500 flex items-center"
                 @click="isNotificationMenuOpen = !isNotificationMenuOpen"
               >
                 <span class="sr-only">View notifications</span>
@@ -105,10 +105,10 @@
                 </div>
               </div>
             </div>
-            <div class="relative">
+            <div class="relative flex items-center">
               <button 
                 type="button" 
-                class="flex rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                class="flex items-center rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                 @click="isProfileMenuOpen = !isProfileMenuOpen"
               >
                 <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
