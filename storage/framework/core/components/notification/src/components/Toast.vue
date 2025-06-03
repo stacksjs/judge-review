@@ -31,7 +31,7 @@ const dismissible = computed(() => props.toast.dismissible !== false)
 const toastClass = computed(() => props.toast.class || '')
 const toastDescriptionClass = computed(() => props.descriptionClass || '')
 
-const toastStyle = props.toast.style || {}
+const toastStyle = props.toast?.style || {}
 
 // Height index is used to calculate the offset as it gets updated before the toast array, which means we can calculate the new layout faster.
 const heightIndex = computed(() => props.heights.findIndex(height => height.toastId === props.toast.id) || 0)

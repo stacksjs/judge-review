@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" setup>
 // Visible toasts amount
 const VISIBLE_TOASTS_AMOUNT = 3
 // Viewport padding
@@ -8,13 +8,6 @@ const TOAST_WIDTH = 356
 // Default gap between toasts
 const GAP = 14
 
-function _cn(...classes: (string | undefined)[]) {
-  return classes.filter(Boolean).join(' ')
-}
-</script>
-
-<script lang="ts" setup>
-/* eslint import/first: 0 */
 import type {
   HeightT,
   Position,
