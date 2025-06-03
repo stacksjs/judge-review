@@ -1,10 +1,10 @@
 [build]
-  base = "/"
-  command = "bun install && touch .env && cd storage/framework/core && bun run build && cd ../../.. && ./buddy build views"
-  publish = "storage/framework/views/web/dist"
+base = "/"
+command = "bun install && touch .env && cd storage/framework/core && bun run build && cd ../../.. && ./buddy build views"
+publish = "storage/framework/views/web/dist"
 
 [build.environment]
-  NODE_VERSION = "20"
+NODE_VERSION = "20"
 
 [[plugins]]
-  package = "@netlify/plugin-lighthouse" 
+package = "@netlify/plugin-lighthouse"

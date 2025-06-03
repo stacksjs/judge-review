@@ -1,12 +1,9 @@
 import type { UserConfig as ViteConfig } from 'vite'
 import { alias } from '@stacksjs/alias'
 import { path as p } from '@stacksjs/path'
-import Unocss from 'unocss/vite'
-
 import {
   autoImports,
   components,
-  cssEngine,
   devtools,
   i18n,
   layouts,
@@ -16,13 +13,13 @@ import {
   stacks,
   uiEngine,
 } from '@stacksjs/vite-plugin'
-import generateSitemap from 'vite-ssg-sitemap'
+
+import Unocss from 'unocss/vite'
 
 // import { fonts } from './plugin/fonts'
 
 // const isMaintenanceMode = config.app.maintenanceMode
 // const maintenancePath = isMaintenanceMode ? '' : './maintenance'
-
 
 export const viewsConfig: ViteConfig = {
   build: {

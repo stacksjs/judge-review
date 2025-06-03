@@ -1,18 +1,16 @@
-
 export interface BenchAuthor {
   id: number
   name: string
   imageUrl: string
 }
 
-  
 export interface Judge {
   id: string
   name: string
   court: string
   imageUrl: string
 }
-  
+
 export interface BenchReviews {
   id: number
   author: BenchAuthor
@@ -27,7 +25,6 @@ export interface BenchReviews {
   type: string
   status: string
 }
-
 
 export interface NotificationUser {
   name: string

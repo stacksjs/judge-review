@@ -23,7 +23,6 @@ export default {
     },
     useUuid: true,
     useTimestamps: true, // defaults to true, `timestampable` used as an alias
-    useSocials: ['github'],
     useSearch: {
       displayable: ['id', 'name', 'email'], // the fields to become d (defaults to all fields)
       searchable: ['name', 'email'], // the fields to become searchable (defaults to all fields)

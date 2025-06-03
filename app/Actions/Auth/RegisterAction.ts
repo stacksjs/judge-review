@@ -40,6 +40,8 @@ export default new Action({
 
     const result = await register({ email, password, name })
 
+    console.log(result)
+
     if (result) {
       const user = await Auth.getUserFromToken(result.token)
 
@@ -49,7 +51,6 @@ export default new Action({
           id: user?.id,
           email: user?.email,
           name: user?.name,
-          job_title: user?.job_title,
         },
       })
     }

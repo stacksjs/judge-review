@@ -233,6 +233,7 @@ declare global {
   const useAsyncQueue: typeof import('../core/browser/src/utils/vendors')['useAsyncQueue']
   const useAsyncState: typeof import('../core/browser/src/utils/vendors')['useAsyncState']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useAuth: typeof import('../../../resources/functions/auth')['useAuth']
   const useAverage: typeof import('../core/browser/src/utils/math')['useAverage']
   const useBase64: typeof import('../core/browser/src/utils/vendors')['useBase64']
   const useBattery: typeof import('../core/browser/src/utils/vendors')['useBattery']
@@ -492,7 +493,6 @@ declare module 'vue' {
     readonly confirmPayment: UnwrapRef<typeof import('../core/browser/src/utils/billable')['confirmPayment']>
     readonly controlledComputed: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['controlledComputed']>
     readonly controlledRef: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['controlledRef']>
-    readonly count: UnwrapRef<typeof import('../../../resources/functions/counter')['count']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createControlledPromise: UnwrapRef<typeof import('../core/browser/src/utils/promise')['createControlledPromise']>
     readonly createEventHook: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['createEventHook']>
@@ -544,7 +544,6 @@ declare module 'vue' {
     readonly global: UnwrapRef<typeof import('../core/browser/src/utils/regex')['global']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['ignorableWatch']>
-    readonly increment: UnwrapRef<typeof import('../../../resources/functions/counter')['increment']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly injectHead: UnwrapRef<typeof import('@unhead/vue')['injectHead']>
     readonly injectLocal: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['injectLocal']>
@@ -682,6 +681,7 @@ declare module 'vue' {
     readonly useAsyncQueue: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['useAsyncQueue']>
     readonly useAsyncState: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['useAsyncState']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useAuth: UnwrapRef<typeof import('../../../resources/functions/auth')['useAuth']>
     readonly useAverage: UnwrapRef<typeof import('../core/browser/src/utils/math')['useAverage']>
     readonly useBase64: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['useBase64']>
     readonly useBattery: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['useBattery']>

@@ -15,7 +15,6 @@ import {
   transformerVariantGroup,
 
 } from 'unocss'
-import { presetHeadlessUi } from 'unocss-preset-primitives'
 
 const config: UnoConfig = {
   shortcuts: ui.shortcuts,
@@ -93,11 +92,11 @@ const config: UnoConfig = {
   theme: {
     extend: {
       colors: {
-        primary: '#1F1FE9',
-        secondary: '#B80C09',
-        success: '#CAFE48',
-        dark: '#1A181B',
-        light: '#F5F3F5',
+        'primary': '#1F1FE9',
+        'secondary': '#B80C09',
+        'success': '#CAFE48',
+        'dark': '#1A181B',
+        'light': '#F5F3F5',
         'brown-header': '#F8F5E8',
       },
     },
