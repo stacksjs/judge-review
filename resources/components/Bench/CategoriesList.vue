@@ -1,6 +1,6 @@
 <template>
   <div class="sticky top-4">
-    <h2 class="text-base font-semibold text-gray-900">Explore Cases</h2>
+    <h2 class="text-base font-semibold text-gray-900">Explore Categories</h2>
     <nav class="mt-4 space-y-1">
       <a v-for="category in categories" 
         :key="category.name" 

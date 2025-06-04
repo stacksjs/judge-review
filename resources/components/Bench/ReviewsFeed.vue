@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-6">
-    <div v-for="review in reviews" :key="review.id" class="rounded-lg bg-white shadow">
+    <div v-for="review in reviews" :key="review.id">
       <Feed :review="review" />
     </div>
   </div>

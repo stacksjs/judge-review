@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white shadow sm:rounded-lg">
+  <div class="bg-off-white sm:rounded-lg">
     <div class="px-4 py-5 sm:p-6">
       <!-- Reviewer -->
       <div class="flex items-center justify-between">

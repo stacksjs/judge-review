@@ -90,6 +90,10 @@ const config: UnoConfig = {
   safelist: ui.safelist?.split(' ') || [],
 
   theme: {
+    colors: {
+      offBrown: '#f8f5e8',
+      offWhite: '#F9F7F1',
+    },
     extend: {
       colors: {
         'primary': '#1F1FE9',
@@ -97,7 +101,6 @@ const config: UnoConfig = {
         'success': '#CAFE48',
         'dark': '#1A181B',
         'light': '#F5F3F5',
-        'brown-header': '#F8F5E8',
       },
     },
   },
