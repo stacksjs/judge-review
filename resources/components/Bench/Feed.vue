@@ -44,12 +44,12 @@
           <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
         </div>
         <div class="mt-2">
-          <button 
-            @click="showPricingModal = true" 
+          <router-link 
+            :to="`/review/${review.id}`"
             class="inline-block text-xs text-gray-600 hover:text-gray-500 hover:underline"
           >
             Read more
-          </button>
+          </router-link>
         </div>
       </div>
 
