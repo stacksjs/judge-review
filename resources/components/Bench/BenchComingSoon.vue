@@ -42,7 +42,7 @@ async function submitEmail() {
 </script>
 
 <template>
-  <div class="relative isolate overflow-hidden bg-white h-screen">
+  <div class="relative isolate overflow-hidden bg-off-white h-screen">
 
     <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 lg:flex lg:px-8 lg:py-20 sm:pb-32">
       <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-40">
@@ -73,7 +73,7 @@ async function submitEmail() {
       </div>
       <div class="mx-auto mt-16 flex lg:ml-10 lg:mr-0 lg:mt-0 sm:mt-24 xl:ml-32">
         <div class="max-w-3xl flex-none sm:max-w-5xl">
-          <div class="rounded-xl bg-white p-2 lg:rounded-2xl lg:p-4">
+          <div class="rounded-xl p-2 lg:rounded-2xl lg:p-4">
             <img src="/images/bench/hero_image.png" alt="Bench Review Preview" class="w-[50rem] rounded-lg object-cover">
           </div>
         </div>

@@ -62,6 +62,17 @@ const config: UnoConfig = {
             provider: 'none',
           },
         ],
+        'pt-serif': [
+          {
+            name: 'PT Serif',
+            weights: ['400', '500', '700', '800'],
+            italic: true,
+          },
+          {
+            name: 'serif',
+            provider: 'none',
+          },
+        ],
         mono: 'Fira Code',
       },
 

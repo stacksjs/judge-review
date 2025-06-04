@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen mt-32">
+  <div class="min-h-screen">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Profile Header -->
       <div class="relative">

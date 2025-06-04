@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen mt-32">
+  <div class="min-h-screen">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="space-y-10 divide-y divide-gray-900/10">
         <div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">

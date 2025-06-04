@@ -1,7 +1,7 @@
 <template>
   <BenchHeader />
   
-  <main>
+  <main class="bg-off-white py-16">
     <RouterView />
   </main>
 

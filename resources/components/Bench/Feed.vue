@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-off-white sm:rounded-lg">
+  <div class="sm:rounded-lg border">
     <div class="px-4 py-5 sm:p-6">
       <!-- Reviewer -->
       <div class="flex items-center justify-between">
@@ -46,7 +46,7 @@
         <div class="mt-2">
           <button 
             @click="showPricingModal = true" 
-            class="inline-block text-xs text-blue-600 hover:text-blue-500 hover:underline"
+            class="inline-block text-xs text-gray-600 hover:text-gray-500 hover:underline"
           >
             Read more
           </button>

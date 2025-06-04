@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky top-4">
+  <div class="top-4 border p-4 rounded-sm">
     <h2 class="text-base font-semibold text-gray-900">Explore Categories</h2>
     <nav class="mt-4 space-y-1">
       <a v-for="category in categories" 
