@@ -37,8 +37,13 @@
         </div>
       </div>
 
+      <!-- Review Title -->
+      <div class="mt-3">
+        <h3 class="text-base font-semibold text-gray-900">{{ review.title }}</h3>
+      </div>
+
       <!-- Review Content -->
-      <div class="mt-4">
+      <div class="mt-2">
         <div class="relative">
           <p class="text-sm text-gray-700 line-clamp-4">{{ review.content }}</p>
           <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
@@ -114,6 +119,7 @@ const toggleLike = () => {
 <style scoped>
 .line-clamp-4 {
   display: -webkit-box;
+  line-clamp: 4;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;

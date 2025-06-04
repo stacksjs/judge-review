@@ -20,7 +20,6 @@
               <div class="flex space-x-1 text-sm text-gray-500">
                 <time :datetime="review.dateTime">{{ review.date }}</time>
                 <span aria-hidden="true">&middot;</span>
-                <span>{{ review.readingTime }}</span>
               </div>
             </div>
           </div>
@@ -105,6 +104,7 @@
 </template>
 
 <script setup lang="ts">
+import type { BenchReviews } from '@/types/bench';
 
 defineOptions({
   name: 'ReviewDetailPage',
@@ -117,29 +117,7 @@ useHead({
   ],
 })
 
-const review: {
-  id: number
-  title: string
-  author: {
-    id: number
-    name: string
-    imageUrl: string
-  }
-  judge: {
-    id: string
-    name: string
-    court: string
-    imageUrl: string
-  }
-  date: string
-  dateTime: string
-  readingTime: string
-  rating: number
-  likes: number
-  comments: number
-  type: string
-  content: string
-} = {
+const review: BenchReviews = {
   id: 1,
   title: 'A Masterclass in Judicial Excellence: My Experience with Judge Sarah Johnson',
   author: {
@@ -155,8 +133,8 @@ const review: {
   },
   date: 'Mar 16, 2024',
   dateTime: '2024-03-16T10:00',
-  readingTime: '12 min read',
   rating: 5,
+  status: 'Closed',
   likes: 256,
   comments: 48,
   type: 'Criminal Law',

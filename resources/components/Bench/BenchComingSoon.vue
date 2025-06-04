@@ -1,8 +1,14 @@
-<script setup>
+<script setup lang="ts">
+interface ApiError {
+  errors: Array<{
+    message: string;
+  }>;
+}
+
 // Reactive state for the email input
 const email = ref('')
 const loading = ref(false)
-const errors = ref([])
+const errors = ref<Array<{ message: string }>>([])
 const successMessage = ref('')
 
 // Method to handle email submission
@@ -18,22 +24,25 @@ async function submitEmail() {
 
   loading.value = true
 
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify(body),
-  })
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
 
-  if (!response.ok) {
-    const errs = await response.json()
-
-    errors.value = errs.errors
-  }
-  else {
-    successMessage.value = 'Thanks! Stay tune for more updates.'
+    if (!response.ok) {
+      const errs = await response.json() as ApiError
+      errors.value = errs.errors
+    }
+    else {
+      successMessage.value = 'Thanks! Stay tuned for more updates.'
+    }
+  } catch (error) {
+    errors.value = [{ message: 'An error occurred. Please try again.' }]
   }
 
   email.value = ''
@@ -43,7 +52,6 @@ async function submitEmail() {
 
 <template>
   <div class="relative isolate overflow-hidden bg-off-white h-screen">
-
     <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 lg:flex lg:px-8 lg:py-20 sm:pb-32">
       <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-40">
         <!-- <img class="h-11" src="https://tailwindui.com/img/logos/mark.svg?color=blue&amp;shade=600" alt="Your Company"> -->
@@ -63,13 +71,33 @@ async function submitEmail() {
           The first-ever platform dedicated to judicial transparency. Read and share experiences with judges across the country. Like Glassdoor for the judiciary, we're empowering citizens to make informed decisions about their legal representatives.
         </p>
 
-        <p v-for="error in errors" :key="error" class="pt-2 text-xs text-red-500">
-          {{ error.message }}
-        </p>
-
-        <p v-if="successMessage" class="pt-2 text-xs text-green-700">
-          {{ successMessage }}
-        </p>
+        <div class="mt-10">
+          <form @submit.prevent="submitEmail" class="flex max-w-md gap-x-4">
+            <div class="relative flex-auto">
+              <input 
+                type="email" 
+                v-model="email"
+                placeholder="Enter your email"
+                required
+                :disabled="loading"
+                class="block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+              >
+              <div v-if="successMessage" class="absolute left-0 mt-2 text-sm text-green-600">
+                {{ successMessage }}
+              </div>
+              <div v-if="errors.length > 0" class="absolute left-0 mt-2 text-sm text-red-600">
+                {{ errors[0]?.message }}
+              </div>
+            </div>
+            <button 
+              type="submit"
+              :disabled="loading"
+              class="flex-none rounded-md bg-gray-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+            >
+              {{ loading ? 'Subscribing...' : 'Notify me' }}
+            </button>
+          </form>
+        </div>
       </div>
       <div class="mx-auto mt-16 flex lg:ml-10 lg:mr-0 lg:mt-0 sm:mt-24 xl:ml-32">
         <div class="max-w-3xl flex-none sm:max-w-5xl">

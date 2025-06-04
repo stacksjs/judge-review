@@ -39,7 +39,7 @@ const reviews = [
       court: 'Superior Court',
       imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
-    title: 'Topnotch!',
+    title: 'Topnotch Judicial Excellence!',
     content: `Judge Johnson handled my case with exceptional professionalism and fairness. Her attention to detail and clear communication made the process much smoother than expected. Throughout the proceedings,
       she demonstrated a deep understanding of the law while maintaining a balanced and impartial approach. Her ability to manage complex legal arguments and maintain courtroom decorum was impressive.
       The judge took the time to explain key decisions and ensured all parties were heard. Her written opinions were thorough and well-reasoned, providing clear guidance for future cases.
@@ -65,7 +65,7 @@ const reviews = [
       court: 'Appellate Court',
       imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
-    title: 'Disappointed!',
+    title: 'A Masterclass in Judicial Excellence!',
     content: `Very impressed with the thoroughness of the proceedings. The judge maintained perfect decorum while ensuring all parties were heard. His approach to case management was exemplary,
     with clear timelines and expectations set from the beginning. The judge demonstrated exceptional knowledge of both procedural and substantive law,
     which helped streamline the process significantly. His written decisions were comprehensive and well-articulated, making complex legal concepts accessible to all parties.

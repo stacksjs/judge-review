@@ -52,8 +52,8 @@
             </button>
           </div>
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <router-link v-if="!isAuthenticated" to="/login" class="text-sm/6 font-semibold text-gray-900 mr-6">Log in </router-link>
-            <router-link v-if="!isAuthenticated" to="/register" class="text-sm/6 font-semibold text-gray-900"> Sign up </router-link>
+            <router-link v-if="!isAuthenticated" to="/login" class="text-sm/6 font-semibold text-gray-900 mr-6">Log in</router-link>
+            <router-link v-if="!isAuthenticated" to="/register" class="text-sm/6 font-semibold text-gray-900">Sign up</router-link>
             <div v-else class="flex items-center gap-x-4">
               <div class="relative flex items-center">
                 <button 
@@ -137,14 +137,13 @@
 <script setup lang="ts">
 import { BenchNotification } from '@/types/bench'
 
+// This would typically come from your auth store
+const isAuthenticated = ref(false)
+const isProfileMenuOpen = ref(false)
+const isNotificationMenuOpen = ref(false)
+const mobileMenu = ref(false)
 
-  // This would typically come from your auth store
-  const isAuthenticated = ref(false)
-  const isProfileMenuOpen = ref(false)
-  const isNotificationMenuOpen = ref(false)
-  const mobileMenu = ref(false)
-
-  const notifications = ref<BenchNotification[]>([
+const notifications = ref<BenchNotification[]>([
     {
       id: 1,
       user: {
