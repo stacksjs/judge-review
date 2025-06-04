@@ -2,12 +2,9 @@
   <div>
     <main>
       <header class="relative isolate pt-16">
-        <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-          <div class="absolute left-16 top-full -mt-16 transform-gpu opacity-50 blur-3xl xl:left-1/2 xl:-ml-80">
-            <div class="aspect-[1154/678] w-[72.125rem] bg-gradient-to-br from-[#FF80B5] to-[#9089FC]" style="clip-path: polygon(100% 38.5%, 82.6% 100%, 60.2% 37.7%, 52.4% 32.1%, 47.5% 41.8%, 45.2% 65.6%, 27.5% 23.4%, 0.1% 35.3%, 17.9% 0%, 27.7% 23.4%, 76.2% 2.5%, 74.2% 56%, 100% 38.5%)"></div>
+          <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+            <div class="absolute inset-x-0 bottom-0 h-px bg-gray-900/5"></div>
           </div>
-          <div class="absolute inset-x-0 bottom-0 h-px bg-gray-900/5"></div>
-        </div>
 
         <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div class="mx-auto flex max-w-2xl items-center justify-between gap-x-8 lg:mx-0 lg:max-w-none">
@@ -19,8 +16,14 @@
               </h1>
             </div>
             <div class="flex items-center gap-x-4 sm:gap-x-6">
-              <button type="button" class="hidden text-sm/6 font-semibold text-gray-900 sm:block">Share Profile</button>
-              <a href="#" class="hidden text-sm/6 font-semibold text-gray-900 sm:block">Write Review</a>
+              <button 
+                type="button" 
+                class="hidden text-sm/6 font-semibold text-gray-900 sm:block"
+                @click="copyProfileLink"
+              >
+                {{ showCopiedFeedback ? 'Copied!' : 'Copy Profile Link' }}
+              </button>
+              <router-link to="/review" class="hidden text-sm/6 font-semibold text-gray-900 sm:block">Write Review</router-link>
               <a href="#" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Follow</a>
 
               <div class="relative sm:hidden">
@@ -33,7 +36,7 @@
 
                 <div class="absolute right-0 z-10 mt-0.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="more-menu-button" tabindex="-1">
                   <button type="button" class="block w-full px-3 py-1 text-left text-sm/6 text-gray-900" role="menuitem" tabindex="-1" id="more-menu-item-0">Share Profile</button>
-                  <a href="#" class="block px-3 py-1 text-sm/6 text-gray-900" role="menuitem" tabindex="-1" id="more-menu-item-1">Write Review</a>
+                  <router-link to="/review" class="block px-3 py-1 text-sm/6 text-gray-900" role="menuitem" tabindex="-1" id="more-menu-item-1">Write Review</router-link>
                 </div>
               </div>
             </div>
@@ -58,21 +61,21 @@
             <div>
               <nav class="-mb-px flex space-x-8" aria-label="Tabs">
                 <router-link 
-                  :to="`/judges/${$route.params.id}/reviews`" 
+                  :to="`/judges/${route.params.id}/reviews`" 
                   class="whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium"
                   :class="[$route.path.includes('/reviews') ? 'border-gray-500 text-gray-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
                 >
                   Reviews
                 </router-link>
                 <router-link 
-                  :to="`/judges/${$route.params.id}/cases`" 
+                  :to="`/judges/${route.params.id}/cases`" 
                   class="whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium"
                   :class="[$route.path.includes('/cases') ? 'border-gray-500 text-gray-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
                 >
                   Cases
                 </router-link>
                 <router-link 
-                  :to="`/judges/${$route.params.id}/profile`" 
+                  :to="`/judges/${route.params.id}/profile`" 
                   class="whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium"
                   :class="[$route.path.includes('/profile') || !$route.path.includes('/reviews') && !$route.path.includes('/cases') ? 'border-gray-500 text-gray-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700']"
                 >
@@ -141,7 +144,17 @@
 </template>
 
 <script setup lang="ts">
-// No need for component imports or computed properties anymore
+const route = useRoute() as RouteLocationNormalizedLoaded & { params: { id: string } }
+const showCopiedFeedback = ref(false)
+
+const copyProfileLink = () => {
+  const url = window.location.href
+  navigator.clipboard.writeText(url)
+  showCopiedFeedback.value = true
+  setTimeout(() => {
+    showCopiedFeedback.value = false
+  }, 2000)
+}
 </script>
 
 <style scoped>
