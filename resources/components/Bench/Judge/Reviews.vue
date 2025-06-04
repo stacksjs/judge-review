@@ -61,14 +61,22 @@
             </button>
           </div>
           <div class="mt-4 text-sm text-gray-500">
-            <p>{{ review.content }}</p>
+            <div class="relative">
+              <p class="line-clamp-4">{{ review.content }}</p>
+              <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+            </div>
+            <div class="mt-2">
+              <router-link 
+                :to="`/review/${review.id}`"
+                class="inline-block text-xs text-gray-600 hover:text-gray-500 hover:underline"
+              >
+                Read more
+              </router-link>
+            </div>
           </div>
           <div class="mt-4 flex items-center space-x-4">
             <button type="button" class="text-sm font-semibold text-gray-500 hover:text-gray-700">
               Helpful ({{ review.helpfulCount }})
-            </button>
-            <button type="button" class="text-sm font-semibold text-gray-500 hover:text-gray-700">
-              Reply
             </button>
           </div>
         </div>
@@ -107,4 +115,14 @@ const reviews = [
     helpfulCount: 15
   }
 ]
-</script> 
+</script>
+
+<style scoped>
+.line-clamp-4 {
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style> 
