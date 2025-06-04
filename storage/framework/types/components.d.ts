@@ -119,6 +119,7 @@ declare module 'vue' {
     RadioGroupDemo: typeof import('./../defaults/components/Docs/Demo/RadioGroupDemo.vue')['default']
     README: typeof import('./../../../resources/components/README.md')['default']
     ReviewForm: typeof import('./../../../resources/components/Bench/ReviewForm.vue')['default']
+    ReviewJudgeSearch: typeof import('./../../../resources/components/Bench/ReviewJudgeSearch.vue')['default']
     Reviews: typeof import('./../../../resources/components/Bench/Judge/Reviews.vue')['default']
     ReviewSection: typeof import('./../../../resources/components/Bench/User/ReviewSection.vue')['default']
     ReviewsFeed: typeof import('./../../../resources/components/Bench/ReviewsFeed.vue')['default']
