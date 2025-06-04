@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white py-24 sm:py-32">
+  <div class="py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-4xl text-center">
         <p class="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-800 sm:text-6xl">Simple, transparent pricing</p>

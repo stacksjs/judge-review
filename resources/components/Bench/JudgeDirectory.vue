@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white py-24 sm:py-32">
+    <div class="py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <!-- Search and Filter Section -->
         <div class="mb-8">
@@ -8,7 +8,7 @@
               <div class="relative">
                 <input
                   type="text"
-                  class="block w-full rounded-md border-0 py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+                  class="block w-full rounded-md border-0 py-1.5 pl-10 pr-3 text-gray-900 bg-off-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
                   placeholder="Search judges..."
                 >
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -19,20 +19,20 @@
               </div>
             </div>
             <div class="flex gap-4">
-              <select class="rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6">
+              <select class="rounded-md border-0 bg-off-white py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6">
                 <option>All Courts</option>
                 <option>Supreme Court</option>
                 <option>Appellate Court</option>
                 <option>District Court</option>
               </select>
-              <select class="rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6">
+              <select class="rounded-md border-0 bg-off-white py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6">
                 <option>All States</option>
                 <option>California</option>
                 <option>New York</option>
                 <option>Texas</option>
                 <option>Florida</option>
               </select>
-              <select class="rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6">
+              <select class="rounded-md border-0 bg-off-white py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6">
                 <option>Rating</option>
                 <option>4+ Stars</option>
                 <option>3+ Stars</option>
@@ -43,10 +43,10 @@
         </div>
   
         <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <li v-for="judge in judges" :key="judge.id" class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+          <li v-for="judge in judges" :key="judge.id" class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow">
             <div class="flex flex-1 flex-col p-8">
               <div class="mx-auto h-32 w-32 overflow-hidden rounded-full">
-                <img class="h-full w-full object-cover" :src="judge.image" :alt="judge.name">
+                <img class="h-full w-full object-cover filter grayscale" :src="judge.image" :alt="judge.name">
               </div>
               <h3 class="mt-6 text-sm font-medium text-gray-900">{{ judge.name }}</h3>
               <dl class="mt-1 flex grow flex-col justify-between">
