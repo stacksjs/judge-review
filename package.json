@@ -55,6 +55,20 @@
     "stx": "./buddy"
   },
   "dependencies": {
+    "@tiptap/core": "^2.12.0",
+    "@tiptap/extension-blockquote": "^2.12.0",
+    "@tiptap/extension-bold": "^2.12.0",
+    "@tiptap/extension-bullet-list": "^2.12.0",
+    "@tiptap/extension-document": "^2.12.0",
+    "@tiptap/extension-highlight": "^2.12.0",
+    "@tiptap/extension-italic": "^2.12.0",
+    "@tiptap/extension-list-item": "^2.12.0",
+    "@tiptap/extension-ordered-list": "^2.12.0",
+    "@tiptap/extension-paragraph": "^2.12.0",
+    "@tiptap/extension-text": "^2.12.0",
+    "@tiptap/pm": "^2.12.0",
+    "@tiptap/starter-kit": "^2.12.0",
+    "@tiptap/vue-3": "^2.12.0",
     "stacks": "workspace:*"
   },
   "config": {

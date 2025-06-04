@@ -6,6 +6,17 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
+const reviewTitle = ref('')
+const reviewContent = ref('')
+const rating = ref(0)
+const hoverRating = ref(0)
+const fairness = ref(0)
+const hoverFairness = ref(0)
+const knowledge = ref(0)
+const hoverKnowledge = ref(0)
+const demeanor = ref(0)
+const hoverDemeanor = ref(0)
+
 interface Judge {
   id: string;
   name: string;
@@ -15,14 +26,6 @@ interface Judge {
 }
 
 const judge = ref<Judge | null>(null)
-const rating = ref(0)
-const hoverRating = ref(0)
-const fairness = ref(0)
-const hoverFairness = ref(0)
-const knowledge = ref(0)
-const hoverKnowledge = ref(0)
-const demeanor = ref(0)
-const hoverDemeanor = ref(0)
 
 // Mock data - replace with actual API call
 const loadJudge = async (id: string) => {
@@ -59,6 +62,20 @@ const getRatingText = (value: number) => {
 const ratingText = computed(() => getRatingText(hoverRating.value || rating.value))
 
 function handleSubmit() {
+  const reviewData = {
+    judgeId: judge.value?.id,
+    title: reviewTitle.value,
+    content: reviewContent.value,
+    ratings: {
+      overall: rating.value,
+      fairness: fairness.value,
+      knowledge: knowledge.value,
+      demeanor: demeanor.value
+    }
+  }
+  
+  // Send the review data to your backend
+  console.log('Submitting review:', reviewData)
   notification('Review Submitted')
   router.push(`/judges/${judge.value?.id}/reviews`)
 }
@@ -86,6 +103,21 @@ function handleCancel() {
       <p class="mt-1 text-sm/6 text-gray-600">Rate the judge's performance in different aspects.</p>
 
       <div class="mt-10 space-y-10">
+        <!-- Title field -->
+        <div class="col-span-full">
+          <label for="title" class="block text-sm/6 font-medium text-gray-700">Review Title</label>
+          <div class="mt-2">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              v-model="reviewTitle"
+              placeholder="Brief summary of your experience"
+              class="block w-full rounded-md bg-off-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6"
+            >
+          </div>
+        </div>
+
         <div class="space-y-6">
           <div class="flex items-center justify-between">
             <label for="fairness" class="text-sm/6 font-medium text-gray-700">Fairness & Impartiality</label>
@@ -157,11 +189,6 @@ function handleCancel() {
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="border-b border-gray-900/10 pb-12">
-      <h2 class="text-base/7 font-semibold text-gray-800">Additional Information</h2>
-      <p class="mt-1 text-sm/6 text-gray-600">Optional information to provide context for your review.</p>
 
       <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
         <div class="sm:col-span-3">
@@ -191,7 +218,6 @@ function handleCancel() {
           </div>
         </div>
       </div>
-      
 
       <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
         <div class="col-span-full">
@@ -216,15 +242,15 @@ function handleCancel() {
             </div>
           </div>
         </div>
+
         <div class="col-span-full">
           <label for="review" class="block text-sm/6 font-medium text-gray-700">Your Review</label>
           <div class="mt-2">
-            <textarea name="review" id="review" rows="6" class="block w-full rounded-md bg-off-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6" placeholder="Share your experience with this judge..."></textarea>
+            <RichTextEditor v-model="reviewContent" />
           </div>
           <p class="mt-3 text-sm/6 text-gray-600">Please be specific about your experience and maintain a professional tone.</p>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -235,3 +261,56 @@ function handleCancel() {
 
   <Toaster position="top-right" />
 </template>
+
+<style>
+.ProseMirror {
+  min-height: 150px;
+  padding: 0.5rem 0;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+.ProseMirror p:first-child {
+  margin-top: 0;
+}
+
+.ProseMirror p.is-empty:first-child::before {
+  color: #9ca3af;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Basic editor styles */
+.ProseMirror > * + * {
+  margin-top: 0.75em;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding: 0 1rem;
+}
+
+.ProseMirror ul {
+  list-style-type: disc;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+}
+
+.ProseMirror code {
+  background-color: rgba(97, 97, 97, 0.1);
+  color: #616161;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.ProseMirror blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(13, 13, 13, 0.1);
+}
+</style>

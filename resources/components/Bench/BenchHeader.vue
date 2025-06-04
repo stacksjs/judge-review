@@ -1,6 +1,6 @@
 <template>
     <header class="z-10">
-      <nav class="mx-auto flex items-center justify-between p-6 lg:px-8 border-b bg-brown-header" aria-label="Global">
+      <nav class="mx-auto flex items-center justify-between p-6 lg:px-8 border-b bg-off-white" aria-label="Global">
         <div class="flex items-center gap-x-8">
           <router-link to="/">
             <span class="sr-only">Judge Review</span>

@@ -123,6 +123,7 @@ declare module 'vue' {
     Reviews: typeof import('./../../../resources/components/Bench/Judge/Reviews.vue')['default']
     ReviewSection: typeof import('./../../../resources/components/Bench/User/ReviewSection.vue')['default']
     ReviewsFeed: typeof import('./../../../resources/components/Bench/ReviewsFeed.vue')['default']
+    RichTextEditor: typeof import('./../../../resources/components/Bench/RichTextEditor.vue')['default']
     RightSidebar: typeof import('./../../../resources/components/Bench/RightSidebar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
