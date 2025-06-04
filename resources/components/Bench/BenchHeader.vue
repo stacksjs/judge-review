@@ -138,7 +138,7 @@ import { BenchNotification } from '@/types/bench'
 
 
   // This would typically come from your auth store
-  const isAuthenticated = ref(true)
+  const isAuthenticated = ref(false)
   const isProfileMenuOpen = ref(false)
   const isNotificationMenuOpen = ref(false)
   const mobileMenu = ref(false)

@@ -97,7 +97,7 @@ const testimonials = [
                     {{ testimonial.content }}
                   </p>
                 </blockquote>
-                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                <div class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
                   <div>
                     <div class="font-display text-base text-slate-900">
                       {{ testimonial.author.name }}
@@ -115,7 +115,7 @@ const testimonials = [
                       height="56"
                     >
                   </div>
-                </figcaption>
+                </div>
               </figure>
             </li>
           </ul>
