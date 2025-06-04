@@ -55,7 +55,7 @@
             </svg>
           </div>
           <div class="hidden sm:block">
-            <div class="border-b border-gray-200">
+            <div>
               <nav class="-mb-px flex space-x-8" aria-label="Tabs">
                 <router-link 
                   :to="`/judges/${$route.params.id}/reviews`" 
@@ -87,7 +87,7 @@
           <!-- Judge Summary -->
           <div class="lg:col-start-3 lg:row-end-1">
             <h2 class="sr-only">Summary</h2>
-            <div class="rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5 p-4">
+            <div class="rounded-lg bg-off-white shadow-sm ring-1 ring-gray-900/5 p-4">
               <dl class="flex flex-wrap">
                 <div class="flex-auto">
                   <dt class="text-sm/6 font-semibold text-gray-900">Overall Rating</dt>
