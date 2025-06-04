@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="flex items-center space-x-4">
-        <router-link to="/review" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
+        <router-link to="/review/new" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
           Write a Review
         </router-link>
       </div>
@@ -67,7 +67,7 @@
             </div>
             <div class="mt-2">
               <router-link 
-                :to="`/review/${review.id}`"
+                :to="`/article/${review.id}`"
                 class="inline-block text-xs text-gray-600 hover:text-gray-500 hover:underline"
               >
                 Read more

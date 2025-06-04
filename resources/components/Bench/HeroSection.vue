@@ -9,7 +9,7 @@
               <p class="mt-8 text-pretty text-lg font-medium text-gray-600 sm:max-w-md sm:text-xl/8 lg:max-w-none">The first-ever platform dedicated to judicial transparency. Read and share experiences with judges across the country. Like Glassdoor for the judiciary, we're empowering citizens to make informed decisions about their legal representatives.</p>
               <div class="mt-10 flex items-center gap-x-6">
                 <router-link to="/judges" class="rounded-sm bg-gray-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Find a Judge</router-link>
-                <router-link to="/review" class="text-sm/6 font-semibold text-gray-700">Write a Review <span aria-hidden="true">→</span></router-link>
+                <router-link to="/review/new" class="text-sm/6 font-semibold text-gray-700">Write a Review <span aria-hidden="true">→</span></router-link>
               </div>
             </div>
             <div class="mt-14 flex justify-center sm:-mt-44 lg:mt-0">

@@ -50,7 +50,7 @@
         </div>
         <div class="mt-2">
           <router-link 
-            :to="`/review/${review.id}`"
+            :to="`/article/${review.id}`"
             class="inline-block text-xs text-gray-600 hover:text-gray-500 hover:underline"
           >
             Read more
