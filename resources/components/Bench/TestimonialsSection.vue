@@ -32,7 +32,7 @@
           </div>
         </figure>
 
-        <figure class="border-r-2 border-gray-400 p-8">
+        <figure class="border-gray-400 p-8">
           <blockquote class="text-gray-900">
             <p>"As a public defender, this platform has been invaluable. The insights into judicial tendencies and preferences help us better serve our clients and prepare more effective arguments."</p>
           </blockquote>

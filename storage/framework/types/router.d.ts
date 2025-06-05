@@ -32,6 +32,7 @@ declare module 'vue-router/auto-routes' {
     '/judges/review/': RouteRecordInfo<'/judges/review/', '/judges/review', Record<never, never>, Record<never, never>>,
     '/judges/review/[id]': RouteRecordInfo<'/judges/review/[id]', '/judges/review/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
+    '/paywall': RouteRecordInfo<'/paywall', '/paywall', Record<never, never>, Record<never, never>>,
     '/profile/': RouteRecordInfo<'/profile/', '/profile', Record<never, never>, Record<never, never>>,
     '/profile/[id]/': RouteRecordInfo<'/profile/[id]/', '/profile/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/register': RouteRecordInfo<'/register', '/register', Record<never, never>, Record<never, never>>,
