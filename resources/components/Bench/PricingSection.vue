@@ -33,7 +33,7 @@
           <h3 id="tier-hobby" class="text-lg/8 font-semibold text-gray-600">Hobby</h3>
           <p class="mt-4 text-sm/6 text-gray-600">For those who need to review more judges.</p>
           <p class="mt-6 flex items-baseline gap-x-1">
-            <span class="text-4xl font-semibold tracking-tight text-gray-800">$5</span>
+            <span class="text-4xl font-semibold tracking-tight text-gray-800">$10</span>
             <span class="text-sm/6 font-semibold text-gray-600">/month</span>
           </p>
           <router-link to="/register" aria-describedby="tier-hobby" class="mt-6 block rounded-sm bg-gray-600 px-2.5 py-1.5 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Get started</router-link>

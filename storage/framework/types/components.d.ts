@@ -102,6 +102,7 @@ declare module 'vue' {
     PaymentForm: typeof import('./../defaults/components/Dashboard/Billing/PaymentForm.vue')['default']
     PaymentMethod: typeof import('./../defaults/components/Dashboard/Billing/PaymentMethod.vue')['default']
     PaymentMethodList: typeof import('./../defaults/components/Dashboard/Billing/PaymentMethodList.vue')['default']
+    PaywallPage: typeof import('./../../../resources/components/Bench/PaywallPage.vue')['default']
     Plan: typeof import('./../defaults/components/Marketing/Plan.vue')['default']
     Plans: typeof import('./../defaults/components/Dashboard/Billing/Plans.vue')['default']
     Playground: typeof import('./../defaults/components/Playground.vue')['default']

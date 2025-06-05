@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { useAuth } from '../functions/auth'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const { register } = useAuth()
 
@@ -9,8 +12,24 @@ const password = ref('')
 const passwordConfirmation = ref('')
 
 async function submitRegistration() {
-  await register({ name: name.value, email: email.value, password: password.value })
+  try {
+    await register({ name: name.value, email: email.value, password: password.value })
+    router.push('/paywall')
+  } catch (error) {
+    console.error(error)
+    alert('Registration failed. Please try again.')
+  }
 }
+
+useHead({
+  title: 'Register - The Chamber of Secrets',
+  meta: [
+    { name: 'description', content: 'Register for an account to get unlimited access to detailed judge reviews, ratings, and insights from legal professionals.' },
+  ],
+  link: [
+    { rel: 'icon', type: 'image/svg+xml' },
+  ],
+})
 </script>
 
 <template>

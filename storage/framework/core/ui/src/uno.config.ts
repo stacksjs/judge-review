@@ -48,10 +48,10 @@ const config: UnoConfig = {
     presetWebFonts({
       provider: 'google', // privacy-friendly Google Web Fonts proxy
       fonts: {
-        sans: 'Inter',
-        serif: 'Inter',
-        lobster: 'Lobster',
-        libre: [
+        'sans': 'Inter',
+        'serif': 'Inter',
+        'lobster': 'Lobster',
+        'libre': [
           {
             name: 'Libre Baskerville',
             weights: ['400', '500', '700', '800'],
@@ -73,7 +73,7 @@ const config: UnoConfig = {
             provider: 'none',
           },
         ],
-        mono: 'Fira Code',
+        'mono': 'Fira Code',
       },
 
       processors: createLocalFontProcessor({
@@ -107,11 +107,11 @@ const config: UnoConfig = {
     },
     extend: {
       colors: {
-        'primary': '#1F1FE9',
-        'secondary': '#B80C09',
-        'success': '#CAFE48',
-        'dark': '#1A181B',
-        'light': '#F5F3F5',
+        primary: '#1F1FE9',
+        secondary: '#B80C09',
+        success: '#CAFE48',
+        dark: '#1A181B',
+        light: '#F5F3F5',
       },
     },
   },
