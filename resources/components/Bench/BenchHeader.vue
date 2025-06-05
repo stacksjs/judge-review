@@ -6,12 +6,12 @@
             <span class="sr-only">Judge Review</span>
             <img class="h-12" src="/images/bench/logo.png" alt="">
           </router-link>
-          <div class="hidden lg:flex lg:gap-x-8">
+          <div v-if="!comingSoon" class="hidden lg:flex lg:gap-x-8">
             <router-link 
               to="/judges" 
               class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
               :class="[
-                $route.path === '/judges' 
+                route.path === '/judges' 
                   ? 'border-gray-500 text-gray-600' 
                   : 'border-transparent hover:border-gray-500'
               ]"
@@ -22,7 +22,7 @@
               to="/review/new" 
               class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
               :class="[
-                $route.path === '/review/new' 
+                route.path === '/review/new' 
                   ? 'border-gray-500 text-gray-600' 
                   : 'border-transparent hover:border-gray-500'
               ]"
@@ -33,7 +33,7 @@
               to="/feed" 
               class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
               :class="[
-                $route.path === '/feed' 
+                route.path === '/feed' 
                   ? 'border-gray-500 text-gray-600' 
                   : 'border-transparent hover:border-gray-500'
               ]"
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="flex items-center">
-          <div class="flex lg:hidden">
+          <div v-if="!comingSoon" class="flex lg:hidden">
             <button @click="mobileMenu = true" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Open main menu</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
@@ -51,7 +51,7 @@
               </svg>
             </button>
           </div>
-          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div v-if="!comingSoon" class="hidden lg:flex lg:flex-1 lg:justify-end">
             <router-link v-if="!isAuthenticated" to="/login" class="text-sm/6 font-semibold text-gray-900 mr-6">Log in</router-link>
             <router-link v-if="!isAuthenticated" to="/register" class="text-sm/6 font-semibold text-gray-900">Sign up</router-link>
             <div v-else class="flex items-center gap-x-4">
@@ -130,12 +130,23 @@
           </div>
         </div>
       </nav>
-      <MobileMenu :is-open="mobileMenu" :is-authenticated="isAuthenticated" @close="mobileMenu = false" />
+      <MobileMenu v-if="!comingSoon" :is-open="mobileMenu" :is-authenticated="isAuthenticated" @close="mobileMenu = false" />
     </header>
   </template>
   
 <script setup lang="ts">
 import { BenchNotification } from '@/types/bench'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+interface Props {
+  comingSoon?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  comingSoon: false
+})
 
 // This would typically come from your auth store
 const isAuthenticated = ref(false)
