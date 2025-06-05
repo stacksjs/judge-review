@@ -75,7 +75,6 @@ function handleSubmit() {
   }
   
   // Send the review data to your backend
-  console.log('Submitting review:', reviewData)
   notification('Review Submitted')
   router.push(`/judges/${judge.value?.id}/reviews`)
 }

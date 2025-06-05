@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useAuth } from '../functions/auth'
 import { useRouter } from 'vue-router'
+import { Toaster, notification } from '@stacksjs/notification'
 
 const router = useRouter()
 
@@ -14,10 +15,11 @@ const passwordConfirmation = ref('')
 async function submitRegistration() {
   try {
     await register({ name: name.value, email: email.value, password: password.value })
+    notification('Registration successful!')
     router.push('/paywall')
   } catch (error) {
     console.error(error)
-    alert('Registration failed. Please try again.')
+    notification('Registration failed. Please try again.')
   }
 }
 
@@ -107,4 +109,5 @@ useHead({
       </p>
     </div>
   </div>
+  <Toaster position="top-right" />
 </template>
