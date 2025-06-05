@@ -8,7 +8,7 @@
     </div>
   </template>
   
-  <script setup lang="ts">
+<script setup lang="ts">
   import type { BenchReviews } from '@/types/bench';
   
   defineOptions({
