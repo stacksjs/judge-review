@@ -1402,7 +1402,7 @@
       "name": "@stacksjs/validation",
       "version": "0.70.23",
       "dependencies": {
-        "@stacksjs/ts-validation": "^0.2.7",
+        "@stacksjs/ts-validation": "^0.2.8",
         "add": "^2.0.6",
         "validator": "^13.15.15",
       },
@@ -1670,7 +1670,7 @@
 
     "@aws-cdk/asset-node-proxy-agent-v6": ["@aws-cdk/asset-node-proxy-agent-v6@2.1.0", "", {}, "sha512-7bY3J8GCVxLupn/kNmpPc5VJz8grx+4RKfnnJiO1LG+uxkZfANZG3RMHhE+qQxxwkyQ9/MfPtTpf748UhR425A=="],
 
-    "@aws-cdk/cloud-assembly-schema": ["@aws-cdk/cloud-assembly-schema@44.1.0", "", { "dependencies": { "jsonschema": "~1.4.1", "semver": "^7.7.2" } }, "sha512-WvesvSbBw5FrVbH8LZfjX5iDDRdixDkEnbsFGN8H2GNR9geBo4kIBI1nlOiqoGB6dwPwif8qDEM/4NOfuzIChQ=="],
+    "@aws-cdk/cloud-assembly-schema": ["@aws-cdk/cloud-assembly-schema@44.2.0", "", { "dependencies": { "jsonschema": "~1.4.1", "semver": "^7.7.2" } }, "sha512-oB3fq8yudGMHsSOyh2rFge5HVUMS6MOiAqK/6a9pyG4kHPkza0xCPlpvLFVCliD8y/VrsfxIcA584x9O0cxDiQ=="],
 
     "@aws-crypto/crc32": ["@aws-crypto/crc32@5.2.0", "", { "dependencies": { "@aws-crypto/util": "^5.2.0", "@aws-sdk/types": "^3.222.0", "tslib": "^2.6.2" } }, "sha512-nLbCWqQNgUiwwtFsen1AdzAtvuLRsQS8rYgMuxCrdKf9kOssamGLuPwyTY9wyYblNr9+1XM8v6zoDTPPSIeANg=="],
 
@@ -2774,7 +2774,7 @@
 
     "@stacksjs/transition": ["@stacksjs/transition@workspace:storage/framework/core/components/transition"],
 
-    "@stacksjs/ts-validation": ["@stacksjs/ts-validation@0.2.7", "", { "dependencies": { "dompurify": "^3.2.6" } }, "sha512-11bwRthOs5vb13M2d1qqZK5ooa3qx/EKPbTTOpRkvLMYsAWg9dxOsC/6FsjNGwK4j396dKS2w4Px7TUukG+OSQ=="],
+    "@stacksjs/ts-validation": ["@stacksjs/ts-validation@0.2.8", "", { "dependencies": { "dompurify": "^3.2.6" } }, "sha512-6E+p83ff9BAjmr1q/vWHG4GHbDQA6wmXEb81zCxwXHBT+9OtBmxEU4H8KCHjPD7ByEgHFPJDyDDoL8jqryTlzQ=="],
 
     "@stacksjs/tunnel": ["@stacksjs/tunnel@workspace:storage/framework/core/tunnel"],
 
@@ -6159,6 +6159,8 @@
     "archiver-utils/glob/minimatch": ["minimatch@9.0.5", "", { "dependencies": { "brace-expansion": "^2.0.1" } }, "sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow=="],
 
     "archiver-utils/glob/minipass": ["minipass@7.1.2", "", {}, "sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw=="],
+
+    "bl/buffer/ieee754": ["ieee754@1.2.1", "", {}, "sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA=="],
 
     "c12/chokidar/readdirp": ["readdirp@4.1.2", "", {}, "sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg=="],
 

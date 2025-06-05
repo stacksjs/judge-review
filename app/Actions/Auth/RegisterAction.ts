@@ -23,17 +23,10 @@ export default new Action({
       },
 
       password: {
-        rule: schema.string().min(6).max(255),
+        rule: schema.password().minLength(6).matches(passwordConfirmation),
         message: {
           min: 'Password must have a minimum of 6 characters',
-          max: 'Password must have a maximum of 255 characters',
-        },
-      },
-
-      password_confirmation: {
-        rule: schema.string().equals(password),
-        message: {
-          equals: 'Password confirmation must match password',
+          matches: 'Password must match password confirmation',
         },
       },
 
