@@ -6,7 +6,7 @@
         <p class="mt-2 text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">What legal professionals are saying</p>
       </div>
       <div class="mx-auto mt-16 grid grid-cols-1 gap-0 text-sm/6 text-gray-900 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
-        <figure class="border-r-2 border-gray-400 p-8">
+        <figure class="border-r-2 border-gray-200 p-8">
           <blockquote class="text-gray-900">
             <p>"This platform has revolutionized how we prepare for court appearances. Being able to read detailed reviews and understand a judge's approach has been invaluable for our practice. The insights shared by other attorneys have helped us better serve our clients."</p>
           </blockquote>
@@ -19,7 +19,7 @@
           </div>
         </figure>
 
-        <figure class="border-r-2 border-gray-400 p-8">
+        <figure class="border-r-2 border-gray-200 p-8">
           <blockquote class="text-gray-900">
             <p>"The detailed reviews have been a game-changer for our firm. We can now better prepare our clients for what to expect in court, leading to more successful outcomes."</p>
           </blockquote>
@@ -32,7 +32,7 @@
           </div>
         </figure>
 
-        <figure class="border-gray-400 p-8">
+        <figure class="border-gray-200 p-8">
           <blockquote class="text-gray-900">
             <p>"As a public defender, this platform has been invaluable. The insights into judicial tendencies and preferences help us better serve our clients and prepare more effective arguments."</p>
           </blockquote>
@@ -45,7 +45,7 @@
           </div>
         </figure>
 
-        <figure class="border-r-2 border-gray-400 p-8">
+        <figure class="border-r-2 border-gray-200 p-8">
           <blockquote class="text-gray-900">
             <p>"The ability to share experiences and learn from other attorneys has made us more effective advocates. This platform has become an essential tool in our practice."</p>
           </blockquote>
@@ -58,7 +58,7 @@
           </div>
         </figure>
 
-        <figure class="border-r-2 border-gray-400 p-8">
+        <figure class="border-r-2 border-gray-200 p-8">
           <blockquote class="text-gray-900">
             <p>"The transparency this platform provides is exactly what the legal community needed. It helps level the playing field and ensures better outcomes for all parties involved."</p>
           </blockquote>
