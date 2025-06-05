@@ -16,26 +16,20 @@ export default new Action({
 
     await request.validate({
       email: {
-        rule: schema.string().email(),
-        message: {
-          email: 'Email must be a valid email address',
-        },
+        rule: schema.string().email()
       },
 
       password: {
-        rule: schema.password().minLength(6).matches(passwordConfirmation),
-        message: {
-          min: 'Password must have a minimum of 6 characters',
-          matches: 'Password must match password confirmation',
-        },
+        rule: schema.password()
+          .min(8)
+          .matches(passwordConfirmation)
+          .hasUppercase()
+          .hasLowercase()
+          .hasNumbers()
       },
 
       name: {
-        rule: schema.string().min(2).max(255),
-        message: {
-          min: 'Name must have a minimum of 2 characters',
-          max: 'Name must have a maximum of 255 characters',
-        },
+        rule: schema.string().min(2).max(255)
       },
     })
 
