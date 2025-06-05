@@ -27,7 +27,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@iconify-json/carbon": "^1.2.8",
+    "@iconify-json/carbon": "^1.2.9",
     "@intlify/unplugin-vue-i18n": "^6.0.8",
     "@shikijs/markdown-it": "^3.5.0",
     "@types/markdown-it-link-attributes": "^3.0.5",
