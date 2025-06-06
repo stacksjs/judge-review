@@ -35,7 +35,7 @@
     "prepublishOnly": "bun run build"
   },
   "dependencies": {
-    "@iconify-json/carbon": "^1.2.8",
+    "@iconify-json/carbon": "^1.2.9",
     "@shikijs/vitepress-twoslash": "^3.5.0",
     "@vite-pwa/assets-generator": "^1.0.0",
     "@vite-pwa/vitepress": "^1.0.0",
