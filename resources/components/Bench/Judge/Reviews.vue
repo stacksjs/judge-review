@@ -32,7 +32,7 @@ const reviews = [
 </script>
 
 <template>
-  <div class="-mx-4 px-4 py-8 shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg sm:px-8 sm:pb-14 lg:col-span-2 lg:row-span-2 lg:row-end-2 xl:px-16 xl:pb-20 xl:pt-16">
+  <div class="-mx-4 px-4 py-8 bg-white shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg sm:px-8 sm:pb-14 lg:col-span-2 lg:row-span-2 lg:row-end-2 xl:px-16 xl:pb-20 xl:pt-16">
     <!-- Overall Rating Summary -->
     <div class="flex items-center justify-between">
       <div>
@@ -96,7 +96,7 @@ const reviews = [
           <div class="mt-4 text-sm text-gray-500">
             <div class="relative">
               <p class="line-clamp-4">{{ review.content }}</p>
-              <BlurReview />
+              <BlurReview color="white"/>
             </div>
             <div class="mt-2">
               <router-link 

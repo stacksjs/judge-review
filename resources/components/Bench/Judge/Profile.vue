@@ -1,5 +1,5 @@
 <template>
-  <div class="-mx-4 px-4 py-8 shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg sm:px-8 sm:pb-14 lg:col-span-2 lg:row-span-2 lg:row-end-2 xl:px-16 xl:pb-20 xl:pt-16">
+  <div class="-mx-4 bg-white px-4 py-8 shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg sm:px-8 sm:pb-14 lg:col-span-2 lg:row-span-2 lg:row-end-2 xl:px-16 xl:pb-20 xl:pt-16">
     <h2 class="text-base font-semibold text-gray-800">Professional Background</h2>
     <dl class="mt-6 grid grid-cols-1 text-sm/6 sm:grid-cols-2">
       <div class="sm:pr-4">

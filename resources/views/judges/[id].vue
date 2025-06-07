@@ -48,7 +48,7 @@
           <!-- Judge Summary -->
           <div class="lg:col-start-3 lg:row-end-1">
             <h2 class="sr-only">Summary</h2>
-            <div class="rounded-lg bg-off-white shadow-sm ring-1 ring-gray-900/5 p-4">
+            <div class="rounded-lg bg-white shadow-sm ring-1 ring-gray-900/5 p-4">
               <dl class="flex flex-wrap">
                 <div class="flex-auto">
                   <dt class="text-sm/6 font-semibold text-gray-900">Overall Rating</dt>
