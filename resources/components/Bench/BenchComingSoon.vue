@@ -94,7 +94,7 @@ async function submitEmail() {
       <div class="mx-auto mt-16 flex lg:ml-10 lg:mr-0 lg:mt-0 sm:mt-24 xl:ml-32">
         <div class="max-w-3xl flex-none sm:max-w-5xl">
           <div class="rounded-xl p-2 lg:rounded-2xl lg:p-4">
-            <img src="/images/bench/hero_image.png"
+            <img src="/images/bench/hero-image.webp"
               alt="Illustration of the U.S. Supreme Court building at night with a warm, golden glow and subtle magical ambiance. The neoclassical architecture is highlighted under a twilight sky with soft, swirling clouds, evoking a slightly mystical, storybook atmosphere."
               class="w-[50rem] rounded-lg object-cover">
           </div>
