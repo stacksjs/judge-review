@@ -50,7 +50,7 @@ async function submitEmail() {
 <template>
   <div class="relative isolate overflow-hidden bg-off-white min-h-[calc(100vh-80px)]">
     <div class="mx-auto max-w-7xl px-6 pb-16 pt-10 lg:flex lg:px-8 lg:py-16 sm:pb-24">
-      <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0">
+      <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-2xl lg:flex-shrink-0">
         <div class="mt-24 lg:mt-16 sm:mt-32">
           <a href="#" class="inline-flex space-x-6">
             <span
