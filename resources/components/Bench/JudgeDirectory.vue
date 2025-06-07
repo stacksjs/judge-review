@@ -16,7 +16,7 @@
 </script> 
 
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+  <div class="min-h-screen">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <!-- Header Section -->
       <div class="text-center mb-16">
@@ -31,7 +31,7 @@
             <div class="relative">
               <input
                 type="text"
-                class="block w-full rounded-xl border-0 py-3 pl-12 pr-4 text-gray-900 bg-gray-50 ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-warm-brown sm:text-sm sm:leading-6 transition-all duration-200"
+                class="block w-full rounded-xl border-0 py-3 pl-12 pr-4 text-gray-900 bg-gray-50 ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-softBrown sm:text-sm sm:leading-6 transition-all duration-200"
                 placeholder="Search by name, court, or location..."
                 v-model="searchQuery"
               >
@@ -43,20 +43,20 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-4">
-            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-warm-brown sm:text-sm sm:leading-6 transition-all duration-200">
+            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-softBrown sm:text-sm sm:leading-6 transition-all duration-200">
               <option>All Courts</option>
               <option>Supreme Court</option>
               <option>Appellate Court</option>
               <option>District Court</option>
             </select>
-            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-warm-brown sm:text-sm sm:leading-6 transition-all duration-200">
+            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-softBrown sm:text-sm sm:leading-6 transition-all duration-200">
               <option>All States</option>
               <option>California</option>
               <option>New York</option>
               <option>Texas</option>
               <option>Florida</option>
             </select>
-            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-warm-brown sm:text-sm sm:leading-6 transition-all duration-200">
+            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-softBrown sm:text-sm sm:leading-6 transition-all duration-200">
               <option>Rating</option>
               <option>4+ Stars</option>
               <option>3+ Stars</option>
@@ -69,10 +69,10 @@
       <!-- Judges Grid -->
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <div v-for="judge in filteredJudges" :key="judge.id" 
-             class="group relative bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
+             class="group relative bg-off-gray rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 hover:border-softBrown">
           <div class="p-6">
             <div class="relative">
-              <div class="mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-gray-50 group-hover:ring-off-gray transition-all duration-300">
+              <div class="mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-gray-50 group-hover:ring-softBrown transition-all duration-300">
                 <img class="h-full w-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300" :src="judge.image" :alt="judge.name">
               </div>
               <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
@@ -100,10 +100,10 @@
           </div>
 
           <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white to-transparent h-24"></div>
-          <div class="relative bg-gray-50/80 backdrop-blur-sm px-6 py-4">
+          <div class="relative bg-off-gray-darker px-6 py-4">
             <div class="flex justify-center space-x-4">
               <router-link :to="`judges/${judge.id}/profile`" 
-                          class="items-center justify-center gap-x-2 rounded-lg bg-white/80 px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200/50 hover:bg-white hover:ring-gray-300/50 hover:text-gray-900 transition-all duration-200">
+                          class="items-center justify-center gap-x-2 rounded-lg bg-white/80 px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200/50 hover:bg-white hover:ring-softBrown hover:text-deepBrown transition-all duration-200">
                 <svg class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
                     <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
@@ -111,7 +111,7 @@
                 </router-link>
 
               <router-link :to="`judges/review/${judge.id}`"
-                class="items-center justify-center gap-x-2 rounded-lg bg-white/80 px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200/50 hover:bg-white hover:ring-gray-300/50 hover:text-gray-900 transition-all duration-200">
+                class="items-center justify-center gap-x-2 rounded-lg bg-white/80 px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200/50 hover:bg-white hover:ring-softBrown hover:text-deepBrown transition-all duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 text-gray-500">
                   <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
                 </svg>
