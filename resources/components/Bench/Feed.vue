@@ -1,5 +1,5 @@
 <template>
-  <div class="sm:rounded-lg border">
+  <div class="sm:rounded-lg border bg-off-gray">
     <div class="px-4 py-5 sm:p-6">
       <!-- Reviewer -->
       <div class="flex items-center justify-between">

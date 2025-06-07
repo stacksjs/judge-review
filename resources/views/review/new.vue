@@ -1,8 +1,10 @@
 <template>
-    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 mt-16">
+  <div class="min-h-screen bg-off-white py-10">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <ReviewForm />
-    </div>  
-  </template>
+    </div>
+  </div>
+</template> 
   
   <script setup lang="ts">
   defineOptions({

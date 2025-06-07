@@ -1,7 +1,7 @@
 <template>
   <div class="top-4">
     <!-- Trending Judges -->
-    <div class="rounded-lg border">
+    <div class="rounded-lg border bg-off-gray">
       <div class="p-4">
         <h2 class="text-base font-semibold text-gray-900">Trending Judges</h2>
         <div class="mt-4 space-y-4">
@@ -18,7 +18,7 @@
     </div>
 
     <!-- Recent Activity -->
-    <div class="mt-6 rounded-lg border">
+    <div class="mt-6 rounded-lg border bg-off-gray">
       <div class="p-4">
         <h2 class="text-base font-semibold text-gray-900">Recent Activity</h2>
         <div class="mt-4 flow-root">

@@ -41,11 +41,9 @@ const loadJudge = async (id: string) => {
 
 onMounted(async () => {
   const judgeId = route.params.id as string
-  if (!judgeId) {
-    router.push('/review')
-    return
+  if (judgeId) {
+    await loadJudge(judgeId)
   }
-  await loadJudge(judgeId)
 })
 
 const getRatingText = (value: number) => {
@@ -85,14 +83,20 @@ function handleCancel() {
 </script>
 
 <template>
-  <div v-if="judge" class="space-y-12">
-    <div class="pb-12">
-      <div>
-        <div class="text-center mb-8">
-          <img class="inline-block h-24 w-24 rounded-full ring-2 ring-white mb-4" :src="judge.imageUrl" :alt="judge.name" />
-          <h3 class="text-lg font-semibold text-gray-800">{{ judge.name }}</h3>
-          <p class="text-sm text-gray-600">{{ judge.court }}</p>
-          <p class="text-sm text-gray-600">{{ judge.department }}</p>
+  <div class="space-y-12">
+    <ReviewJudgeSearch v-if="!judge" class="mb-48"/>
+
+    <!-- Review Form - Only shown when judge is selected -->
+    <div v-else>
+      <!-- Review Header -->
+      <div class="pb-12">
+        <div>
+          <div class="text-center mb-8">
+            <img class="inline-block h-24 w-24 rounded-full ring-2 ring-white mb-4 filter grayscale" :src="judge.imageUrl" :alt="judge.name" />
+            <h3 class="text-lg font-semibold text-gray-800">{{ judge.name }}</h3>
+            <p class="text-sm text-gray-600">{{ judge.court }}</p>
+            <p class="text-sm text-gray-600">{{ judge.department }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -251,11 +255,12 @@ function handleCancel() {
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="mt-6 flex items-center justify-end gap-x-6">
-    <button type="button" @click="handleCancel" class="text-sm/6 font-semibold text-gray-700">Cancel</button>
-    <button @click="handleSubmit" class="rounded-sm bg-gray-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Submit Review</button>
+      <div class="mt-6 flex items-center justify-end gap-x-6">
+        <button type="button" @click="handleCancel" class="text-sm/6 font-semibold text-gray-700">Cancel</button>
+        <button @click="handleSubmit" class="rounded-sm bg-gray-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Submit Review</button>
+      </div>
+   
   </div>
 
   <Toaster position="top-right" />

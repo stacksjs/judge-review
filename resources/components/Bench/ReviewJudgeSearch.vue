@@ -39,7 +39,7 @@ const selectJudge = (judge: any) => {
 </script>
 
 <template>
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <div class="max-w-3xl mx-auto">
     <div class="text-center">
       <h2 class="text-2xl font-bold tracking-tight text-gray-900">Write a Review</h2>
       <p class="mt-2 text-sm text-gray-600">
@@ -64,7 +64,7 @@ const selectJudge = (judge: any) => {
               @click="selectJudge(judge)"
             >
               <div class="flex items-center">
-                <img :src="judge.imageUrl" class="h-10 w-10 rounded-full" :alt="judge.name">
+                <img :src="judge.imageUrl" class="h-10 w-10 rounded-full filter grayscale" :alt="judge.name">
                 <div class="ml-3">
                   <p class="text-sm font-medium text-gray-900">{{ judge.name }}</p>
                   <p class="text-sm text-gray-500">{{ judge.court }}</p>

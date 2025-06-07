@@ -1,6 +1,6 @@
 <template>
 <footer class="bg-off-white border-t border-gray-200">
-  <div class="mx-auto max-w-7xl px-6 py-8 md:flex md:items-center md:justify-between lg:px-8">
+  <div class="px-6 py-8 md:flex md:items-center md:justify-between lg:px-8">
     
     <div class="flex items-center gap-4 md:order-1 md:mt-0">
       <img src="/images/bench/uscourts.webp" alt="US Courts Logo" class="h-12 opacity-50" />

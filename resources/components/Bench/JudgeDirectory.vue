@@ -10,6 +10,7 @@
                   type="text"
                   class="block w-full rounded-md border-0 py-1.5 pl-10 pr-3 text-gray-900 bg-off-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
                   placeholder="Search judges..."
+                  v-model="searchQuery"
                 >
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                   <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -43,7 +44,7 @@
         </div>
   
         <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <li v-for="judge in judges" :key="judge.id" class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow">
+          <li v-for="judge in filteredJudges" :key="judge.id" class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow">
             <div class="flex flex-1 flex-col p-8">
               <div class="mx-auto h-32 w-32 overflow-hidden rounded-full">
                 <img class="h-full w-full object-cover filter grayscale" :src="judge.image" :alt="judge.name">
@@ -93,13 +94,51 @@
             </div>
           </li>
         </ul>
+
+        <!-- Pagination -->
+        <div class="mt-10 flex items-center justify-between border-t border-gray-200 px-4 py-3 sm:px-6">
+          <div class="flex flex-1 justify-between sm:hidden">
+            <a href="#" class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
+            <a href="#" class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
+          </div>
+          <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+            <div>
+              <p class="text-sm text-gray-700">
+                Showing <span class="font-medium">1</span> to <span class="font-medium">8</span> of <span class="font-medium">12</span> results
+              </p>
+            </div>
+            <div>
+              <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                <a href="#" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                  <span class="sr-only">Previous</span>
+                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-gray-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">1</a>
+                <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
+                <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
+                <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                  <span class="sr-only">Next</span>
+                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </template>
   
   <script setup lang="ts">
+  import { ref, computed } from 'vue'
+
+  const searchQuery = ref('')
+
   // Sample data - replace with actual data from your backend
-  const judges = [
+  const judges = ref([
     {
       id: 1,
       name: 'Hon. Sarah Johnson',
@@ -109,7 +148,6 @@
       rating: 4.5,
       reviewCount: 128,
       image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-      href: '#'
     },
     {
       id: 2,
@@ -140,6 +178,101 @@
       rating: 4.3,
       reviewCount: 112,
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      id: 5,
+      name: 'Hon. Emily Thompson',
+      court: 'District Court',
+      location: 'Illinois',
+      appointedYear: '2019',
+      rating: 4.6,
+      reviewCount: 143,
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      id: 6,
+      name: 'Hon. David Kim',
+      court: 'Appellate Court',
+      location: 'Washington',
+      appointedYear: '2018',
+      rating: 4.4,
+      reviewCount: 89,
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      id: 7,
+      name: 'Hon. Lisa Martinez',
+      court: 'Supreme Court',
+      location: 'Arizona',
+      appointedYear: '2020',
+      rating: 4.7,
+      reviewCount: 167,
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      id: 8,
+      name: 'Hon. Robert Taylor',
+      court: 'District Court',
+      location: 'Massachusetts',
+      appointedYear: '2017',
+      rating: 4.1,
+      reviewCount: 78,
+      image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      id: 9,
+      name: 'Hon. Patricia Lee',
+      court: 'Appellate Court',
+      location: 'Virginia',
+      appointedYear: '2019',
+      rating: 4.5,
+      reviewCount: 134,
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      id: 10,
+      name: 'Hon. Thomas Anderson',
+      court: 'Supreme Court',
+      location: 'Oregon',
+      appointedYear: '2018',
+      rating: 4.3,
+      reviewCount: 102,
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      id: 11,
+      name: 'Hon. Jennifer Garcia',
+      court: 'District Court',
+      location: 'Colorado',
+      appointedYear: '2020',
+      rating: 4.9,
+      reviewCount: 189,
+      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      id: 12,
+      name: 'Hon. William Brown',
+      court: 'Appellate Court',
+      location: 'Michigan',
+      appointedYear: '2017',
+      rating: 4.4,
+      reviewCount: 145,
+      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
     }
-  ]
+  ])
+
+  const filteredJudges = computed(() => {
+    if (!searchQuery.value) return judges.value
+    const query = searchQuery.value.toLowerCase()
+    return judges.value.filter(judge => 
+      judge.name.toLowerCase().includes(query) ||
+      judge.court.toLowerCase().includes(query) ||
+      judge.location.toLowerCase().includes(query)
+    )
+  })
+
+  // Export the computed property
+  defineExpose({
+    filteredJudges
+  })
   </script> 
