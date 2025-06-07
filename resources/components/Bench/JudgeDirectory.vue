@@ -87,39 +87,40 @@
               <p class="mt-2 text-sm text-gray-500">{{ judge.location }}</p>
               
               <div class="mt-4 flex items-center justify-center">
-                <div class="flex items-center">
-                  <svg v-for="star in 5" :key="star" 
+                  <div class="flex items-center">
+                    <svg v-for="star in 5" :key="star" 
                        :class="[star <= judge.rating ? 'text-yellow-400' : 'text-gray-200', 'h-5 w-5 flex-shrink-0']"
-                       viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
-                  </svg>
-                </div>
+                          viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
                 <span class="ml-2 text-sm text-gray-500">({{ judge.reviewCount }} reviews)</span>
               </div>
-            </div>
+                </div>
           </div>
 
           <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white to-transparent h-24"></div>
           <div class="relative bg-gray-50/80 backdrop-blur-sm px-6 py-4">
-            <div class="flex gap-3">
+            <div class="flex justify-center space-x-4">
               <router-link :to="`judges/${judge.id}/profile`" 
-                          class="flex-1 inline-flex items-center justify-center gap-x-2 rounded-lg bg-white/80 px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200/50 hover:bg-white hover:ring-gray-300/50 hover:text-gray-900 transition-all duration-200">
+                          class="items-center justify-center gap-x-2 rounded-lg bg-white/80 px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200/50 hover:bg-white hover:ring-gray-300/50 hover:text-gray-900 transition-all duration-200">
                 <svg class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
-                  <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
-                </svg>
-                View Profile
-              </router-link>
+                    <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                    <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                  </svg>
+                </router-link>
+
               <router-link :to="`judges/review/${judge.id}`"
-                          class="flex-1 inline-flex items-center justify-center gap-x-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:from-blue-500 hover:to-blue-600 transition-all duration-200">
-                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 2c-1.716 0-3.408.106-5.07.31C3.806 2.45 3 3.414 3 4.517V17.25a.75.75 0 001.075.676L10 15.082l5.925 2.844A.75.75 0 0017 17.25V4.517c0-1.103-.806-2.068-1.93-2.207A41.403 41.403 0 0010 2z" clip-rule="evenodd" />
+                class="items-center justify-center gap-x-2 rounded-lg bg-white/80 px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200/50 hover:bg-white hover:ring-gray-300/50 hover:text-gray-900 transition-all duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 text-gray-500">
+                  <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
                 </svg>
-                Write Review
+
+
               </router-link>
+              </div>
             </div>
           </div>
-        </div>
       </div>
 
       <!-- Pagination -->
@@ -132,7 +133,7 @@
               </svg>
               Previous
             </a>
-          </div>
+        </div>
           <div class="hidden md:-mt-px md:flex">
             <a href="#" class="inline-flex items-center border-t-2 border-blue-500 px-4 pt-4 text-sm font-medium text-blue-600">1</a>
             <a href="#" class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">2</a>
@@ -142,9 +143,9 @@
             <a href="#" class="inline-flex items-center border-t-2 border-transparent pt-4 pl-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
               Next
               <svg class="ml-3 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-              </svg>
-            </a>
+                  <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                </svg>
+              </a>
           </div>
         </nav>
       </div>
