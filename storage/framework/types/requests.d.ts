@@ -215,46 +215,6 @@ export interface CategorizableModelsRequestType extends Request {
 
 }
 
-interface RequestDataProject {
-  id: number
-  name: string
-  description: string
-  url: string
-  status: string
-  created_at?: string
-  updated_at?: string
-}
-export interface ProjectRequestType extends Request {
-  validate: (attributes?: CustomAttributes) => Promise<void>
-  get: <T = string>(element: string, defaultValue?: T) => T
-  all: () => RequestDataProject
-  id: number
-  name: string
-  description: string
-  url: string
-  status: string
-  created_at?: string
-  updated_at?: string
-}
-
-interface RequestDataSubscriberEmail {
-  id: number
-  email: string
-  deleted_at?: string
-  created_at?: string
-  updated_at?: string
-}
-export interface SubscriberEmailRequestType extends Request {
-  validate: (attributes?: CustomAttributes) => Promise<void>
-  get: <T = string>(element: string, defaultValue?: T) => T
-  all: () => RequestDataSubscriberEmail
-  id: number
-  email: string
-  deleted_at?: string
-  created_at?: string
-  updated_at?: string
-}
-
 interface RequestDataOauthAccessToken {
   id: number
   token: string
@@ -311,52 +271,20 @@ export interface OauthClientRequestType extends Request {
   updated_at?: string
 }
 
-interface RequestDataTeam {
+interface RequestDataEmailSubscription {
   id: number
-  name: string
-  company_name: string
   email: string
-  billing_email: string
-  status: string
-  description: string
-  path: string
-  is_personal: boolean
-  user_id: number
+  deleted_at?: string
   created_at?: string
   updated_at?: string
 }
-export interface TeamRequestType extends Request {
+export interface EmailSubscriptionRequestType extends Request {
   validate: (attributes?: CustomAttributes) => Promise<void>
   get: <T = string>(element: string, defaultValue?: T) => T
-  all: () => RequestDataTeam
+  all: () => RequestDataEmailSubscription
   id: number
-  name: string
-  company_name: string
   email: string
-  billing_email: string
-  status: string
-  description: string
-  path: string
-  is_personal: boolean
-  user_id: number
-  created_at?: string
-  updated_at?: string
-}
-
-interface RequestDataSubscriber {
-  id: number
-  subscribed: boolean
-  user_id: number
-  created_at?: string
-  updated_at?: string
-}
-export interface SubscriberRequestType extends Request {
-  validate: (attributes?: CustomAttributes) => Promise<void>
-  get: <T = string>(element: string, defaultValue?: T) => T
-  all: () => RequestDataSubscriber
-  id: number
-  subscribed: boolean
-  user_id: number
+  deleted_at?: string
   created_at?: string
   updated_at?: string
 }
@@ -389,30 +317,11 @@ export interface DeploymentRequestType extends Request {
   updated_at?: string
 }
 
-interface RequestDataRelease {
-  id: number
-  name: string
-  version: string
-  created_at?: string
-  updated_at?: string
-}
-export interface ReleaseRequestType extends Request {
-  validate: (attributes?: CustomAttributes) => Promise<void>
-  get: <T = string>(element: string, defaultValue?: T) => T
-  all: () => RequestDataRelease
-  id: number
-  name: string
-  version: string
-  created_at?: string
-  updated_at?: string
-}
-
 interface RequestDataUser {
   id: number
   name: string
   email: string
   password: string
-  team_id: number
   created_at?: string
   updated_at?: string
 }
@@ -424,7 +333,6 @@ export interface UserRequestType extends Request {
   name: string
   email: string
   password: string
-  team_id: number
   created_at?: string
   updated_at?: string
 }
@@ -441,7 +349,6 @@ interface RequestDataPersonalAccessToken {
   ip_address: string
   device_name: string
   is_single_use: boolean
-  team_id: number
   user_id: number
   created_at?: string
   updated_at?: string
@@ -461,7 +368,6 @@ export interface PersonalAccessTokenRequestType extends Request {
   ip_address: string
   device_name: string
   is_single_use: boolean
-  team_id: number
   user_id: number
   created_at?: string
   updated_at?: string
@@ -1759,4 +1665,4 @@ export interface ErrorRequestType extends Request {
   updated_at?: string
 }
 
-export type ModelRequest = MigrationsRequestType | PasswordResetsRequestType | PasskeysRequestType | CommentablesRequestType | CommentableUpvotesRequestType | CategorizableRequestType | TaggableRequestType | TaggableModelsRequestType | CategorizableModelsRequestTypeProjectRequestType | SubscriberEmailRequestType | OauthAccessTokenRequestType | OauthClientRequestType | TeamRequestType | SubscriberRequestType | DeploymentRequestType | ReleaseRequestType | UserRequestType | PersonalAccessTokenRequestType | PrintDeviceRequestType | CategoryRequestType | PaymentRequestType | DriverRequestType | WaitlistProductRequestType | DigitalDeliveryRequestType | ManufacturerRequestType | OrderItemRequestType | ShippingZoneRequestType | CustomerRequestType | ProductRequestType | ReceiptRequestType | ProductVariantRequestType | LicenseKeyRequestType | WaitlistRestaurantRequestType | ReviewRequestType | ProductUnitRequestType | GiftCardRequestType | OrderRequestType | CouponRequestType | TaxRateRequestType | TransactionRequestType | LoyaltyPointRequestType | ProductItemRequestType | LoyaltyRewardRequestType | ShippingMethodRequestType | ShippingRateRequestType | CartRequestType | DeliveryRouteRequestType | CartItemRequestType | PaymentProductRequestType | FailedJobRequestType | PaymentMethodRequestType | PageRequestType | AuthorRequestType | PostRequestType | PaymentTransactionRequestType | WebsocketRequestType | RequestRequestType | JobRequestType | LogRequestType | SubscriptionRequestType | ErrorRequestType
+export type ModelRequest = MigrationsRequestType | PasswordResetsRequestType | PasskeysRequestType | CommentablesRequestType | CommentableUpvotesRequestType | CategorizableRequestType | TaggableRequestType | TaggableModelsRequestType | CategorizableModelsRequestTypeOauthAccessTokenRequestType | OauthClientRequestType | EmailSubscriptionRequestType | DeploymentRequestType | UserRequestType | PersonalAccessTokenRequestType | PrintDeviceRequestType | CategoryRequestType | PaymentRequestType | DriverRequestType | WaitlistProductRequestType | DigitalDeliveryRequestType | ManufacturerRequestType | OrderItemRequestType | ShippingZoneRequestType | CustomerRequestType | ProductRequestType | ReceiptRequestType | ProductVariantRequestType | LicenseKeyRequestType | WaitlistRestaurantRequestType | ReviewRequestType | ProductUnitRequestType | GiftCardRequestType | OrderRequestType | CouponRequestType | TaxRateRequestType | TransactionRequestType | LoyaltyPointRequestType | ProductItemRequestType | LoyaltyRewardRequestType | ShippingMethodRequestType | ShippingRateRequestType | CartRequestType | DeliveryRouteRequestType | CartItemRequestType | PaymentProductRequestType | FailedJobRequestType | PaymentMethodRequestType | PageRequestType | AuthorRequestType | PostRequestType | PaymentTransactionRequestType | WebsocketRequestType | RequestRequestType | JobRequestType | LogRequestType | SubscriptionRequestType | ErrorRequestType

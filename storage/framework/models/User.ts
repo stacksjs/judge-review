@@ -45,7 +45,7 @@ export default {
     observe: true,
   },
 
-  hasOne: ['Subscriber', 'Driver', 'Author'],
+  hasOne: ['Driver', 'Author'],
   hasMany: [
     {
       model: 'PersonalAccessToken',
@@ -56,8 +56,6 @@ export default {
       foreignKey: 'user_id',
     },
   ],
-
-  belongsToMany: ['Team'],
 
   attributes: {
     name: {

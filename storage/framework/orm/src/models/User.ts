@@ -4,9 +4,7 @@ import type { AuthorModel } from './Author'
 import type { DriverModel } from './Driver'
 import type { OauthAccessTokenModel } from './OauthAccessToken'
 import type { PersonalAccessTokenModel } from './PersonalAccessToken'
-import type { SubscriberModel } from './Subscriber'
 import { randomUUIDv7 } from 'bun'
-
 import { sql } from '@stacksjs/database'
 
 import { HttpError } from '@stacksjs/error-handling'
@@ -61,7 +59,7 @@ export type UserUpdate = Updateable<UserWrite>
 
 export class UserModel extends BaseOrm<UserModel, UsersTable, UserJsonResponse> {
   private readonly hidden: Array<keyof UserJsonResponse> = ['password']
-  private readonly fillable: Array<keyof UserJsonResponse> = ['name', 'email', 'password', 'uuid', 'two_factor_secret', 'public_key', 'team_id']
+  private readonly fillable: Array<keyof UserJsonResponse> = ['name', 'email', 'password', 'uuid', 'two_factor_secret', 'public_key']
   private readonly guarded: Array<keyof UserJsonResponse> = []
   protected attributes = {} as UserJsonResponse
   protected originalAttributes = {} as UserJsonResponse
@@ -196,10 +194,6 @@ export class UserModel extends BaseOrm<UserModel, UsersTable, UserJsonResponse> 
     for (const [key, fn] of Object.entries(customSetter)) {
       (model as any)[key] = await fn()
     }
-  }
-
-  get subscriber(): SubscriberModel | undefined {
-    return this.attributes.subscriber
   }
 
   get driver(): DriverModel | undefined {
@@ -858,25 +852,6 @@ export class UserModel extends BaseOrm<UserModel, UsersTable, UserJsonResponse> 
     const instance = new UserModel(undefined)
 
     return instance.applyWhereIn<V>(column, values)
-  }
-
-  async userTeams() {
-    if (this.id === undefined)
-      throw new HttpError(500, 'Relation Error!')
-
-    const results = await DB.instance.selectFrom('teams')
-      .where('team_id', '=', this.id)
-      .selectAll()
-      .execute()
-
-    const tableRelationIds = results.map((result: { team_id: number }) => result.team_id)
-
-    if (!tableRelationIds.length)
-      throw new HttpError(500, 'Relation Error!')
-
-    const relationResults = await Team.whereIn('id', tableRelationIds).get()
-
-    return relationResults
   }
 
   toSearchableObject(): Partial<UserJsonResponse> {

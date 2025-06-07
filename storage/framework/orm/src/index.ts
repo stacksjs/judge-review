@@ -18,6 +18,8 @@ export { default as DigitalDelivery, type DigitalDeliveryJsonResponse, type Digi
 
 export { default as Driver, type DriverJsonResponse, type DriverUpdate, type NewDriver } from './models/Driver'
 
+export { default as EmailSubscription, type EmailSubscriptionJsonResponse, type EmailSubscriptionUpdate, type NewEmailSubscription } from './models/EmailSubscription'
+
 export { default as Error, type ErrorJsonResponse, type ErrorUpdate, type NewError } from './models/Error'
 
 export { default as FailedJob, type FailedJobJsonResponse, type FailedJobUpdate, type NewFailedJob } from './models/FailedJob'
@@ -68,11 +70,7 @@ export { type NewProductUnit, default as ProductUnit, type ProductUnitJsonRespon
 
 export { type NewProductVariant, default as ProductVariant, type ProductVariantJsonResponse, type ProductVariantUpdate } from './models/ProductVariant'
 
-export { type NewProject, default as Project, type ProjectJsonResponse, type ProjectUpdate } from './models/Project'
-
 export { type NewReceipt, default as Receipt, type ReceiptJsonResponse, type ReceiptUpdate } from './models/Receipt'
-
-export { type NewRelease, default as Release, type ReleaseJsonResponse, type ReleaseUpdate } from './models/Release'
 
 export { type NewRequest, default as Request, type RequestJsonResponse, type RequestUpdate } from './models/Request'
 
@@ -84,15 +82,9 @@ export { type NewShippingRate, default as ShippingRate, type ShippingRateJsonRes
 
 export { type NewShippingZone, default as ShippingZone, type ShippingZoneJsonResponse, type ShippingZoneUpdate } from './models/ShippingZone'
 
-export { type NewSubscriber, default as Subscriber, type SubscriberJsonResponse, type SubscriberUpdate } from './models/Subscriber'
-
-export { type NewSubscriberEmail, default as SubscriberEmail, type SubscriberEmailJsonResponse, type SubscriberEmailUpdate } from './models/SubscriberEmail'
-
 export { type NewSubscription, default as Subscription, type SubscriptionJsonResponse, type SubscriptionUpdate } from './models/Subscription'
 
 export { type NewTaxRate, default as TaxRate, type TaxRateJsonResponse, type TaxRateUpdate } from './models/TaxRate'
-
-export { type NewTeam, default as Team, type TeamJsonResponse, type TeamUpdate } from './models/Team'
 
 export { type NewTransaction, default as Transaction, type TransactionJsonResponse, type TransactionUpdate } from './models/Transaction'
 

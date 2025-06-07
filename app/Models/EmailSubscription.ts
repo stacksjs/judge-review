@@ -3,8 +3,8 @@ import type { Model } from '@stacksjs/types'
 import { schema } from '@stacksjs/validation'
 
 export default {
-  name: 'SubscriberEmail', // defaults to the sanitized file name
-  table: 'subscriber_emails', // defaults to the lowercase, plural name of the model name (or the name of the model file)
+  name: 'EmailSubscription', // defaults to the sanitized file name
+  table: 'email_subscriptions', // defaults to the lowercase, plural name of the model name (or the name of the model file)
   primaryKey: 'id', // defaults to `id`
   autoIncrement: true, // defaults to true
 

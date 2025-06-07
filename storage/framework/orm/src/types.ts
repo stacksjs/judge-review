@@ -8,6 +8,7 @@ import type { DeliveryRoutesTable } from '../src/models/DeliveryRoute'
 import type { DeploymentsTable } from '../src/models/Deployment'
 import type { DigitalDeliveriesTable } from '../src/models/DigitalDelivery'
 import type { DriversTable } from '../src/models/Driver'
+import type { EmailSubscriptionsTable } from '../src/models/EmailSubscription'
 import type { ErrorsTable } from '../src/models/Error'
 import type { FailedJobsTable } from '../src/models/FailedJob'
 import type { GiftCardsTable } from '../src/models/GiftCard'
@@ -33,36 +34,19 @@ import type { ProductsTable } from '../src/models/Product'
 import type { ProductItemsTable } from '../src/models/ProductItem'
 import type { ProductUnitsTable } from '../src/models/ProductUnit'
 import type { ProductVariantsTable } from '../src/models/ProductVariant'
-import type { ProjectsTable } from '../src/models/Project'
 import type { ReceiptsTable } from '../src/models/Receipt'
-import type { ReleasesTable } from '../src/models/Release'
 import type { RequestsTable } from '../src/models/Request'
 import type { ReviewsTable } from '../src/models/Review'
 import type { ShippingMethodsTable } from '../src/models/ShippingMethod'
 import type { ShippingRatesTable } from '../src/models/ShippingRate'
 import type { ShippingZonesTable } from '../src/models/ShippingZone'
-import type { SubscribersTable } from '../src/models/Subscriber'
-import type { SubscriberEmailsTable } from '../src/models/SubscriberEmail'
 import type { SubscriptionsTable } from '../src/models/Subscription'
 import type { TaxRatesTable } from '../src/models/TaxRate'
-import type { TeamsTable } from '../src/models/Team'
 import type { TransactionsTable } from '../src/models/Transaction'
 import type { UsersTable } from '../src/models/User'
 import type { WaitlistProductsTable } from '../src/models/WaitlistProduct'
 import type { WaitlistRestaurantsTable } from '../src/models/WaitlistRestaurant'
 import type { WebsocketsTable } from '../src/models/Websocket'
-
-export interface TeamsUsersTable {
-  id?: number
-  team_id: number
-  user_id: number
-}
-
-export interface TeamsUsersTable {
-  id?: number
-  user_id: number
-  team_id: number
-}
 
 export interface MigrationsTable {
   name: string
@@ -178,15 +162,10 @@ export interface QueryLogsTable {
   optimization_suggestions?: string
 }
 export interface Database {
-  projects: ProjectsTable
-  subscriber_emails: SubscriberEmailsTable
   oauth_access_tokens: OauthAccessTokensTable
   oauth_clients: OauthClientsTable
-  teams_users: TeamsUsersTable
-  teams: TeamsTable
-  subscribers: SubscribersTable
+  email_subscriptions: EmailSubscriptionsTable
   deployments: DeploymentsTable
-  releases: ReleasesTable
   users: UsersTable
   personal_access_tokens: PersonalAccessTokensTable
   print_devices: PrintDevicesTable

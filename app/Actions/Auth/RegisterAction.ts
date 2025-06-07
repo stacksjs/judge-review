@@ -16,7 +16,7 @@ export default new Action({
 
     await request.validate({
       email: {
-        rule: schema.string().email()
+        rule: schema.string().email(),
       },
 
       password: {
@@ -25,11 +25,11 @@ export default new Action({
           .matches(passwordConfirmation)
           .hasUppercase()
           .hasLowercase()
-          .hasNumbers()
+          .hasNumbers(),
       },
 
       name: {
-        rule: schema.string().min(2).max(255)
+        rule: schema.string().min(2).max(255),
       },
     })
 

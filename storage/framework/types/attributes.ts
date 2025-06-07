@@ -1,10 +1,6 @@
 export interface Attributes {
-  name: string
-  description: string
-  url: string
-  status: string
-  email: string
   token: string
+  name: string
   scopes: string
   revoked: boolean
   expires_at: Date | string
@@ -13,18 +9,14 @@ export interface Attributes {
   redirect: string
   personal_access_client: boolean
   password_client: boolean
-  company_name: string
-  billing_email: string
-  path: string
-  is_personal: boolean
-  subscribed: boolean
+  email: string
   commit_sha: string
   commit_message: string
   branch: string
+  status: string
   execution_time: number
   deploy_script: string
   terminal_output: string
-  version: string
   password: string
   plain_text_token: string
   abilities: string
@@ -38,6 +30,7 @@ export interface Attributes {
   terminal: string
   last_ping: number
   print_count: number
+  description: string
   image_url: string
   is_active: boolean
   parent_category_id: string
@@ -48,6 +41,7 @@ export interface Attributes {
   reference_number: string
   card_last_four: string
   card_brand: string
+  billing_email: string
   transaction_id: string
   payment_provider: string
   refund_amount: number
@@ -201,6 +195,7 @@ export interface Attributes {
   socket: string
   details: string
   time: number
+  path: string
   status_code: number
   duration_ms: number
   memory_usage: number
