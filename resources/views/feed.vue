@@ -20,21 +20,17 @@ useHead({
 
 <template>
   <div class="min-h-screen">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-6">
         <!-- Left Sidebar - Case Categories -->
-        <div class="hidden lg:block lg:col-span-3">
+        <div class="hidden lg:block lg:col-span-2 space-y-6">
           <CategoriesList :categories="categories" />
+          <LeftSidebar :trending-judges="trendingJudges" :recent-activity="recentActivity" />
         </div>
 
         <!-- Main Feed -->
-        <div class="col-span-1 lg:col-span-6">
+        <div class="col-span-1 lg:col-span-4">
           <ReviewsFeed :reviews="reviews" />
-        </div>
-
-        <!-- Right Sidebar -->
-        <div class="hidden lg:block lg:col-span-3">
-          <RightSidebar :trending-judges="trendingJudges" :recent-activity="recentActivity" />
         </div>
       </div>
     </div>

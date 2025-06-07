@@ -99,7 +99,7 @@
                 </div>
           </div>
 
-          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white to-transparent h-24"></div>
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-warm-gray to-transparent h-24"></div>
           <div class="relative bg-off-gray-darker px-6 py-4">
             <div class="flex justify-center space-x-4">
               <router-link :to="`judges/${judge.id}/profile`" 

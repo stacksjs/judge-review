@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import type { BenchReviews } from '@/types/bench';
 
@@ -38,7 +37,7 @@ useHead({
 
       <div class="review-content relative">
         <div v-html="review.content" class="text-lg text-gray-700 space-y-6 line-clamp-10"></div>
-        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-off-white to-transparent"></div>
+        <BlurReview />
       </div>
 
       <PaywallCta />

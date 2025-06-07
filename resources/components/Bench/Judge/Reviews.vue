@@ -96,7 +96,7 @@ const reviews = [
           <div class="mt-4 text-sm text-gray-500">
             <div class="relative">
               <p class="line-clamp-4">{{ review.content }}</p>
-              <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+              <BlurReview />
             </div>
             <div class="mt-2">
               <router-link 
