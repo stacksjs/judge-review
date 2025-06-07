@@ -63,7 +63,7 @@ async function submitEmail() {
           Transparency in the Chambers of Secret
         </h1>
 
-        <blockquote class="mt-8 border-l-4 border-gray-300 pl-4 italic">
+        <blockquote class="mt-8 border-l-4 border-gray-300 pl-4 italic ml-4">
           <p class="text-gray-700 leading-8">
             "Publicity is justly commended as a remedy for social and industrial diseases. Sunlight is said to be the
             best of disinfectants; electric light the most efficient policeman."
