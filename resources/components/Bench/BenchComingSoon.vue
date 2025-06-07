@@ -67,8 +67,18 @@ async function submitEmail() {
           Transparency in the Judiciary Starts Here
         </h1>
 
+        <blockquote class="mt-6 border-l-4 border-gray-300 pl-4 italic">
+          <p class="text-gray-700 leading-8">
+            "Publicity is justly commended as a remedy for social and industrial diseases. Sunlight is said to be the best of disinfectants; electric light the most efficient policeman."
+          </p>
+          <footer class="mt-2 text-sm text-gray-500">
+            — Justice Louis D. Brandeis, "What Publicity Can Do," 1913
+          </footer>
+        </blockquote>
+
         <p class="mt-6 text-lg text-gray-600 leading-8">
-          The first-ever platform dedicated to judicial transparency. Read and share experiences with judges across the country. Like Glassdoor for the judiciary, we're empowering citizens to make informed decisions about their legal representatives.
+          Like Glassdoor but for the judiciary. Written by clerks.
+          Empowering citizens to make informed decisions about their legal representatives.
         </p>
 
         <div class="mt-10">
