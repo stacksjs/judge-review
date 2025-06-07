@@ -60,7 +60,7 @@ async function submitEmail() {
         </div>
 
         <h1 class="mt-12 text-4xl text-gray-900 font-bold tracking-tight sm:text-6xl">
-          Transparency in the Chambers of Secret
+          Transparency in the US Chambers of Secret
         </h1>
 
         <blockquote class="mt-8 border-l-4 border-gray-300 pl-4 italic ml-4">
