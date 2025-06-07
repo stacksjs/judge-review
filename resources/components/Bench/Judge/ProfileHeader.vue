@@ -20,7 +20,7 @@ const copyProfileLink = () => {
     <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <div class="mx-auto flex max-w-2xl items-center justify-between gap-x-8 lg:mx-0 lg:max-w-none">
         <div class="flex items-center gap-x-6">
-          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-16 flex-none rounded-full ring-1 ring-gray-900/10">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-16 flex-none rounded-full ring-1 ring-gray-900/10 filter grayscale">
           <h1>
             <div class="text-sm/6 text-gray-500">Judge <span class="text-gray-700">#12345</span></div>
             <div class="mt-1 text-base font-semibold text-gray-900">Hon. Sarah Johnson</div>
