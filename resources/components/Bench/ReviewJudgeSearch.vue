@@ -1,28 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { judges } from '../../functions/judges'
 
 const router = useRouter()
 const searchQuery = ref('')
-const isSearching = ref(false)
 
-// Mock data for now - this would come from your API
-const judges = ref([
-  {
-    id: '1',
-    name: 'Hon. Sarah Johnson',
-    court: 'Superior Court of California',
-    department: 'San Francisco County, Department 15',
-    imageUrl: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80'
-  },
-  {
-    id: '2',
-    name: 'Hon. Michael Chen',
-    court: 'Superior Court of California',
-    department: 'San Francisco County, Department 12',
-    imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-  }
-])
 
 const filteredJudges = computed(() => {
   if (!searchQuery.value) return []
@@ -64,7 +47,7 @@ const selectJudge = (judge: any) => {
               @click="selectJudge(judge)"
             >
               <div class="flex items-center">
-                <img :src="judge.imageUrl" class="h-10 w-10 rounded-full filter grayscale" :alt="judge.name">
+                <img :src="judge.image" class="h-10 w-10 rounded-full filter grayscale" :alt="judge.name">
                 <div class="ml-3">
                   <p class="text-sm font-medium text-gray-900">{{ judge.name }}</p>
                   <p class="text-sm text-gray-500">{{ judge.court }}</p>

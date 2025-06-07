@@ -27,9 +27,8 @@ interface Judge {
 
 const judge = ref<Judge | null>(null)
 
-// Mock data - replace with actual API call
-const loadJudge = async (id: string) => {
-  // Simulating API call
+
+async function loadJudge(id: number) {
   judge.value = {
     id: '1',
     name: 'Hon. Sarah Johnson',
@@ -40,7 +39,8 @@ const loadJudge = async (id: string) => {
 }
 
 onMounted(async () => {
-  const judgeId = route.params.id as string
+  const judgeId = route.params.id
+
   if (judgeId) {
     await loadJudge(judgeId)
   }
@@ -60,17 +60,18 @@ const getRatingText = (value: number) => {
 const ratingText = computed(() => getRatingText(hoverRating.value || rating.value))
 
 function handleSubmit() {
-  const reviewData = {
-    judgeId: judge.value?.id,
-    title: reviewTitle.value,
-    content: reviewContent.value,
-    ratings: {
-      overall: rating.value,
-      fairness: fairness.value,
-      knowledge: knowledge.value,
-      demeanor: demeanor.value
-    }
-  }
+  // const reviewData = {
+  //   judgeId: judge.value?.id,
+  //   title: reviewTitle.value,
+  //   content: reviewContent.value,
+  //   ratings: {
+  //     overall: rating.value,
+  //     fairness: fairness.value,
+  //     knowledge: knowledge.value,
+  //     demeanor: demeanor.value
+  //   }
+    
+  // }
   
   // Send the review data to your backend
   notification('Review Submitted')
