@@ -105,6 +105,7 @@ declare global {
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
   const isTruthy: typeof import('../core/browser/src/utils/guards')['isTruthy']
+  const judges: typeof import('../../../resources/functions/judges')['judges']
   const lazy: typeof import('../core/browser/src/utils/lazy')['lazy']
   const letter: typeof import('../core/browser/src/utils/regex')['letter']
   const linefeed: typeof import('../core/browser/src/utils/regex')['linefeed']
@@ -554,6 +555,7 @@ declare module 'vue' {
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly isTruthy: UnwrapRef<typeof import('../core/browser/src/utils/guards')['isTruthy']>
+    readonly judges: UnwrapRef<typeof import('../../../resources/functions/judges')['judges']>
     readonly lazy: UnwrapRef<typeof import('../core/browser/src/utils/lazy')['lazy']>
     readonly letter: UnwrapRef<typeof import('../core/browser/src/utils/regex')['letter']>
     readonly linefeed: UnwrapRef<typeof import('../core/browser/src/utils/regex')['linefeed']>

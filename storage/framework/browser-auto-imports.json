@@ -150,6 +150,7 @@
     "isReadonly": true,
     "isRef": true,
     "isTruthy": true,
+    "judges": true,
     "lazy": true,
     "letter": true,
     "linefeed": true,
