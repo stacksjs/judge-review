@@ -3,7 +3,7 @@
   <div class="px-6 py-8 md:flex md:items-center md:justify-between lg:px-8">
     <div class="flex items-center gap-4 md:order-1 md:mt-0">
       <img src="/images/bench/uscourts.webp" alt="US Courts Logo" class="h-12 opacity-50" />
-      <p class="text-center text-sm/6 text-gray-600">&copy; 2025 Bench Review. All rights reserved. Made with <a href="https://github.com/stacksjs/stacks" class="text-gray-600 hover:text-gray-800">Stacks.js</a></p>
+      <p class="text-center text-sm/6 text-gray-600">&copy; 2025 Bench Review. All rights reserved. Built with <a href="https://github.com/stacksjs/stacks" class="text-gray-600 hover:text-gray-800">Stacks</a>.</p>
     </div>
 
     <div class="flex justify-center gap-x-6 md:order-2">

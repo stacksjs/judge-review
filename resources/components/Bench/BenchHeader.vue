@@ -1,7 +1,7 @@
 <template>
     <header class="z-10">
       <nav class="mx-auto flex items-center justify-between p-6 lg:px-8 border-b bg-off-white" aria-label="Global">
-        <div class="flex items-center gap-x-8">
+        <div class="flex items-center gap-x-16">
           <router-link to="/">
             <span class="sr-only">Judge Review</span>
             <img class="h-12" src="/images/bench/logo.png" alt="">
