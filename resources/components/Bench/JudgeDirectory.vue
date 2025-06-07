@@ -31,7 +31,7 @@
             <div class="relative">
               <input
                 type="text"
-                class="block w-full rounded-xl border-0 py-3 pl-12 pr-4 text-gray-900 bg-gray-50 ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6 transition-all duration-200"
+                class="block w-full rounded-xl border-0 py-3 pl-12 pr-4 text-gray-900 bg-gray-50 ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-warm-brown sm:text-sm sm:leading-6 transition-all duration-200"
                 placeholder="Search by name, court, or location..."
                 v-model="searchQuery"
               >
@@ -43,20 +43,20 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-4">
-            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6 transition-all duration-200">
+            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-warm-brown sm:text-sm sm:leading-6 transition-all duration-200">
               <option>All Courts</option>
               <option>Supreme Court</option>
               <option>Appellate Court</option>
               <option>District Court</option>
             </select>
-            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6 transition-all duration-200">
+            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-warm-brown sm:text-sm sm:leading-6 transition-all duration-200">
               <option>All States</option>
               <option>California</option>
               <option>New York</option>
               <option>Texas</option>
               <option>Florida</option>
             </select>
-            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6 transition-all duration-200">
+            <select class="rounded-xl border-0 bg-gray-50 py-3 pl-4 pr-10 text-gray-900 ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-warm-brown sm:text-sm sm:leading-6 transition-all duration-200">
               <option>Rating</option>
               <option>4+ Stars</option>
               <option>3+ Stars</option>
@@ -72,18 +72,18 @@
              class="group relative bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
           <div class="p-6">
             <div class="relative">
-              <div class="mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-gray-50 group-hover:ring-blue-50 transition-all duration-300">
+              <div class="mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-gray-50 group-hover:ring-off-gray transition-all duration-300">
                 <img class="h-full w-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300" :src="judge.image" :alt="judge.name">
               </div>
               <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                <span class="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                <span class="inline-flex items-center rounded-full bg-warm-gray px-3 py-1 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-700/10">
                   {{ judge.court }}
                 </span>
               </div>
             </div>
             
             <div class="mt-8 text-center">
-              <h3 class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">{{ judge.name }}</h3>
+              <h3 class="text-xl font-semibold text-gray-900 group-hover:text-deep-brown transition-colors duration-200">{{ judge.name }}</h3>
               <p class="mt-2 text-sm text-gray-500">{{ judge.location }}</p>
               
               <div class="mt-4 flex items-center justify-center">
@@ -135,7 +135,7 @@
             </a>
         </div>
           <div class="hidden md:-mt-px md:flex">
-            <a href="#" class="inline-flex items-center border-t-2 border-blue-500 px-4 pt-4 text-sm font-medium text-blue-600">1</a>
+            <a href="#" class="inline-flex items-center border-t-2 border-soft-brown px-4 pt-4 text-sm font-medium text-soft-brown">1</a>
             <a href="#" class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">2</a>
             <a href="#" class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">3</a>
           </div>
