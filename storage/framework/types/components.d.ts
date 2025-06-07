@@ -117,6 +117,7 @@ declare module 'vue' {
     PrimaryFeatures: typeof import('./../defaults/components/Marketing/PrimaryFeatures.vue')['default']
     PrimaryFeatures2: typeof import('./../defaults/components/Marketing/PrimaryFeatures2.vue')['default']
     Profile: typeof import('./../../../resources/components/Bench/Judge/Profile.vue')['default']
+    ProfileHeader: typeof import('./../../../resources/components/Bench/Judge/ProfileHeader.vue')['default']
     QueueForm: typeof import('./../defaults/components/Dashboard/Settings/Forms/QueueForm.vue')['default']
     QueueTable: typeof import('./../defaults/components/Dashboard/Queue/QueueTable.vue')['default']
     RadioGroupCode: typeof import('./../defaults/components/Docs/Demo/RadioGroupCode.md')['default']

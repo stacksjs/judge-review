@@ -1,3 +1,36 @@
+<script setup lang="ts">
+const route = useRoute()
+const reviews = [
+  {
+    id: 1,
+    name: 'Michael Chen',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    rating: 5,
+    date: '2 weeks ago',
+    content: 'Judge Johnson was extremely thorough and fair in handling my case. She took the time to understand all the details and made sure everyone had a chance to be heard. Her knowledge of the law is impressive, and she maintains a professional yet approachable demeanor in the courtroom.',
+    helpfulCount: 12
+  },
+  {
+    id: 2,
+    name: 'Sarah Williams',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    rating: 4,
+    date: '1 month ago',
+    content: 'While I didn\'t get the outcome I was hoping for, I appreciate Judge Johnson\'s clear explanation of her decision and the legal reasoning behind it. She was respectful to all parties involved and maintained excellent control of the courtroom.',
+    helpfulCount: 8
+  },
+  {
+    id: 3,
+    name: 'Robert Davis',
+    avatar: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    rating: 5,
+    date: '2 months ago',
+    content: 'One of the most prepared and knowledgeable judges I\'ve appeared before. She asks insightful questions and ensures that all legal procedures are followed correctly. Her courtroom is well-organized and efficient.',
+    helpfulCount: 15
+  }
+]
+</script>
+
 <template>
   <div class="-mx-4 px-4 py-8 shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg sm:px-8 sm:pb-14 lg:col-span-2 lg:row-span-2 lg:row-end-2 xl:px-16 xl:pb-20 xl:pt-16">
     <!-- Overall Rating Summary -->
@@ -14,7 +47,7 @@
         </div>
       </div>
       <div class="flex items-center space-x-4">
-        <router-link to="/review/new" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
+        <router-link :to="`/review/${route.params.id}`" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
           Write a Review
         </router-link>
       </div>
@@ -85,37 +118,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-const reviews = [
-  {
-    id: 1,
-    name: 'Michael Chen',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    rating: 5,
-    date: '2 weeks ago',
-    content: 'Judge Johnson was extremely thorough and fair in handling my case. She took the time to understand all the details and made sure everyone had a chance to be heard. Her knowledge of the law is impressive, and she maintains a professional yet approachable demeanor in the courtroom.',
-    helpfulCount: 12
-  },
-  {
-    id: 2,
-    name: 'Sarah Williams',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    rating: 4,
-    date: '1 month ago',
-    content: 'While I didn\'t get the outcome I was hoping for, I appreciate Judge Johnson\'s clear explanation of her decision and the legal reasoning behind it. She was respectful to all parties involved and maintained excellent control of the courtroom.',
-    helpfulCount: 8
-  },
-  {
-    id: 3,
-    name: 'Robert Davis',
-    avatar: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    rating: 5,
-    date: '2 months ago',
-    content: 'One of the most prepared and knowledgeable judges I\'ve appeared before. She asks insightful questions and ensures that all legal procedures are followed correctly. Her courtroom is well-organized and efficient.',
-    helpfulCount: 15
-  }
-]
-</script>
 
 <style scoped>
 .line-clamp-4 {

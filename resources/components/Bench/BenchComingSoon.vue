@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Toaster, notification } from '@stacksjs/notification'
+
 interface ApiError {
   errors: Array<{
     message: string;
@@ -8,17 +10,12 @@ interface ApiError {
 // Reactive state for the email input
 const email = ref('')
 const loading = ref(false)
-const errors = ref<Array<{ message: string }>>([])
-const successMessage = ref('')
 
 // Method to handle email submission
 async function submitEmail() {
   const body = {
     email: email.value,
   }
-
-  errors.value = []
-  successMessage.value = ''
 
   const url = 'http://localhost:3008/api/email/subscribe'
 
@@ -36,13 +33,13 @@ async function submitEmail() {
 
     if (!response.ok) {
       const errs = await response.json() as ApiError
-      errors.value = errs.errors
+      notification.error(errs.errors[0]?.message || 'An error occurred. Please try again.')
     }
     else {
-      successMessage.value = 'Thanks! Stay tuned for more updates.'
+      notification.success('Thanks! Stay tuned for more updates.')
     }
   } catch (error) {
-    errors.value = [{ message: 'An error occurred. Please try again.' }]
+    notification.error('An error occurred. Please try again.')
   }
 
   email.value = ''
@@ -54,9 +51,6 @@ async function submitEmail() {
   <div class="relative isolate overflow-hidden bg-off-white min-h-screen">
     <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 lg:flex lg:px-8 lg:py-20 sm:pb-32">
       <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-40">
-        <!-- <img class="h-11" src="https://tailwindui.com/img/logos/mark.svg?color=blue&amp;shade=600" alt="Your Company"> -->
-        <Logo class="h-11 w-auto" />
-
         <div class="mt-24 lg:mt-16 sm:mt-32">
           <a href="#" class="inline-flex space-x-6">
             <span class="rounded-full bg-gray-600/10 px-3 py-1 text-sm text-gray-600 font-semibold leading-6 ring-1 ring-gray-600/10 ring-inset">Coming soon</span>
@@ -91,12 +85,6 @@ async function submitEmail() {
                 :disabled="loading"
                 class="block w-full bg-off-gray rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
               >
-              <div v-if="successMessage" class="absolute left-0 mt-2 text-sm text-green-600">
-                {{ successMessage }}
-              </div>
-              <div v-if="errors.length > 0" class="absolute left-0 mt-2 text-sm text-red-600">
-                {{ errors[0]?.message }}
-              </div>
             </div>
             <button 
               type="submit"
@@ -117,4 +105,5 @@ async function submitEmail() {
       </div>
     </div>
   </div>
+  <Toaster position="top-right" />
 </template>
