@@ -59,11 +59,11 @@ async function submitEmail() {
           </a>
         </div>
 
-        <h1 class="mt-10 text-4xl text-gray-900 font-bold tracking-tight sm:text-6xl">
+        <h1 class="mt-12 text-4xl text-gray-900 font-bold tracking-tight sm:text-6xl">
           Transparency in the Chambers of Secret
         </h1>
 
-        <blockquote class="mt-6 border-l-4 border-gray-300 pl-4 italic">
+        <blockquote class="mt-8 border-l-4 border-gray-300 pl-4 italic">
           <p class="text-gray-700 leading-8">
             "Publicity is justly commended as a remedy for social and industrial diseases. Sunlight is said to be the
             best of disinfectants; electric light the most efficient policeman."
@@ -73,12 +73,12 @@ async function submitEmail() {
           </footer>
         </blockquote>
 
-        <p class="mt-6 text-lg text-gray-600 leading-8">
+        <p class="mt-8 text-lg text-gray-600 leading-8">
           Like Glassdoor but for the judiciary. Written by clerks, so you can get a glimpse into
           the inner workings of the court system.
         </p>
 
-        <div class="mt-10">
+        <div class="mt-12">
           <form @submit.prevent="submitEmail" class="flex max-w-md gap-x-4">
             <div class="relative flex-auto">
               <input type="email" v-model="email" placeholder="Enter your email" required :disabled="loading"
