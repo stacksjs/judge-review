@@ -77,8 +77,7 @@ async function submitEmail() {
         </blockquote>
 
         <p class="mt-6 text-lg text-gray-600 leading-8">
-          Like Glassdoor but for the judiciary. Written by clerks.
-          Empowering citizens to make informed decisions about their legal representatives.
+          Like Glassdoor but for the judiciary. Written by clerks, so you can get a glimpse into the inner workings of the court system.
         </p>
 
         <div class="mt-10">
