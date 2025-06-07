@@ -105,6 +105,7 @@ const config: UnoConfig = {
       offBrown: '#f8f5e8',
       offWhite: '#F9F7F1',
       offGray: '#FFFDF9',
+      offWhiteDarker: '#EAE3CE',
     },
     extend: {
       colors: {

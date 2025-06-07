@@ -38,3 +38,18 @@ export interface BenchNotification {
   time: string
   unread: boolean
 }
+
+export interface Stats {
+  totalReviews: number
+  judgesReviewed: number
+  averageRating: number
+  helpfulVotes: number
+}
+
+
+export interface User {
+  id: string
+  name: string
+  imageUrl: string
+  joinDate: string
+}

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { judges } from '../../functions/judges'
+import { judges } from '../../functions/sample'
 
 const router = useRouter()
 const searchQuery = ref('')

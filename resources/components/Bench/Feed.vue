@@ -5,7 +5,7 @@
       <div class="flex items-center justify-between">
         <div class="flex items-center">
           <router-link :to="`/profile/${review.author.id}`" class="flex-shrink-0">
-            <img class="h-8 w-8 rounded-full" :src="review.author.imageUrl" :alt="review.author.name" />
+            <img class="h-8 w-8 rounded-full filter grayscale" :src="review.author.imageUrl" :alt="review.author.name" />
           </router-link>
           <div class="ml-2">
             <p class="text-sm font-medium text-gray-900">
