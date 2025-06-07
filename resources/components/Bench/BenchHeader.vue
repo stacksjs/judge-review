@@ -4,7 +4,7 @@
         <div class="flex items-center gap-x-16">
           <router-link to="/">
             <span class="sr-only">Judge Review</span>
-            <img class="h-12" src="/images/bench/logo.png" alt="">
+            <img class="h-16" src="/images/bench/logo.png" alt="">
           </router-link>
           <div v-if="!comingSoon" class="hidden lg:flex lg:gap-x-8">
             <router-link 
