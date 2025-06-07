@@ -168,7 +168,7 @@ export const reviews = [
     rating: 4,
     comments: 5,
     type: 'Criminal',
-    status: 'Closed'
+    status: 'In Progress'
   },
   {
     id: 2,
@@ -216,7 +216,7 @@ export const reviews = [
     likes: 32,
     comments: 7,
     type: 'Family',
-    status: 'Closed'
+    status: 'Pending'
   },
   {
     id: 4,
@@ -239,7 +239,7 @@ export const reviews = [
     likes: 15,
     comments: 2,
     type: 'Probate',
-    status: 'Closed'
+    status: 'Pending'
   },
   {
     id: 5,
@@ -262,7 +262,7 @@ export const reviews = [
     likes: 21,
     comments: 4,
     type: 'Bankruptcy',
-    status: 'Closed'
+    status: 'In Progress'
   }
 ]
 
