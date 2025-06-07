@@ -24,7 +24,7 @@ async function submitRegistration() {
 }
 
 useHead({
-  title: 'Register - The Chamber of Secrets',
+  title: 'Register - Bench Review',
   meta: [
     { name: 'description', content: 'Register for an account to get unlimited access to detailed judge reviews, ratings, and insights from legal professionals.' },
   ],

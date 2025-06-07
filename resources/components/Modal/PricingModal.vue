@@ -12,13 +12,13 @@
     <div class="mx-auto mt-12 max-w-md">
       <div class="rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
         <div class="flex items-center justify-between">
-          <h3 id="tier-hobby" class="text-2xl font-bold text-gray-600">Hobby</h3>
+          <h3 id="tier-hobby" class="text-2xl font-bold text-gray-600">Professional</h3>
           <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-800">Popular</span>
         </div>
-        <p class="mt-4 text-base text-gray-600">Perfect for those who need to review more judges and want advanced features.</p>
+        <p class="mt-4 text-base text-gray-600">For anyone curious about judge reviews.</p>
         <div class="mt-6">
           <div class="flex items-baseline gap-x-1">
-            <span class="text-5xl font-bold tracking-tight text-gray-900">$5</span>
+            <span class="text-5xl font-bold tracking-tight text-gray-900">$10</span>
             <span class="text-lg font-semibold text-gray-600">/month</span>
           </div>
           <p class="mt-2 text-sm text-gray-500">Billed monthly. Cancel anytime.</p>

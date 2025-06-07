@@ -4,7 +4,7 @@
       <div class="text-center">
         <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Want to read more?</h3>
         <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
-          Get unlimited access to detailed judge reviews, ratings, and insights from legal professionals.
+          Get unlimited access to detailed judge reviews, ratings, and insights from legal professionals—plus powerful search and filtering to find exactly what you are looking for.
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a href="/register" class="rounded-md bg-gray-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
