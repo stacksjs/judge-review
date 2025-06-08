@@ -19,10 +19,10 @@
               Find Judges
             </router-link>
             <router-link 
-              to="/review/new" 
+              to="/review" 
               class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
               :class="[
-                route.path === '/review/new' 
+                route.path === '/review' 
                   ? 'border-gray-500 text-gray-600' 
                   : 'border-transparent hover:border-gray-500'
               ]"

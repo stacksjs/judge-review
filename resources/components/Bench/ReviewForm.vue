@@ -16,6 +16,7 @@ const knowledge = ref(0)
 const hoverKnowledge = ref(0)
 const demeanor = ref(0)
 const hoverDemeanor = ref(0)
+const isAnonymous = ref(false)
 
 interface Judge {
   id: string;
@@ -84,7 +85,7 @@ function handleCancel() {
 </script>
 
 <template>
-  <div class="space-y-12">
+  <div class="space-y-12 pb-32">
     <ReviewJudgeSearch v-if="!judge" class="mb-48"/>
 
     <!-- Review Form - Only shown when judge is selected -->
@@ -116,8 +117,9 @@ function handleCancel() {
               name="title"
               id="title"
               v-model="reviewTitle"
+              :disabled="!judge"
               placeholder="Brief summary of your experience"
-              class="block w-full rounded-md bg-off-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6"
+              class="block w-full rounded-md bg-off-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6 disabled:opacity-50 disabled:cursor-not-allowed"
             >
           </div>
         </div>
@@ -131,7 +133,8 @@ function handleCancel() {
                   v-for="star in 5" 
                   :key="star"
                   type="button"
-                  class="text-gray-300 hover:text-yellow-400 focus:outline-none"
+                  :disabled="!judge"
+                  class="text-gray-300 hover:text-yellow-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                   :class="{ 'text-yellow-400': star <= (hoverFairness || fairness) }"
                   @click="fairness = star"
                   @mouseenter="hoverFairness = star"
@@ -154,7 +157,8 @@ function handleCancel() {
                   v-for="star in 5" 
                   :key="star"
                   type="button"
-                  class="text-gray-300 hover:text-yellow-400 focus:outline-none"
+                  :disabled="!judge"
+                  class="text-gray-300 hover:text-yellow-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                   :class="{ 'text-yellow-400': star <= (hoverKnowledge || knowledge) }"
                   @click="knowledge = star"
                   @mouseenter="hoverKnowledge = star"
@@ -177,7 +181,8 @@ function handleCancel() {
                   v-for="star in 5" 
                   :key="star"
                   type="button"
-                  class="text-gray-300 hover:text-yellow-400 focus:outline-none"
+                  :disabled="!judge"
+                  class="text-gray-300 hover:text-yellow-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                   :class="{ 'text-yellow-400': star <= (hoverDemeanor || demeanor) }"
                   @click="demeanor = star"
                   @mouseenter="hoverDemeanor = star"
@@ -198,27 +203,94 @@ function handleCancel() {
         <div class="sm:col-span-3">
           <label for="case-number" class="block text-sm/6 font-medium text-gray-700">Case Number (Optional)</label>
           <div class="mt-2">
-            <input type="text" name="case-number" id="case-number" class="block w-full rounded-md bg-off-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6">
+            <input 
+              type="text" 
+              name="case-number" 
+              id="case-number" 
+              :disabled="!judge"
+              class="block w-full rounded-md bg-off-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
           </div>
         </div>
 
         <div class="sm:col-span-3">
           <label for="case-date" class="block text-sm/6 font-medium text-gray-700">Case Date (Optional)</label>
           <div class="mt-2">
-            <input type="date" name="case-date" id="case-date" class="block w-full rounded-md bg-off-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6">
+            <input 
+              type="date" 
+              name="case-date" 
+              id="case-date" 
+              :disabled="!judge"
+              class="block w-full rounded-md bg-off-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
           </div>
         </div>
 
         <div class="col-span-full">
           <label for="role" class="block text-sm/6 font-medium text-gray-700">Your Role in the Case</label>
           <div class="mt-2">
-            <select id="role" name="role" class="block w-full rounded-md bg-off-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6">
+            <select 
+              id="role" 
+              name="role" 
+              :disabled="!judge"
+              class="block w-full rounded-md bg-off-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600 sm:text-sm/6 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
               <option>Attorney</option>
               <option>Party to the Case</option>
               <option>Court Staff</option>
               <option>Observer</option>
               <option>Other</option>
             </select>
+          </div>
+        </div>
+
+        <div class="col-span-full">
+          <div class="relative flex items-start">
+            <div class="flex h-6 items-center">
+              <button
+                type="button"
+                :disabled="!judge"
+                @click="isAnonymous = !isAnonymous"
+                :class="[
+                  isAnonymous ? 'bg-gray-600' : 'bg-gray-200',
+                  'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
+                ]"
+              >
+                <span
+                  :class="[
+                    isAnonymous ? 'translate-x-5' : 'translate-x-0',
+                    'pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out'
+                  ]"
+                >
+                  <span
+                    :class="[
+                      isAnonymous ? 'opacity-0 duration-100 ease-out' : 'opacity-100 duration-200 ease-in',
+                      'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity'
+                    ]"
+                    aria-hidden="true"
+                  >
+                    <svg class="h-3 w-3 text-gray-400" fill="none" viewBox="0 0 12 12">
+                      <path d="M4 8l2-2m0 0l2-2M6 6L4 4m2 2l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span
+                    :class="[
+                      isAnonymous ? 'opacity-100 duration-200 ease-in' : 'opacity-0 duration-100 ease-out',
+                      'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity'
+                    ]"
+                    aria-hidden="true"
+                  >
+                    <svg class="h-3 w-3 text-gray-600" fill="currentColor" viewBox="0 0 12 12">
+                      <path d="M3.707 5.293a1 1 0 00-1.414 1.414l1.414-1.414zM5 8l-.707.707a1 1 0 001.414 0L5 8zm4.707-3.293a1 1 0 00-1.414-1.414l1.414 1.414zm-7.414 2l2 2 1.414-1.414-2-2-1.414 1.414zm3.414 2l4-4-1.414-1.414-4 4 1.414 1.414z" />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div class="ml-3 text-sm leading-6">
+              <label for="anonymous" class="font-medium text-gray-700">Post anonymously</label>
+              <p class="text-gray-500">Your name will not be displayed with this review</p>
+            </div>
           </div>
         </div>
       </div>
@@ -232,7 +304,8 @@ function handleCancel() {
                 v-for="star in 5" 
                 :key="star"
                 type="button"
-                class="text-gray-300 hover:text-yellow-400 focus:outline-none"
+                :disabled="!judge"
+                class="text-gray-300 hover:text-yellow-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                 :class="{ 'text-yellow-400': star <= (hoverRating || rating) }"
                 @click="rating = star"
                 @mouseenter="hoverRating = star"
@@ -250,7 +323,10 @@ function handleCancel() {
         <div class="col-span-full">
           <label for="review" class="block text-sm/6 font-medium text-gray-700">Your Review</label>
           <div class="mt-2">
-            <RichTextEditor v-model="reviewContent" />
+            <RichTextEditor 
+              v-model="reviewContent" 
+              :disabled="!judge"
+            />
           </div>
           <p class="mt-3 text-sm/6 text-gray-600">Please be specific about your experience and maintain a professional tone.</p>
         </div>

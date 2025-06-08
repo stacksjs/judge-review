@@ -15,7 +15,7 @@
                 <router-link to="/judges"
                   class="rounded-sm bg-gray-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Find
                   a Judge</router-link>
-                <router-link to="/review/new" class="text-sm/6 font-semibold text-gray-700">Write a Review <span
+                <router-link to="/review" class="text-sm/6 font-semibold text-gray-700">Write a Review <span
                     aria-hidden="true">→</span></router-link>
               </div>
             </div>

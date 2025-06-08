@@ -82,6 +82,7 @@ const review: BenchReviews = {
     </div>
     <PricingSection />
     <TestimonialsSection />
+    <CallToAction />
   </main>
 
 </template>

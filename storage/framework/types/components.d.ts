@@ -24,7 +24,7 @@ declare module 'vue' {
     BenchHeader: typeof import('./../../../resources/components/Bench/BenchHeader.vue')['default']
     BlurReview: typeof import('./../../../resources/components/Bench/BlurReview.vue')['default']
     CacheForm: typeof import('./../defaults/components/Dashboard/Settings/Forms/CacheForm.vue')['default']
-    CallToAction: typeof import('./../defaults/components/Marketing/CallToAction.vue')['default']
+    CallToAction: typeof import('./../../../resources/components/Bench/CallToAction.vue')['default']
     CardBrands: typeof import('./../defaults/components/Dashboard/Billing/CardBrands.vue')['default']
     CardForm: typeof import('./../defaults/components/Dashboard/Billing/CardForm.vue')['default']
     Cases: typeof import('./../../../resources/components/Bench/Judge/Cases.vue')['default']

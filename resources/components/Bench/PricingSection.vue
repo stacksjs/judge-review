@@ -26,7 +26,7 @@
       </div>
 
       <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2">
-        <div class="rounded-3xl p-8 ring-1 ring-gray-200">
+        <div class="rounded-3xl p-8 ring-1 ring-gray-200 bg-white">
           <h3 id="tier-free" class="text-lg/8 font-semibold text-gray-800">Free</h3>
           <p class="mt-4 text-sm/6 text-gray-600">Are you a clerk? This is for you.</p>
           <p class="mt-6 flex items-baseline gap-x-1">
@@ -58,7 +58,7 @@
             </li>
           </ul>
         </div>
-        <div class="rounded-3xl p-8 ring-2 ring-gray-600">
+        <div class="rounded-3xl p-8 ring-2 ring-gray-600 bg-white">
           <h3 id="tier-hobby" class="text-lg/8 font-semibold text-gray-600">Professional</h3>
           <p class="mt-4 text-sm/6 text-gray-600">For anyone curious about judge reviews.</p>
           <p class="mt-6 flex items-baseline gap-x-1">
