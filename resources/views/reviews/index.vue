@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { categories, reviews, trendingJudges, recentActivity } from '../functions/sample'
+import { categories, reviews, trendingJudges, recentActivity } from '../../functions/sample'
 
 defineOptions({
   name: 'FeedPage',
@@ -20,7 +20,7 @@ useHead({
 
 <template>
   <div class="min-h-screen">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 pb-32">
       <div class="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-6">
         <!-- Left Sidebar - Case Categories -->
         <div class="hidden lg:block lg:col-span-2 space-y-6">

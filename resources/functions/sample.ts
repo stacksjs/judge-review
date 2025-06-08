@@ -3,10 +3,13 @@ export const judges = ref([
   {
     id: 1,
     name: 'Hon. Sarah Johnson',
-    court: 'Supreme Court',
     location: 'California',
     appointedYear: '2018',
     rating: 4.5,
+    court: {
+      name: 'Supreme Court',
+      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 128,
     department: 'San Francisco County, Department 15',
     image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
@@ -14,10 +17,13 @@ export const judges = ref([
   {
     id: 2,
     name: 'Hon. Michael Chen',
-    court: 'Appellate Court',
     location: 'New York',
     appointedYear: '2019',
     rating: 4.2,
+    court: {
+      name: 'Appellate Court',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 95,
     department: 'San Francisco County, Department 12',
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
@@ -25,10 +31,13 @@ export const judges = ref([
   {
     id: 3,
     name: 'Hon. Maria Rodriguez',
-    court: 'District Court',
     location: 'Texas',
     appointedYear: '2020',
     rating: 4.8,
+    court: {
+      name: 'District Court',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 156,
     department: 'San Francisco County, Department 12',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
@@ -36,10 +45,13 @@ export const judges = ref([
   {
     id: 4,
     name: 'Hon. James Wilson',
-    court: 'Supreme Court',
     location: 'Florida',
     appointedYear: '2017',
     rating: 4.3,
+    court: {
+      name: 'Supreme Court',
+      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 112,
     department: 'San Francisco County, Department 12',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
@@ -47,10 +59,13 @@ export const judges = ref([
   {
     id: 5,
     name: 'Hon. Emily Thompson',
-    court: 'District Court',
     location: 'Illinois',
     appointedYear: '2019',
     rating: 4.6,
+    court: {
+      name: 'District Court',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 143,
     department: 'San Francisco County, Department 12',
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
@@ -58,10 +73,13 @@ export const judges = ref([
   {
     id: 6,
     name: 'Hon. David Kim',
-    court: 'Appellate Court',
     location: 'Washington',
     appointedYear: '2018',
     rating: 4.4,
+    court: {
+      name: 'Appellate Court',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 89,
     department: 'San Francisco County, Department 15',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
@@ -69,10 +87,13 @@ export const judges = ref([
   {
     id: 7,
     name: 'Hon. Lisa Martinez',
-    court: 'Supreme Court',
     location: 'Arizona',
     appointedYear: '2020',
     rating: 4.7,
+    court: {
+      name: 'Supreme Court',
+      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 167,
     department: 'San Francisco County, Department 15',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
@@ -80,10 +101,13 @@ export const judges = ref([
   {
     id: 8,
     name: 'Hon. Robert Taylor',
-    court: 'District Court',
     location: 'Massachusetts',
     appointedYear: '2017',
     rating: 4.1,
+    court: {
+      name: 'District Court',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 78,
     department: 'San Francisco County, Department 15',
     image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
@@ -91,10 +115,13 @@ export const judges = ref([
   {
     id: 9,
     name: 'Hon. Patricia Lee',
-    court: 'Appellate Court',
     location: 'Virginia',
     appointedYear: '2019',
     rating: 4.5,
+    court: {
+      name: 'Appellate Court',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 134,
     department: 'San Francisco County, Department 15',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
@@ -102,10 +129,13 @@ export const judges = ref([
   {
     id: 10,
     name: 'Hon. Thomas Anderson',
-    court: 'Supreme Court',
     location: 'Oregon',
     appointedYear: '2018',
     rating: 4.3,
+    court: {
+      name: 'Supreme Court',
+      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 102,
     department: 'San Francisco County, Department 15',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
@@ -113,10 +143,13 @@ export const judges = ref([
   {
     id: 11,
     name: 'Hon. Jennifer Garcia',
-    court: 'District Court',
     location: 'Colorado',
     appointedYear: '2020',
     rating: 4.9,
+    court: {
+      name: 'District Court',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 189,
     department: 'San Francisco County, Department 15',
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
@@ -124,10 +157,13 @@ export const judges = ref([
   {
     id: 12,
     name: 'Hon. William Brown',
-    court: 'Appellate Court',
     location: 'Michigan',
     appointedYear: '2017',
     rating: 4.4,
+    court: {
+      name: 'Appellate Court',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80'
+    },
     reviewCount: 145,
     department: 'San Francisco County, Department 15',
     image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
@@ -154,7 +190,10 @@ export const reviews = [
     judge: {
       id: '123',
       name: 'Hon. Sarah Johnson',
-      court: 'Superior Court',
+      court: {
+        name: 'Superior Court',
+        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+      },
       imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
     title: 'Topnotch Judicial Excellence!',
@@ -180,7 +219,10 @@ export const reviews = [
     judge: {
       id: '456',
       name: 'Hon. Robert Davis',
-      court: 'Appellate Court',
+      court: {
+        name: 'Appellate Court',
+        image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+      },
       imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
     title: 'A Masterclass in Judicial Excellence!',
@@ -205,7 +247,10 @@ export const reviews = [
     judge: {
       id: '789',
       name: 'Hon. Maria Garcia',
-      court: 'Family Court',
+      court: {
+        name: 'Family Court',
+        image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+      },
       imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
     title: 'Compassionate and Fair in Family Matters',
@@ -228,7 +273,10 @@ export const reviews = [
     judge: {
       id: '101',
       name: 'Hon. James Wilson',
-      court: 'Probate Court',
+      court: {
+        name: 'Probate Court',
+        image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+      },
       imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
     title: 'Efficient Probate Proceedings',
@@ -251,7 +299,10 @@ export const reviews = [
     judge: {
       id: '202',
       name: 'Hon. Emily Thompson',
-      court: 'Bankruptcy Court',
+      court: {
+        name: 'Bankruptcy Court',
+        image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+      },
       imageUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
     },
     title: 'Clear Guidance Through Bankruptcy',

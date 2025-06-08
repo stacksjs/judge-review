@@ -76,7 +76,7 @@ const review: BenchReviews = {
 
   <main>
     <HeroSection />
-    <div>
+    <div class="pt-32">
       <ArticleHeader :review="review" />
       <Article :review="review" />
     </div>

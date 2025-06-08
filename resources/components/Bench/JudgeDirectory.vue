@@ -9,7 +9,7 @@
     const query = searchQuery.value.toLowerCase()
     return judges.value.filter(judge => 
       judge.name.toLowerCase().includes(query) ||
-      judge.court.toLowerCase().includes(query) ||
+      judge.court.name.toLowerCase().includes(query) ||
       judge.location.toLowerCase().includes(query)
     )
   })
@@ -68,16 +68,31 @@
 
       <!-- Judges Grid -->
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div v-for="judge in filteredJudges" :key="judge.id" 
-             class="group relative bg-off-gray rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 hover:border-softBrown">
-          <div class="p-6">
+        <router-link 
+          v-for="judge in filteredJudges" 
+          :key="judge.id"
+          :to="`judges/${judge.id}/profile`"
+          class="group relative bg-off-gray rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 hover:border-softBrown"
+        >
+          <!-- Background Image Container -->
+          <div class="absolute inset-0 z-0">
+            <img 
+              :src="judge.court.image" 
+              :alt="`${judge.court.name} courthouse`"
+              class="h-full w-full object-cover opacity-10 group-hover:opacity-30 transition-all duration-300"
+            >
+            <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/80 group-hover:from-white/60 group-hover:via-white/30 group-hover:to-white/70 transition-all duration-300"></div>
+          </div>
+
+          <!-- Content Container -->
+          <div class="relative z-10 p-6">
             <div class="relative">
               <div class="mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-gray-50 group-hover:ring-softBrown transition-all duration-300">
                 <img class="h-full w-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300" :src="judge.image" :alt="judge.name">
               </div>
               <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
                 <span class="inline-flex items-center rounded-full bg-warm-gray px-3 py-1 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-700/10">
-                  {{ judge.court }}
+                  {{ judge.court.name }}
                 </span>
               </div>
             </div>
@@ -87,40 +102,18 @@
               <p class="mt-2 text-sm text-gray-500">{{ judge.location }}</p>
               
               <div class="mt-4 flex items-center justify-center">
-                  <div class="flex items-center">
-                    <svg v-for="star in 5" :key="star" 
-                       :class="[star <= judge.rating ? 'text-yellow-400' : 'text-gray-200', 'h-5 w-5 flex-shrink-0']"
-                          viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
-                    </svg>
-                  </div>
-                <span class="ml-2 text-sm text-gray-500">({{ judge.reviewCount }} reviews)</span>
-              </div>
-                </div>
-          </div>
-
-          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-warm-gray to-transparent h-24"></div>
-          <div class="relative bg-off-gray-darker px-6 py-4">
-            <div class="flex justify-center space-x-4">
-              <router-link :to="`judges/${judge.id}/profile`" 
-                          class="items-center justify-center gap-x-2 rounded-lg bg-white/80 px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200/50 hover:bg-white hover:ring-softBrown hover:text-deepBrown transition-all duration-200">
-                <svg class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
-                    <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                <div class="flex items-center">
+                  <svg v-for="star in 5" :key="star" 
+                     :class="[star <= judge.rating ? 'text-yellow-400' : 'text-gray-200', 'h-5 w-5 flex-shrink-0']"
+                        viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
                   </svg>
-                </router-link>
-
-              <router-link :to="`judges/review/${judge.id}`"
-                class="items-center justify-center gap-x-2 rounded-lg bg-white/80 px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200/50 hover:bg-white hover:ring-softBrown hover:text-deepBrown transition-all duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 text-gray-500">
-                  <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
-                </svg>
-
-
-              </router-link>
+                </div>
+                <span class="ml-2 text-sm text-gray-500">({{ judge.reviewCount }} reviews)</span>
               </div>
             </div>
           </div>
+        </router-link>
       </div>
 
       <!-- Pagination -->

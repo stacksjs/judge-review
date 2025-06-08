@@ -18,6 +18,19 @@
             >
               Find Judges
             </router-link>
+
+            <router-link 
+              to="/courts" 
+              class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
+              :class="[
+                route.path === '/courts' 
+                  ? 'border-gray-500 text-gray-600' 
+                  : 'border-transparent hover:border-gray-500'
+              ]"
+            >
+              Find Court Houses
+            </router-link>
+
             <router-link 
               to="/review" 
               class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
@@ -30,15 +43,26 @@
               Write Review
             </router-link>
             <router-link 
-              to="/feed" 
+              to="/reviews" 
               class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
               :class="[
-                route.path === '/feed' 
+                route.path === '/reviews' 
                   ? 'border-gray-500 text-gray-600' 
                   : 'border-transparent hover:border-gray-500'
               ]"
             >
-              Feed
+              Reviews
+            </router-link>
+            <router-link 
+              to="/blog" 
+              class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
+              :class="[
+                route.path === '/blog' 
+                  ? 'border-gray-500 text-gray-600' 
+                  : 'border-transparent hover:border-gray-500'
+              ]"
+            >
+              Blog
             </router-link>
           </div>
         </div>
@@ -147,6 +171,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   comingSoon: false
 })
+
+const comingSoon = props.comingSoon
 
 // This would typically come from your auth store
 const isAuthenticated = ref(false)

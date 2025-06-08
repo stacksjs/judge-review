@@ -7,7 +7,10 @@ export interface BenchAuthor {
 export interface Judge {
   id: string
   name: string
-  court: string
+  court: {
+    name: string
+    image: string
+  }
   imageUrl: string
 }
 
