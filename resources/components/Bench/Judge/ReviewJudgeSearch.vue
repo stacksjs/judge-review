@@ -11,7 +11,7 @@ const filteredJudges = computed(() => {
   if (!searchQuery.value) return []
   return judges.value.filter(judge => 
     judge.name.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-    judge.court.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+    judge.court.name.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
     judge.department.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 })
@@ -50,7 +50,7 @@ const selectJudge = (judge: any) => {
                 <img :src="judge.image" class="h-10 w-10 rounded-full filter grayscale" :alt="judge.name">
                 <div class="ml-3">
                   <p class="text-sm font-medium text-gray-900">{{ judge.name }}</p>
-                  <p class="text-sm text-gray-500">{{ judge.court }}</p>
+                  <p class="text-sm text-gray-500">{{ judge.court.name }}</p>
                   <p class="text-xs text-gray-500">{{ judge.department }}</p>
                 </div>
               </div>

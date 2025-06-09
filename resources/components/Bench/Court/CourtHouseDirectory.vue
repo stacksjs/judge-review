@@ -66,32 +66,26 @@ const filteredCourtHouses = computed(() => {
           v-for="court in filteredCourtHouses" 
           :key="court.id"
           :to="`courts/${court.id}/profile`"
-          class="group relative bg-off-gray rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 hover:border-softBrown"
+          class="group relative bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 hover:border-softBrown"
         >
-          <!-- Background Image Container -->
-          <div class="absolute inset-0 z-0">
+          <!-- Main Image Container -->
+          <div class="relative h-48 w-full">
             <img 
               :src="court.image" 
               :alt="`${court.name} courthouse`"
-              class="h-full w-full object-cover opacity-10 group-hover:opacity-30 transition-all duration-300"
+              class="h-full w-full object-cover"
             >
-            <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/80 group-hover:from-white/60 group-hover:via-white/30 group-hover:to-white/70 transition-all duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-700/10">
+                {{ court.state }}
+              </span>
+            </div>
           </div>
 
           <!-- Content Container -->
-          <div class="relative z-10 p-6">
-            <div class="relative">
-              <div class="mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-gray-50 group-hover:ring-softBrown transition-all duration-300">
-                <img class="h-full w-full object-cover" :src="court.image" :alt="court.name">
-              </div>
-              <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                <span class="inline-flex items-center rounded-full bg-warm-gray px-3 py-1 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-700/10">
-                  {{ court.state }}
-                </span>
-              </div>
-            </div>
-            
-            <div class="mt-8 text-center">
+          <div class="p-6">
+            <div class="text-center">
               <h3 class="text-xl font-semibold text-gray-900 group-hover:text-deep-brown transition-colors duration-200">{{ court.name }}</h3>
               <p class="mt-2 text-sm text-gray-500">{{ court.city }}, {{ court.state }}</p>
               <p class="mt-1 text-sm text-gray-500">{{ court.address }}</p>
