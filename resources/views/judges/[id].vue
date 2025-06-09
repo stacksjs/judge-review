@@ -1,9 +1,9 @@
 <template>
   <div>
     <main>
-      <ProfileHeader />
+      <ProfileHeader :judge="judge" />
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div>
+        <div> 
           <div class="grid grid-cols-1 sm:hidden">
             <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
             <select aria-label="Select a tab" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-2 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600">
@@ -103,4 +103,19 @@
 
 <script setup lang="ts">
 const route = useRoute()
+
+const judge = {
+  id: 1,
+  name: 'John Doe',
+  court: {
+    id: 1,
+    name: 'Supreme Court',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    address: '123 Main St, Anytown, USA',
+    city: 'Anytown',
+    state: 'CA',
+    zipCode: '12345',
+  },
+  photo: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+}
 </script>

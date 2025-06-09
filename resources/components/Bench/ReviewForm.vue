@@ -94,7 +94,7 @@ function handleCancel() {
       <div class="pb-12">
         <div>
           <div class="text-center mb-8">
-            <img class="inline-block h-24 w-24 rounded-full ring-2 ring-white mb-4 filter grayscale" :src="judge.imageUrl" :alt="judge.name" />
+            <img class="inline-block h-24 w-24 rounded-full ring-2 ring-white mb-4 filter grayscale" :src="judge.photo" :alt="judge.name" />
             <h3 class="text-lg font-semibold text-gray-800">{{ judge.name }}</h3>
             <p class="text-sm text-gray-600">{{ judge.court }}</p>
             <p class="text-sm text-gray-600">{{ judge.department }}</p>

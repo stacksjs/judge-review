@@ -64,6 +64,7 @@
     "anyOf": true,
     "asyncComputed": true,
     "autoResetRef": true,
+    "blogPosts": true,
     "breakpointsAntDesign": true,
     "breakpointsBootstrapV5": true,
     "breakpointsMasterCss": true,

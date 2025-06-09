@@ -22,6 +22,8 @@ declare module 'vue' {
     BenchComingSoon: typeof import('./../../../resources/components/Bench/BenchComingSoon.vue')['default']
     BenchFooter: typeof import('./../../../resources/components/Bench/BenchFooter.vue')['default']
     BenchHeader: typeof import('./../../../resources/components/Bench/BenchHeader.vue')['default']
+    Blog: typeof import('./../../../resources/components/Bench/Blog/Blog.vue')['default']
+    BlogHeader: typeof import('./../../../resources/components/Bench/Blog/BlogHeader.vue')['default']
     BlurReview: typeof import('./../../../resources/components/Bench/BlurReview.vue')['default']
     CacheForm: typeof import('./../defaults/components/Dashboard/Settings/Forms/CacheForm.vue')['default']
     CallToAction: typeof import('./../../../resources/components/Bench/CallToAction.vue')['default']

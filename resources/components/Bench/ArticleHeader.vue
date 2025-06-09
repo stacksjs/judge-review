@@ -38,7 +38,7 @@ const review = props.review
             </span>
             <h2 class="text-lg font-semibold text-gray-900">Reviewing</h2>
             <div class="mt-1 flex items-center justify-end">
-              <img class="h-10 w-10 rounded-full" :src="review.judge.imageUrl" :alt="review.judge.name">
+              <img class="h-10 w-10 rounded-full" :src="review.judge.photo" :alt="review.judge.name">
               <div class="ml-3">
                 <p class="text-sm font-medium text-gray-900">{{ review.judge.name }}</p>
                 <p class="text-sm text-gray-500">{{ review.judge.court }}</p>

@@ -6,7 +6,7 @@
         <h2 class="text-base font-semibold text-gray-900">Trending Judges</h2>
         <div class="mt-4 space-y-4">
           <div v-for="judge in trendingJudges" :key="judge.id" class="flex items-center space-x-3">
-            <img class="h-8 w-8 rounded-full filter grayscale" :src="judge.imageUrl" :alt="judge.name" />
+            <img class="h-8 w-8 rounded-full filter grayscale" :src="judge.photo" :alt="judge.name" />
             <div class="min-w-0 flex-1">
               <p class="text-sm font-medium text-gray-900">{{ judge.name }}</p>
               <p class="text-sm text-gray-500">{{ judge.court }}</p>

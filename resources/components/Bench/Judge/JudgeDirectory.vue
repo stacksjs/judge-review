@@ -88,7 +88,7 @@
           <div class="relative z-10 p-6">
             <div class="relative">
               <div class="mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-gray-50 group-hover:ring-softBrown transition-all duration-300">
-                <img class="h-full w-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300" :src="judge.image" :alt="judge.name">
+                <img class="h-full w-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300" :src="judge.photo" :alt="judge.name">
               </div>
               <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
                 <span class="inline-flex items-center rounded-full bg-warm-gray px-3 py-1 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-700/10">

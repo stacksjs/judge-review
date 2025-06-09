@@ -16,6 +16,7 @@ declare global {
   const asyncComputed: typeof import('../core/browser/src/utils/vendors')['asyncComputed']
   const autoResetRef: typeof import('../core/browser/src/utils/vendors')['autoResetRef']
   const batchInvoke: typeof import('../core/browser/src/utils/function')['batchInvoke']
+  const blogPosts: typeof import('../../../resources/functions/sample')['blogPosts']
   const breakpointsAntDesign: typeof import('../core/browser/src/utils/vendors')['breakpointsAntDesign']
   const breakpointsBootstrapV5: typeof import('../core/browser/src/utils/vendors')['breakpointsBootstrapV5']
   const breakpointsMasterCss: typeof import('../core/browser/src/utils/vendors')['breakpointsMasterCss']
@@ -474,6 +475,7 @@ declare module 'vue' {
     readonly anyOf: UnwrapRef<typeof import('../core/browser/src/utils/regex')['anyOf']>
     readonly asyncComputed: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['autoResetRef']>
+    readonly blogPosts: UnwrapRef<typeof import('../../../resources/functions/sample')['blogPosts']>
     readonly breakpointsAntDesign: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['breakpointsAntDesign']>
     readonly breakpointsBootstrapV5: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['breakpointsBootstrapV5']>
     readonly breakpointsMasterCss: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['breakpointsMasterCss']>

@@ -132,7 +132,7 @@ useHead({
             <div class="px-4 py-5 sm:p-6">
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                  <img class="h-10 w-10 rounded-full" :src="review.judge.imageUrl" :alt="review.judge.name" />
+                  <img class="h-10 w-10 rounded-full" :src="review.judge.photo" :alt="review.judge.name" />
                   <div class="ml-3">
                     <h3 class="text-sm font-medium text-gray-800">
                       <router-link :to="`/judges/${review.judge.id}`" class="hover:underline">

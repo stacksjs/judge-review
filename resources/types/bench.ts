@@ -18,7 +18,7 @@ export interface Judge {
   id: string
   name: string
   court: CourtHouse
-  imageUrl: string
+  photo: string
 }
 
 export interface BenchReviews {
@@ -61,4 +61,17 @@ export interface User {
   name: string
   imageUrl: string
   joinDate: string
+}
+
+export interface BlogPost {
+  id: number
+  author: {
+    id: number
+    name: string
+    imageUrl: string
+  }
+  title: string
+  content: string
+  date: string
+  dateTime: string
 }

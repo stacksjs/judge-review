@@ -1,13 +1,36 @@
 <script setup lang="ts">
+import type { Judge } from '@/types/bench';
+
+const props = defineProps<{
+  judge: Judge
+}>()
+
+const judge = props.judge
+
 const showCopiedFeedback = ref(false)
 
-const copyProfileLink = () => {
+const shareProfile = async () => {
   const url = window.location.href
-  navigator.clipboard.writeText(url)
-  showCopiedFeedback.value = true
-  setTimeout(() => {
-    showCopiedFeedback.value = false
-  }, 2000)
+  const title = 'Judge Profile'
+  
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title,
+        url,
+      })
+    } catch (err) {
+      // User cancelled or share failed
+      console.error('Error sharing:', err)
+    }
+  } else {
+    // Fallback to copy
+    navigator.clipboard.writeText(url)
+    showCopiedFeedback.value = true
+    setTimeout(() => {
+      showCopiedFeedback.value = false
+    }, 2000)
+  }
 }
 </script>
 
@@ -30,11 +53,11 @@ const copyProfileLink = () => {
           <button 
             type="button" 
             class="hidden text-sm/6 font-semibold text-gray-900 sm:block"
-            @click="copyProfileLink"
+            @click="shareProfile"
           >
-            {{ showCopiedFeedback ? 'Copied!' : 'Copy Profile Link' }}
+            {{ showCopiedFeedback ? 'Copied!' : 'Share Profile' }}
           </button>
-          <router-link to="/review" class="hidden text-sm/6 font-semibold text-gray-900 sm:block">Write Review</router-link>
+          <router-link :to="`/review/judge/${judge.id}`" class="hidden text-sm/6 font-semibold text-gray-900 sm:block">Write Review</router-link>
           <a href="#" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Follow</a>
 
           <div class="relative sm:hidden">
@@ -46,7 +69,7 @@ const copyProfileLink = () => {
             </button>
 
             <div class="absolute right-0 z-10 mt-0.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="more-menu-button" tabindex="-1">
-              <button type="button" class="block w-full px-3 py-1 text-left text-sm/6 text-gray-900" role="menuitem" tabindex="-1" id="more-menu-item-0">Share Profile</button>
+              <button type="button" class="block w-full px-3 py-1 text-left text-sm/6 text-gray-900" role="menuitem" tabindex="-1" id="more-menu-item-0" @click="shareProfile">Share Profile</button>
               <router-link to="/review" class="block px-3 py-1 text-sm/6 text-gray-900" role="menuitem" tabindex="-1" id="more-menu-item-1">Write Review</router-link>
             </div>
           </div>
