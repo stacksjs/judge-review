@@ -1,6 +1,12 @@
 export interface Attributes {
-  token: string
   name: string
+  image: string
+  address: string
+  city: string
+  state: string
+  zip_code: string
+  image_url: string
+  token: string
   scopes: string
   revoked: boolean
   expires_at: Date | string
@@ -10,13 +16,6 @@ export interface Attributes {
   personal_access_client: boolean
   password_client: boolean
   email: string
-  commit_sha: string
-  commit_message: string
-  branch: string
-  status: string
-  execution_time: number
-  deploy_script: string
-  terminal_output: string
   password: string
   plain_text_token: string
   abilities: string
@@ -28,10 +27,10 @@ export interface Attributes {
   mac_address: string
   location: string
   terminal: string
+  status: string | string[]
   last_ping: number
   print_count: number
   description: string
-  image_url: string
   is_active: boolean
   parent_category_id: string
   display_order: number
@@ -176,7 +175,6 @@ export interface Attributes {
   product_name: string
   product_sku: string
   product_image: string
-  image: string
   provider_id: string
   connection: string
   queue: string

@@ -215,6 +215,52 @@ export interface CategorizableModelsRequestType extends Request {
 
 }
 
+interface RequestDataCourtHouse {
+  id: number
+  name: string
+  image: string
+  address: string
+  city: string
+  state: string
+  zip_code: string
+  created_at?: string
+  updated_at?: string
+}
+export interface CourtHouseRequestType extends Request {
+  validate: (attributes?: CustomAttributes) => Promise<void>
+  get: <T = string>(element: string, defaultValue?: T) => T
+  all: () => RequestDataCourtHouse
+  id: number
+  name: string
+  image: string
+  address: string
+  city: string
+  state: string
+  zip_code: string
+  created_at?: string
+  updated_at?: string
+}
+
+interface RequestDataJudge {
+  id: number
+  name: string
+  image_url: string
+  court_house_id: number
+  created_at?: string
+  updated_at?: string
+}
+export interface JudgeRequestType extends Request {
+  validate: (attributes?: CustomAttributes) => Promise<void>
+  get: <T = string>(element: string, defaultValue?: T) => T
+  all: () => RequestDataJudge
+  id: number
+  name: string
+  image_url: string
+  court_house_id: number
+  created_at?: string
+  updated_at?: string
+}
+
 interface RequestDataOauthAccessToken {
   id: number
   token: string
@@ -285,34 +331,6 @@ export interface EmailSubscriptionRequestType extends Request {
   id: number
   email: string
   deleted_at?: string
-  created_at?: string
-  updated_at?: string
-}
-
-interface RequestDataDeployment {
-  id: number
-  commit_sha: string
-  commit_message: string
-  branch: string
-  status: string
-  execution_time: number
-  deploy_script: string
-  terminal_output: string
-  created_at?: string
-  updated_at?: string
-}
-export interface DeploymentRequestType extends Request {
-  validate: (attributes?: CustomAttributes) => Promise<void>
-  get: <T = string>(element: string, defaultValue?: T) => T
-  all: () => RequestDataDeployment
-  id: number
-  commit_sha: string
-  commit_message: string
-  branch: string
-  status: string
-  execution_time: number
-  deploy_script: string
-  terminal_output: string
   created_at?: string
   updated_at?: string
 }
@@ -1665,4 +1683,4 @@ export interface ErrorRequestType extends Request {
   updated_at?: string
 }
 
-export type ModelRequest = MigrationsRequestType | PasswordResetsRequestType | PasskeysRequestType | CommentablesRequestType | CommentableUpvotesRequestType | CategorizableRequestType | TaggableRequestType | TaggableModelsRequestType | CategorizableModelsRequestTypeOauthAccessTokenRequestType | OauthClientRequestType | EmailSubscriptionRequestType | DeploymentRequestType | UserRequestType | PersonalAccessTokenRequestType | PrintDeviceRequestType | CategoryRequestType | PaymentRequestType | DriverRequestType | WaitlistProductRequestType | DigitalDeliveryRequestType | ManufacturerRequestType | OrderItemRequestType | ShippingZoneRequestType | CustomerRequestType | ProductRequestType | ReceiptRequestType | ProductVariantRequestType | LicenseKeyRequestType | WaitlistRestaurantRequestType | ReviewRequestType | ProductUnitRequestType | GiftCardRequestType | OrderRequestType | CouponRequestType | TaxRateRequestType | TransactionRequestType | LoyaltyPointRequestType | ProductItemRequestType | LoyaltyRewardRequestType | ShippingMethodRequestType | ShippingRateRequestType | CartRequestType | DeliveryRouteRequestType | CartItemRequestType | PaymentProductRequestType | FailedJobRequestType | PaymentMethodRequestType | PageRequestType | AuthorRequestType | PostRequestType | PaymentTransactionRequestType | WebsocketRequestType | RequestRequestType | JobRequestType | LogRequestType | SubscriptionRequestType | ErrorRequestType
+export type ModelRequest = MigrationsRequestType | PasswordResetsRequestType | PasskeysRequestType | CommentablesRequestType | CommentableUpvotesRequestType | CategorizableRequestType | TaggableRequestType | TaggableModelsRequestType | CategorizableModelsRequestTypeCourtHouseRequestType | JudgeRequestType | OauthAccessTokenRequestType | OauthClientRequestType | EmailSubscriptionRequestType | UserRequestType | PersonalAccessTokenRequestType | PrintDeviceRequestType | CategoryRequestType | PaymentRequestType | DriverRequestType | WaitlistProductRequestType | DigitalDeliveryRequestType | ManufacturerRequestType | OrderItemRequestType | ShippingZoneRequestType | CustomerRequestType | ProductRequestType | ReceiptRequestType | ProductVariantRequestType | LicenseKeyRequestType | WaitlistRestaurantRequestType | ReviewRequestType | ProductUnitRequestType | GiftCardRequestType | OrderRequestType | CouponRequestType | TaxRateRequestType | TransactionRequestType | LoyaltyPointRequestType | ProductItemRequestType | LoyaltyRewardRequestType | ShippingMethodRequestType | ShippingRateRequestType | CartRequestType | DeliveryRouteRequestType | CartItemRequestType | PaymentProductRequestType | FailedJobRequestType | PaymentMethodRequestType | PageRequestType | AuthorRequestType | PostRequestType | PaymentTransactionRequestType | WebsocketRequestType | RequestRequestType | JobRequestType | LogRequestType | SubscriptionRequestType | ErrorRequestType

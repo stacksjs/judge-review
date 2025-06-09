@@ -8,11 +8,11 @@ export { default as Category, type CategoryJsonResponse, type CategoryUpdate, ty
 
 export { default as Coupon, type CouponJsonResponse, type CouponUpdate, type NewCoupon } from './models/Coupon'
 
+export { default as CourtHouse, type CourtHouseJsonResponse, type CourtHouseUpdate, type NewCourtHouse } from './models/CourtHouse'
+
 export { default as Customer, type CustomerJsonResponse, type CustomerUpdate, type NewCustomer } from './models/Customer'
 
 export { default as DeliveryRoute, type DeliveryRouteJsonResponse, type DeliveryRouteUpdate, type NewDeliveryRoute } from './models/DeliveryRoute'
-
-export { default as Deployment, type DeploymentJsonResponse, type DeploymentUpdate, type NewDeployment } from './models/Deployment'
 
 export { default as DigitalDelivery, type DigitalDeliveryJsonResponse, type DigitalDeliveryUpdate, type NewDigitalDelivery } from './models/DigitalDelivery'
 
@@ -27,6 +27,8 @@ export { default as FailedJob, type FailedJobJsonResponse, type FailedJobUpdate,
 export { default as GiftCard, type GiftCardJsonResponse, type GiftCardUpdate, type NewGiftCard } from './models/GiftCard'
 
 export { default as Job, type JobJsonResponse, type JobUpdate, type NewJob } from './models/Job'
+
+export { default as Judge, type JudgeJsonResponse, type JudgeUpdate, type NewJudge } from './models/Judge'
 
 export { default as LicenseKey, type LicenseKeyJsonResponse, type LicenseKeyUpdate, type NewLicenseKey } from './models/LicenseKey'
 

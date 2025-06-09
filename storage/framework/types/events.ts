@@ -3,11 +3,13 @@ import type { CartModel } from '../orm/src/models/Cart'
 import type { CartItemModel } from '../orm/src/models/CartItem'
 import type { CategoryModel } from '../orm/src/models/Category'
 import type { CouponModel } from '../orm/src/models/Coupon'
+import type { CourtHouseModel } from '../orm/src/models/CourtHouse'
 import type { CustomerModel } from '../orm/src/models/Customer'
 import type { DeliveryRouteModel } from '../orm/src/models/DeliveryRoute'
 import type { DigitalDeliveryModel } from '../orm/src/models/DigitalDelivery'
 import type { DriverModel } from '../orm/src/models/Driver'
 import type { GiftCardModel } from '../orm/src/models/GiftCard'
+import type { JudgeModel } from '../orm/src/models/Judge'
 import type { LicenseKeyModel } from '../orm/src/models/LicenseKey'
 import type { LoyaltyPointModel } from '../orm/src/models/LoyaltyPoint'
 import type { LoyaltyRewardModel } from '../orm/src/models/LoyaltyReward'
@@ -33,6 +35,12 @@ import type { WebsocketModel } from '../orm/src/models/Websocket'
 
 export interface ModelEvents {
 
+  'court-house:created': CourtHouseModel
+  'court-house:updated': CourtHouseModel
+  'court-house:deleted': CourtHouseModel
+  'judge:created': JudgeModel
+  'judge:updated': JudgeModel
+  'judge:deleted': JudgeModel
   'user:created': UserModel
   'user:updated': UserModel
   'user:deleted': UserModel

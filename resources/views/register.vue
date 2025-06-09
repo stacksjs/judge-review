@@ -10,7 +10,6 @@ const { register } = useAuth()
 const name = ref('')
 const email = ref('')
 const password = ref('')
-const passwordConfirmation = ref('')
 
 async function submitRegistration() {
   try {

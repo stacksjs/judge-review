@@ -4,13 +4,16 @@ export interface BenchAuthor {
   imageUrl: string
 }
 
+export interface CourtHouse {
+  id: string
+  name: string
+  imageUrl: string
+}
+
 export interface Judge {
   id: string
   name: string
-  court: {
-    name: string
-    image: string
-  }
+  court: CourtHouse
   imageUrl: string
 }
 
@@ -48,7 +51,6 @@ export interface Stats {
   averageRating: number
   helpfulVotes: number
 }
-
 
 export interface User {
   id: string
