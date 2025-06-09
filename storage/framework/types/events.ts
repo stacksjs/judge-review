@@ -10,6 +10,7 @@ import type { DigitalDeliveryModel } from '../orm/src/models/DigitalDelivery'
 import type { DriverModel } from '../orm/src/models/Driver'
 import type { GiftCardModel } from '../orm/src/models/GiftCard'
 import type { JudgeModel } from '../orm/src/models/Judge'
+import type { JudgeReviewModel } from '../orm/src/models/JudgeReview'
 import type { LicenseKeyModel } from '../orm/src/models/LicenseKey'
 import type { LoyaltyPointModel } from '../orm/src/models/LoyaltyPoint'
 import type { LoyaltyRewardModel } from '../orm/src/models/LoyaltyReward'
@@ -41,6 +42,9 @@ export interface ModelEvents {
   'judge:created': JudgeModel
   'judge:updated': JudgeModel
   'judge:deleted': JudgeModel
+  'judge-review:created': JudgeReviewModel
+  'judge-review:updated': JudgeReviewModel
+  'judge-review:deleted': JudgeReviewModel
   'user:created': UserModel
   'user:updated': UserModel
   'user:deleted': UserModel

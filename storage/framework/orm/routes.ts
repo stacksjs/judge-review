@@ -12,6 +12,12 @@ route.post('judges', 'JudgeStoreOrmAction')
 
 route.get('judges/{id}', 'JudgeShowOrmAction')
 
+route.get('judge-reviews', 'JudgeReviewIndexOrmAction')
+
+route.post('judge-reviews', 'JudgeReviewStoreOrmAction')
+
+route.get('judge-reviews/{id}', 'JudgeReviewShowOrmAction')
+
 route.get('users', 'UserIndexOrmAction')
 
 route.post('users', 'UserStoreOrmAction')

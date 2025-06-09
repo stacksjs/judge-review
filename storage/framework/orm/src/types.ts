@@ -14,6 +14,7 @@ import type { FailedJobsTable } from '../src/models/FailedJob'
 import type { GiftCardsTable } from '../src/models/GiftCard'
 import type { JobsTable } from '../src/models/Job'
 import type { JudgesTable } from '../src/models/Judge'
+import type { JudgeReviewsTable } from '../src/models/JudgeReview'
 import type { LicenseKeysTable } from '../src/models/LicenseKey'
 import type { LogsTable } from '../src/models/Log'
 import type { LoyaltyPointsTable } from '../src/models/LoyaltyPoint'
@@ -165,6 +166,7 @@ export interface QueryLogsTable {
 export interface Database {
   court_houses: CourtHousesTable
   judges: JudgesTable
+  judge_reviews: JudgeReviewsTable
   oauth_access_tokens: OauthAccessTokensTable
   oauth_clients: OauthClientsTable
   email_subscriptions: EmailSubscriptionsTable

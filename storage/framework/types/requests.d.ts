@@ -261,6 +261,34 @@ export interface JudgeRequestType extends Request {
   updated_at?: string
 }
 
+interface RequestDataJudgeReview {
+  id: number
+  title: string
+  content: string
+  rating: number
+  likes: number
+  comments: number
+  type: string
+  status: string
+  created_at?: string
+  updated_at?: string
+}
+export interface JudgeReviewRequestType extends Request {
+  validate: (attributes?: CustomAttributes) => Promise<void>
+  get: <T = string>(element: string, defaultValue?: T) => T
+  all: () => RequestDataJudgeReview
+  id: number
+  title: string
+  content: string
+  rating: number
+  likes: number
+  comments: number
+  type: string
+  status: string
+  created_at?: string
+  updated_at?: string
+}
+
 interface RequestDataOauthAccessToken {
   id: number
   token: string
@@ -1683,4 +1711,4 @@ export interface ErrorRequestType extends Request {
   updated_at?: string
 }
 
-export type ModelRequest = MigrationsRequestType | PasswordResetsRequestType | PasskeysRequestType | CommentablesRequestType | CommentableUpvotesRequestType | CategorizableRequestType | TaggableRequestType | TaggableModelsRequestType | CategorizableModelsRequestTypeCourtHouseRequestType | JudgeRequestType | OauthAccessTokenRequestType | OauthClientRequestType | EmailSubscriptionRequestType | UserRequestType | PersonalAccessTokenRequestType | PrintDeviceRequestType | CategoryRequestType | PaymentRequestType | DriverRequestType | WaitlistProductRequestType | DigitalDeliveryRequestType | ManufacturerRequestType | OrderItemRequestType | ShippingZoneRequestType | CustomerRequestType | ProductRequestType | ReceiptRequestType | ProductVariantRequestType | LicenseKeyRequestType | WaitlistRestaurantRequestType | ReviewRequestType | ProductUnitRequestType | GiftCardRequestType | OrderRequestType | CouponRequestType | TaxRateRequestType | TransactionRequestType | LoyaltyPointRequestType | ProductItemRequestType | LoyaltyRewardRequestType | ShippingMethodRequestType | ShippingRateRequestType | CartRequestType | DeliveryRouteRequestType | CartItemRequestType | PaymentProductRequestType | FailedJobRequestType | PaymentMethodRequestType | PageRequestType | AuthorRequestType | PostRequestType | PaymentTransactionRequestType | WebsocketRequestType | RequestRequestType | JobRequestType | LogRequestType | SubscriptionRequestType | ErrorRequestType
+export type ModelRequest = MigrationsRequestType | PasswordResetsRequestType | PasskeysRequestType | CommentablesRequestType | CommentableUpvotesRequestType | CategorizableRequestType | TaggableRequestType | TaggableModelsRequestType | CategorizableModelsRequestTypeCourtHouseRequestType | JudgeRequestType | JudgeReviewRequestType | OauthAccessTokenRequestType | OauthClientRequestType | EmailSubscriptionRequestType | UserRequestType | PersonalAccessTokenRequestType | PrintDeviceRequestType | CategoryRequestType | PaymentRequestType | DriverRequestType | WaitlistProductRequestType | DigitalDeliveryRequestType | ManufacturerRequestType | OrderItemRequestType | ShippingZoneRequestType | CustomerRequestType | ProductRequestType | ReceiptRequestType | ProductVariantRequestType | LicenseKeyRequestType | WaitlistRestaurantRequestType | ReviewRequestType | ProductUnitRequestType | GiftCardRequestType | OrderRequestType | CouponRequestType | TaxRateRequestType | TransactionRequestType | LoyaltyPointRequestType | ProductItemRequestType | LoyaltyRewardRequestType | ShippingMethodRequestType | ShippingRateRequestType | CartRequestType | DeliveryRouteRequestType | CartItemRequestType | PaymentProductRequestType | FailedJobRequestType | PaymentMethodRequestType | PageRequestType | AuthorRequestType | PostRequestType | PaymentTransactionRequestType | WebsocketRequestType | RequestRequestType | JobRequestType | LogRequestType | SubscriptionRequestType | ErrorRequestType

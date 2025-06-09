@@ -6,6 +6,13 @@ export interface Attributes {
   state: string
   zip_code: string
   image_url: string
+  title: string
+  content: string
+  rating: number
+  likes: number
+  comments: number
+  type: string
+  status: string
   token: string
   scopes: string
   revoked: boolean
@@ -27,7 +34,6 @@ export interface Attributes {
   mac_address: string
   location: string
   terminal: string
-  status: string | string[]
   last_ping: number
   print_count: number
   description: string
@@ -82,7 +88,6 @@ export interface Attributes {
   duration: number
   metadata: string
   variant: string
-  type: string
   options: string
   key: string
   template: string | string[]
@@ -95,9 +100,6 @@ export interface Attributes {
   queue_position: number
   seated_at: Date | string
   no_show_at: Date | string
-  rating: number
-  title: string
-  content: string
   is_verified_purchase: boolean
   is_approved: boolean
   is_featured: boolean

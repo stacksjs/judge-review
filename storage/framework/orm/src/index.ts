@@ -30,6 +30,8 @@ export { default as Job, type JobJsonResponse, type JobUpdate, type NewJob } fro
 
 export { default as Judge, type JudgeJsonResponse, type JudgeUpdate, type NewJudge } from './models/Judge'
 
+export { default as JudgeReview, type JudgeReviewJsonResponse, type JudgeReviewUpdate, type NewJudgeReview } from './models/JudgeReview'
+
 export { default as LicenseKey, type LicenseKeyJsonResponse, type LicenseKeyUpdate, type NewLicenseKey } from './models/LicenseKey'
 
 export { default as Log, type LogJsonResponse, type LogUpdate, type NewLog } from './models/Log'
