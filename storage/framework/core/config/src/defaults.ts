@@ -646,8 +646,8 @@ export const defaults: StacksOptions = {
     },
 
     stripe: {
-      appId: '',
-      apiKey: '',
+      secretKey: '',
+      publicKey: '',
     },
   },
 

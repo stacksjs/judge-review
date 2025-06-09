@@ -1,56 +1,54 @@
+import type { AuthorsTable } from '../src/models/Author'
+import type { CartsTable } from '../src/models/Cart'
+import type { CartItemsTable } from '../src/models/CartItem'
+import type { CategoriesTable } from '../src/models/Category'
+import type { CouponsTable } from '../src/models/Coupon'
 import type { CourtHousesTable } from '../src/models/CourtHouse'
+import type { CustomersTable } from '../src/models/Customer'
+import type { DeliveryRoutesTable } from '../src/models/DeliveryRoute'
+import type { DigitalDeliveriesTable } from '../src/models/DigitalDelivery'
+import type { DriversTable } from '../src/models/Driver'
+import type { EmailSubscriptionsTable } from '../src/models/EmailSubscription'
+import type { ErrorsTable } from '../src/models/Error'
+import type { FailedJobsTable } from '../src/models/FailedJob'
+import type { GiftCardsTable } from '../src/models/GiftCard'
+import type { JobsTable } from '../src/models/Job'
 import type { JudgesTable } from '../src/models/Judge'
 import type { JudgeReviewsTable } from '../src/models/JudgeReview'
+import type { LicenseKeysTable } from '../src/models/LicenseKey'
+import type { LogsTable } from '../src/models/Log'
+import type { LoyaltyPointsTable } from '../src/models/LoyaltyPoint'
+import type { LoyaltyRewardsTable } from '../src/models/LoyaltyReward'
+import type { ManufacturersTable } from '../src/models/Manufacturer'
 import type { OauthAccessTokensTable } from '../src/models/OauthAccessToken'
 import type { OauthClientsTable } from '../src/models/OauthClient'
-import type { EmailSubscriptionsTable } from '../src/models/EmailSubscription'
-import type { UsersTable } from '../src/models/User'
-import type { PersonalAccessTokensTable } from '../src/models/PersonalAccessToken'
-import type { PrintDevicesTable } from '../src/models/PrintDevice'
-import type { CategoriesTable } from '../src/models/Category'
-import type { PaymentsTable } from '../src/models/Payment'
-import type { DriversTable } from '../src/models/Driver'
-import type { WaitlistProductsTable } from '../src/models/WaitlistProduct'
-import type { DigitalDeliveriesTable } from '../src/models/DigitalDelivery'
-import type { ManufacturersTable } from '../src/models/Manufacturer'
-import type { OrderItemsTable } from '../src/models/OrderItem'
-import type { ShippingZonesTable } from '../src/models/ShippingZone'
-import type { CustomersTable } from '../src/models/Customer'
-import type { ProductsTable } from '../src/models/Product'
-import type { ReceiptsTable } from '../src/models/Receipt'
-import type { ProductVariantsTable } from '../src/models/ProductVariant'
-import type { LicenseKeysTable } from '../src/models/LicenseKey'
-import type { WaitlistRestaurantsTable } from '../src/models/WaitlistRestaurant'
-import type { ReviewsTable } from '../src/models/Review'
-import type { ProductUnitsTable } from '../src/models/ProductUnit'
-import type { GiftCardsTable } from '../src/models/GiftCard'
 import type { OrdersTable } from '../src/models/Order'
-import type { CouponsTable } from '../src/models/Coupon'
-import type { TaxRatesTable } from '../src/models/TaxRate'
-import type { TransactionsTable } from '../src/models/Transaction'
-import type { LoyaltyPointsTable } from '../src/models/LoyaltyPoint'
+import type { OrderItemsTable } from '../src/models/OrderItem'
+import type { PagesTable } from '../src/models/Page'
+import type { PaymentsTable } from '../src/models/Payment'
+import type { PaymentMethodsTable } from '../src/models/PaymentMethod'
+import type { PaymentProductsTable } from '../src/models/PaymentProduct'
+import type { PaymentTransactionsTable } from '../src/models/PaymentTransaction'
+import type { PersonalAccessTokensTable } from '../src/models/PersonalAccessToken'
+import type { PostsTable } from '../src/models/Post'
+import type { PrintDevicesTable } from '../src/models/PrintDevice'
+import type { ProductsTable } from '../src/models/Product'
 import type { ProductItemsTable } from '../src/models/ProductItem'
-import type { LoyaltyRewardsTable } from '../src/models/LoyaltyReward'
+import type { ProductUnitsTable } from '../src/models/ProductUnit'
+import type { ProductVariantsTable } from '../src/models/ProductVariant'
+import type { ReceiptsTable } from '../src/models/Receipt'
+import type { RequestsTable } from '../src/models/Request'
+import type { ReviewsTable } from '../src/models/Review'
 import type { ShippingMethodsTable } from '../src/models/ShippingMethod'
 import type { ShippingRatesTable } from '../src/models/ShippingRate'
-import type { CartsTable } from '../src/models/Cart'
-import type { DeliveryRoutesTable } from '../src/models/DeliveryRoute'
-import type { CartItemsTable } from '../src/models/CartItem'
-import type { PaymentProductsTable } from '../src/models/PaymentProduct'
-import type { FailedJobsTable } from '../src/models/FailedJob'
-import type { PaymentMethodsTable } from '../src/models/PaymentMethod'
-import type { PagesTable } from '../src/models/Page'
-import type { AuthorsTable } from '../src/models/Author'
-import type { PostsTable } from '../src/models/Post'
-import type { PaymentTransactionsTable } from '../src/models/PaymentTransaction'
-import type { WebsocketsTable } from '../src/models/Websocket'
-import type { RequestsTable } from '../src/models/Request'
-import type { JobsTable } from '../src/models/Job'
-import type { LogsTable } from '../src/models/Log'
+import type { ShippingZonesTable } from '../src/models/ShippingZone'
 import type { SubscriptionsTable } from '../src/models/Subscription'
-import type { ErrorsTable } from '../src/models/Error'
-import type { Generated } from 'kysely'
-
+import type { TaxRatesTable } from '../src/models/TaxRate'
+import type { TransactionsTable } from '../src/models/Transaction'
+import type { UsersTable } from '../src/models/User'
+import type { WaitlistProductsTable } from '../src/models/WaitlistProduct'
+import type { WaitlistRestaurantsTable } from '../src/models/WaitlistRestaurant'
+import type { WebsocketsTable } from '../src/models/Websocket'
 
 export interface MigrationsTable {
   name: string
@@ -101,70 +99,70 @@ export interface CommentableUpvotesTable {
   created_at?: string
 }
 
-  export interface CategorizableTable {
-    id?: number
-    name: string
-    slug: string
-    description?: string
-    is_active: boolean
-    categorizable_type: string
-    created_at?: string
-    updated_at?: string
-  }
+export interface CategorizableTable {
+  id?: number
+  name: string
+  slug: string
+  description?: string
+  is_active: boolean
+  categorizable_type: string
+  created_at?: string
+  updated_at?: string
+}
 
-  export interface TaggableTable {
-    id?: number
-    name: string
-    slug: string
-    description?: string
-    is_active: boolean
-    taggable_type: string
-    created_at?: string
-    updated_at?: string
-  }
+export interface TaggableTable {
+  id?: number
+  name: string
+  slug: string
+  description?: string
+  is_active: boolean
+  taggable_type: string
+  created_at?: string
+  updated_at?: string
+}
 
-  export interface TaggableModelsTable {
-    id?: number
-    tag_id: number
-    taggable_type: string
-    created_at?: string
-    updated_at?: string
-  }
+export interface TaggableModelsTable {
+  id?: number
+  tag_id: number
+  taggable_type: string
+  created_at?: string
+  updated_at?: string
+}
 
-  export interface CategorizableModelsTable {
-    id?: number
-    category_id: number
-    categorizable_type: string
-    categorizable_id: number
-    created_at?: string
-    updated_at?: string
-  }
+export interface CategorizableModelsTable {
+  id?: number
+  category_id: number
+  categorizable_type: string
+  categorizable_id: number
+  created_at?: string
+  updated_at?: string
+}
 
-  export interface QueryLogsTable {
-    id?: number
-    query: string
-    normalized_query: string
-    duration: number
-    connection: string
-    status: 'completed' | 'failed' | 'slow'
-    error?: string
-    executed_at?: string
-    bindings?: string
-    trace?: string
-    model?: string
-    method?: string
-    file?: string
-    line?: number
-    memory_usage?: number
-    rows_affected?: number
-    transaction_id?: string
-    tags?: string
-    affected_tables?: string
-    indexes_used?: string
-    missing_indexes?: string
-    explain_plan?: string
-    optimization_suggestions?: string
-  }
+export interface QueryLogsTable {
+  id?: number
+  query: string
+  normalized_query: string
+  duration: number
+  connection: string
+  status: 'completed' | 'failed' | 'slow'
+  error?: string
+  executed_at?: string
+  bindings?: string
+  trace?: string
+  model?: string
+  method?: string
+  file?: string
+  line?: number
+  memory_usage?: number
+  rows_affected?: number
+  transaction_id?: string
+  tags?: string
+  affected_tables?: string
+  indexes_used?: string
+  missing_indexes?: string
+  explain_plan?: string
+  optimization_suggestions?: string
+}
 export interface Database {
   court_houses: CourtHousesTable
   judges: JudgesTable

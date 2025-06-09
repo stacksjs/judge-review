@@ -1,5 +1,5 @@
-import Stripe from 'stripe'
 import { config } from '@stacksjs/config'
+import Stripe from 'stripe'
 
 const apiKey = config?.services?.stripe?.secretKey || ''
 
