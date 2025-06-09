@@ -1,10 +1,10 @@
-import process from 'node:process'
 import Stripe from 'stripe'
+import { config } from '@stacksjs/config'
 
-const apiKey = process.env.STRIPE_SECRET_KEY || ''
+const apiKey = config?.services?.stripe?.secretKey || ''
 
 const client = new Stripe(apiKey, {
-  apiVersion: '2024-10-28.acacia',
+  apiVersion: '2025-02-24.acacia',
 })
 
 export interface PaymentIntent {

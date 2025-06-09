@@ -8,6 +8,7 @@ export interface Checkout {
 
 export const manageCheckout: Checkout = (() => {
   async function create(user: UserModel, params: Stripe.Checkout.SessionCreateParams): Promise<Stripe.Response<Stripe.Checkout.Session>> {
+    
     if (!user.hasStripeId()) {
       throw new Error('Customer does not exist in Stripe')
     }
