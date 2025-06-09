@@ -20,15 +20,15 @@
             </router-link>
 
             <router-link 
-              to="/courts" 
+              to="/court-houses" 
               class="text-sm/6 font-semibold text-gray-900 border-b-2 transition-colors duration-200"
               :class="[
-                route.path === '/courts' 
+                route.path === '/court-houses' 
                   ? 'border-gray-500 text-gray-600' 
                   : 'border-transparent hover:border-gray-500'
               ]"
             >
-              Find Court Houses
+              Find CourtHouses
             </router-link>
 
             <router-link 

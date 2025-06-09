@@ -76,7 +76,10 @@ const review: BenchReviews = {
 
   <main>
     <HeroSection />
-    <div class="pt-32">
+    <div class="flex justify-center">
+     <img src="/images/bench/arrow.svg" alt="Arrow" class="h-[24rem] opacity-30">
+    </div>
+    <div class="pt-16">
       <ArticleHeader :review="review" />
       <Article :review="review" />
     </div>
