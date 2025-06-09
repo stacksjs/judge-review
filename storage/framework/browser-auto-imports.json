@@ -90,6 +90,7 @@
     "confirmPayment": true,
     "controlledComputed": true,
     "controlledRef": true,
+    "courtHouses": true,
     "createApp": true,
     "createControlledPromise": true,
     "createEventHook": true,

@@ -1,4 +1,52 @@
 // Sample data - replace with actual data from your backend
+export const courtHouses = ref([
+  {
+    id: '1',
+    name: 'Supreme Court of California',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+    address: '350 McAllister Street',
+    city: 'San Francisco',
+    state: 'CA',
+    zipCode: '94102',
+  },
+  {
+    id: '2',
+    name: 'Appellate Court of New York',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+    address: '27 Madison Avenue',
+    city: 'New York',
+    state: 'NY',
+    zipCode: '10010',
+  },
+  {
+    id: '3',
+    name: 'District Court of Texas',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+    address: '515 Rusk Street',
+    city: 'Houston',
+    state: 'TX',
+    zipCode: '77002',
+  },
+  {
+    id: '4',
+    name: 'Supreme Court of Florida',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+    address: '500 South Duval Street',
+    city: 'Tallahassee',
+    state: 'FL',
+    zipCode: '32399',
+  },
+  {
+    id: '5',
+    name: 'District Court of Illinois',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+    address: '219 South Dearborn Street',
+    city: 'Chicago',
+    state: 'IL',
+    zipCode: '60604',
+  },
+])
+
 export const judges = ref([
   {
     id: 1,

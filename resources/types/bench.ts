@@ -7,7 +7,11 @@ export interface BenchAuthor {
 export interface CourtHouse {
   id: string
   name: string
-  imageUrl: string
+  image: string
+  address: string
+  city: string
+  state: string
+  zipCode: string
 }
 
 export interface Judge {

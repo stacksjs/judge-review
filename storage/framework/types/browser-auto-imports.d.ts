@@ -43,6 +43,7 @@ declare global {
   const controlledComputed: typeof import('../core/browser/src/utils/vendors')['controlledComputed']
   const controlledRef: typeof import('../core/browser/src/utils/vendors')['controlledRef']
   const count: typeof import('../../../resources/functions/counter')['count']
+  const courtHouses: typeof import('../../../resources/functions/sample')['courtHouses']
   const createApp: typeof import('vue')['createApp']
   const createControlledPromise: typeof import('../core/browser/src/utils/promise')['createControlledPromise']
   const createEventHook: typeof import('../core/browser/src/utils/vendors')['createEventHook']
@@ -499,6 +500,7 @@ declare module 'vue' {
     readonly confirmPayment: UnwrapRef<typeof import('../core/browser/src/utils/billable')['confirmPayment']>
     readonly controlledComputed: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['controlledComputed']>
     readonly controlledRef: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['controlledRef']>
+    readonly courtHouses: UnwrapRef<typeof import('../../../resources/functions/sample')['courtHouses']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createControlledPromise: UnwrapRef<typeof import('../core/browser/src/utils/promise')['createControlledPromise']>
     readonly createEventHook: UnwrapRef<typeof import('../core/browser/src/utils/vendors')['createEventHook']>
