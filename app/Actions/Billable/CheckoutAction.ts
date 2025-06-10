@@ -8,7 +8,7 @@ export default new Action({
   description: 'Checkout Action',
   method: 'POST',
   async handle(request: RequestInstance) {
-    const user = request.user()
+    const user = await request.user()
 
     if (!user) {
       return response.json({ message: 'User not found' }, 404)
@@ -19,8 +19,8 @@ export default new Action({
       cancel_url: 'https://localhost:3000/cancel',
     }
 
-    const checkout = await manageCheckout.create(user, params)
+    const session = await manageCheckout.create(user, params)
 
-    return response.json({ message: 'Category deleted successfully' })
+    return response.json({ url: session.url })
   },
 })
