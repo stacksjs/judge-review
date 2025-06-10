@@ -178,6 +178,16 @@ export default {
     default: '',
   },
 
+  STRIPE_SECRET_KEY: {
+    validation: schema.string(),
+    default: '',
+  },
+
+  STRIPE_PUBLIC_KEY: {
+    validation: schema.string(),  
+    default: '',
+  },
+
   FRONTEND_APP_ENV: {
     validation: schema.enum(['development', 'staging', 'production']),
     default: 'development',

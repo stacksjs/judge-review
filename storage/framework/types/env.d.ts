@@ -36,6 +36,8 @@ declare module 'bun' {
     const SEARCH_ENGINE_DRIVER: 'meilisearch' | 'algolia' | 'typesense'
     const MEILISEARCH_HOST: string
     const MEILISEARCH_KEY: string
+    const STRIPE_SECRET_KEY: string
+    const STRIPE_PUBLIC_KEY: string
     const FRONTEND_APP_ENV: 'development' | 'staging' | 'production'
     const FRONTEND_APP_URL: string
   }

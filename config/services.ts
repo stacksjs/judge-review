@@ -35,9 +35,9 @@ export default {
   },
 
   mailtrap: {
-    host: env.MAILTRAP_HOST,
-    token: env.MAILTRAP_TOKEN,
-    inboxId: env.MAILTRAP_INBOX_ID,
+    host: env.MAILTRAP_HOST || '',
+    token: env.MAILTRAP_TOKEN || '',
+    inboxId: env.MAILTRAP_INBOX_ID || '',
     maxRetries: env.MAILTRAP_MAX_RETRIES ? Number.parseInt(env.MAILTRAP_MAX_RETRIES) : 3,
     retryTimeout: env.MAILTRAP_RETRY_TIMEOUT ? Number.parseInt(env.MAILTRAP_RETRY_TIMEOUT) : 1000,
   },
@@ -72,14 +72,14 @@ export default {
   // },
 
   slack: {
-    appId: env.SLACK_APP_ID,
-    clientId: env.SLACK_CLIENT_ID,
-    secretKey: env.SLACK_SECRET_KEY,
+    appId: env.SLACK_APP_ID || '',
+    clientId: env.SLACK_CLIENT_ID || '',
+    secretKey: env.SLACK_SECRET_KEY || '',
     maxRetries: env.SLACK_MAX_RETRIES ? Number.parseInt(env.SLACK_MAX_RETRIES) : 3,
     retryTimeout: env.SENDGRID_RETRY_TIMEOUT ? Number.parseInt(env.SENDGRID_RETRY_TIMEOUT) : 1000,
   },
   stripe: {
-    secretKey: env.STRIPE_SECRET_KEY,
-    publicKey: env.STRIPE_PUBLIC_KEY,
+    secretKey: env.STRIPE_SECRET_KEY || '',
+    publicKey: env.STRIPE_PUBLIC_KEY || '',
   },
 } satisfies ServicesConfig
