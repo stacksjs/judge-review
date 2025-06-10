@@ -184,7 +184,7 @@ export default {
   },
 
   STRIPE_PUBLIC_KEY: {
-    validation: schema.string(),  
+    validation: schema.string(),
     default: '',
   },
 
