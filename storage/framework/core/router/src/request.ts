@@ -1,4 +1,4 @@
-import type { UserModel } from '@stacksjs/orm'
+import type { AuthUser } from '@stacksjs/auth'
 import type { AuthToken, CustomAttributes, HttpMethod, NumericField, RequestData, RequestInstance, RouteParam, RouteParams } from '@stacksjs/types'
 import { getCurrentUser } from '@stacksjs/auth'
 import { customValidate } from '@stacksjs/validation'
@@ -253,7 +253,7 @@ export class Request<T extends RequestData = RequestData> implements RequestInst
     return method.toUpperCase() as HttpMethod
   }
 
-  public async user(): Promise<UserModel | undefined> {
+  public async user(): Promise<AuthUser | undefined> {
     return await getCurrentUser()
   }
 }
